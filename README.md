@@ -30,6 +30,9 @@ My Zsh config depends on [Prezto](https://github.com/sorin-ionescu/prezto).
 ### Usage
 `clean.sh` deletes/unlinks the installed configuration files, whether they be
 outside of the scope of this repository or symlinks to this repository created
-by `stow`.
+by `stow`. It confirms each deletion/unlinking to ensure you don't accidentally
+delete your main configuration file.
 
-`install.sh` symlinks the configuration files to their expected locations.
+`install.sh` symlinks the configuration files to their expected locations. It
+currently confirms each installation, once I add more command-line arguments to
+my scripting repertoire I will add a flag to disable confirmation.
