@@ -1,5 +1,5 @@
-# Vidur's Dotfile
-## This is Vidur Butalia's dotfile collection
+# Vidur's Dotfiles
+##### This is Vidur Butalia's dotfile collection
 
 This repo includes my 'dotfiles' (configuration files for most command-line 
 and some GUI applications) as well as basic tooling (shell scripts) I have written 
