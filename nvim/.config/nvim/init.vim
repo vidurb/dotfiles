@@ -12,6 +12,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'sjl/gundo.vim'
 Plug 'sgur/vim-editorconfig'
 Plug 'pangloss/vim-javascript'
+Plug 'mattn/emmet-vim'
 
 " Syntax
 Plug 'scrooloose/syntastic'
