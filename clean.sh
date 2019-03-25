@@ -25,8 +25,6 @@ cleanFile() {
                 echo "Ignored."
                 ;;
         esac
-    else
-        #echo "$HOME/$1 does not exist, no need to delete or unlink anything."
     fi
 }
 confirm() {
