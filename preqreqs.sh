@@ -12,3 +12,5 @@ ln -s -f .tmux/.tmux.conf
 echo "Linked oh-my-tmux"
 # Add tmux-nord theme
 git clone https://github.com/arcticicestudio/nord-tmux ~/.tmux/themes/nord-tmux
+# Add zsh-nvm
+git clone https://github.com/lukechilds/zsh-nvm ~/.zprezto/contrib/zsh-nvm
