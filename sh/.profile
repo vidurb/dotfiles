@@ -30,3 +30,6 @@ fi
 export GOOGLE_API_KEY="AIzaSyAFCLypHm8zkYboGS9JMZow21tf-xz6JF8"
 export GOOGLE_DEFAULT_CLIENT_ID="2036720488-fbeu3aqqhkphbsoafveaojlmh7g07s4m.apps.googleusercontent.com"
 export GOOGLE_DEFAULT_CLIENT_SECRET="LHPMKigO7PUweDavK1zbYPOX"
+
+# Ubuntu make installation of Ubuntu Make binary symlink
+PATH=/home/vidur/.local/share/umake/bin:$PATH
