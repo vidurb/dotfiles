@@ -6,15 +6,9 @@ written myself to set up my configuration on a new terminal.
 
 I use [Arctic Ice Studio](https://github.com/arcticicestudio)'s excellent Nord 
 color scheme wherever possible. I would encourage you to check out their repos 
-if you like the look of my tools. 
+if you like the look of my tools. (Screenshots are at the bottom)
 
 
-My terminal and shell:
-![My Alacritty and Zsh](https://i.imgur.com/vqBnPli.png)
-
-
-My vim config:
-![My Vim](https://i.imgur.com/HhXAe2I.png)
 
 ### Shell scripts
 
@@ -54,23 +48,43 @@ mine, feel free to fork this repo and add your own configurations before running
 `clean.sh` and `install.sh`.
 
 
-### Config Prerequisites
+### Configs
 
 
-##### Vim
+##### Alacritty
+Alacritty is my preferred terminal. This config is doesn't diverge much from the
+default config except for the usage of the Nord theme, but I anticipate that
+will change.
+
+##### Git
+My basic git config - very barebones, and unlikely to be useful for anyone
+else since it has my name and email address hardcoded. :P
+
+##### Mercurial (hg)
+My basic mercurial config - very barebones, and unlikely to be useful for anyone
+else since it has my name and email address hardcoded. :P
+
+##### Neovim
 The Vim & Nvim configuration requires a vim plugin manager. The configuration is 
 written for [vim-plug](https://github.com/junegunn/vim-plug), but changing it to
 use another package manager is trivial.
 
+##### System Shell
+Just some bits I didn't want to lose track of when I reinstall my OS.
+
+##### Tmux
+A work in progress.
+
+##### Vim
+Vim's configuration is symlinked to the Neovim configuration as I use the same
+configuration for both - see that heading for more.
+
 ##### Zsh
 My Zsh config depends on [Prezto](https://github.com/sorin-ionescu/prezto).
 
-### Usage
-`clean.sh` deletes/unlinks the installed configuration files, whether they be
-outside of the scope of this repository or symlinks to this repository created
-by `stow`. It confirms each deletion/unlinking to ensure you don't accidentally
-delete your main configuration file.
+### Screenshots
+#### My terminal and shell:
+![My Alacritty and Zsh](https://i.imgur.com/vqBnPli.png)
+#### My vim config:
+![My Vim](https://i.imgur.com/HhXAe2I.png)
 
-`install.sh` symlinks the configuration files to their expected locations. It
-currently confirms each installation, once I add more command-line arguments to
-my scripting repertoire I will add a flag to disable confirmation.
