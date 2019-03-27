@@ -1,4 +1,5 @@
 # Vidur's Dotfiles
+# I'm putting some credentials into this so no more public repo.
 
 This repo includes my 'dot files' (configuration files for most command-line 
 and some GUI applications) as well as basic tooling (shell scripts) I have 
