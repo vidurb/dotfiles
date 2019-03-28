@@ -33,3 +33,4 @@ export GOOGLE_DEFAULT_CLIENT_SECRET="LHPMKigO7PUweDavK1zbYPOX"
 
 # Ubuntu make installation of Ubuntu Make binary symlink
 PATH=/home/vidur/.local/share/umake/bin:$PATH
+export PATH="$HOME/.cargo/bin:$PATH"
