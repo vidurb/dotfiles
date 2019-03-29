@@ -22,6 +22,7 @@ username = Vidur Butalia <vidurbutalia@gmail.com>
 # (see 'hg help extensions' for more info)
 #
 # churn =
+mercurial_keyring =
 
 # Default path cause who else will I ever fucking use Mercurial with
 [paths]
