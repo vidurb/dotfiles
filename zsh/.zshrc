@@ -45,6 +45,7 @@ alias mount-personal="google-drive-ocamlfuse -label personal /home/vidur/GoogleD
 alias mount-store="google-drive-ocamlfuse -label store /home/vidur/GoogleDrive/store"
 alias mount-miranj="google-drive-ocamlfuse -label miranj /home/vidur/GoogleDrive/miranj"
 alias slack-term="slack-term --config $HOME/snap/slack-term/current/slack-term.json"
+alias clip="xclip -sel clip"
 # Add yarn (should this go in .zprofile?)
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 # Add dasht completion
