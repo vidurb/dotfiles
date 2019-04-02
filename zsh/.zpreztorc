@@ -36,6 +36,8 @@ zstyle ':prezto:load' pmodule \
   'utility' \
   'completion' \
   'zsh-nvm' \
+  'tizonia' \
+  'tmuxinator' \
   'contrib-prompt' \
   'prompt'
 
