@@ -50,7 +50,8 @@ alias mount-store="google-drive-ocamlfuse -label store /home/vidur/GoogleDrive/s
 alias mount-miranj="google-drive-ocamlfuse -label miranj /home/vidur/GoogleDrive/miranj"
 alias slack-term="slack-term --config $HOME/snap/slack-term/current/slack-term.json"
 alias clip="xclip -sel clip"
-
+# alias craft to local craft
+alias craft="./craft"
 # Add yarn (should this go in .zprofile?)
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
