@@ -23,13 +23,8 @@ username = Vidur Butalia <vidurbutalia@gmail.com>
 #
 # churn =
 mercurial_keyring =
-
+shelve=
 # Default path cause who else will I ever fucking use Mercurial with
 [paths]
 default = https://hg.miranj.in
 
-# miranj repo
-[auth]
-miranj.prefix = hg.miranj.in
-miranj.username = vidur
-miranj.schemes = http https
