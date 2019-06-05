@@ -80,6 +80,7 @@ do
                     git clone https://github.com/samoshkin/tmux-config.git ~/tmux-config
                     ~/tmux-config/install.sh
                     rm -rf ~/tmux-config
+                    rm -f ~/.tmux.conf
                     echo "tmux-config installed in ~/.tmux"
                     ;;
                 *)
