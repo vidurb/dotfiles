@@ -91,7 +91,9 @@ on [fisher](https://github.com/jorgebucaran/fisher).
 
 ### Screenshots
 #### My terminal and shell:
-![My Alacritty and Zsh](https://i.imgur.com/vqBnPli.png)
+![My Alacritty and Zsh](https://i.imgur.com/yKXMMkL.png)
 #### My vim config:
 ![My Vim](https://i.imgur.com/HhXAe2I.png)
+#### tmux
+![My tmux](https://i.imgur.com/1jlNJBu.png)
 
