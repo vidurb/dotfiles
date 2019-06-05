@@ -15,7 +15,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'mattn/emmet-vim'
 
 " Syntax
-Plug 'scrooloose/syntastic'
+Plug 'neomake/neomake'
 Plug 'gabrielelana/vim-markdown'
 
 " Display
@@ -57,13 +57,11 @@ syntax on         " colors keywords in language
 
 " Tab completion works properly (UNIX Style) and shows menu of possible options.
 set wildmenu
-set wildmode=longest:full
+set wildmode=longest,list,full
 set wildignore=*.o,*.bak,*.data,*.class
 
 " Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+call neomake#configure#automake('nw', 750)
 
 " Gundo
 nnoremap <F5> :GundoToggle<CR>
