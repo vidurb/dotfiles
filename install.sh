@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "This script requires git & curl"
+
 for directory in */;
 do 
     if [[ ${directory%/} == nvim ]]; then
@@ -34,6 +36,39 @@ do
             esac
         fi
     fi
+    if [[ ${directory%/} == zsh ]]; then
+        if [[ -e  ~/.zprezto ]]; then
+            echo "prezto already installed"
+        else
+            read -r -p "Install prezto for zsh?" response
+            case "$response" in
+                [yY][eE][sS]|[yY]) 
+                    git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
+                    echo "prezto installed in ~/.zprezto"
+                    ;;
+                *)
+                    echo "prezto not installed"
+                ;;
+            esac
+        fi
+    fi
+    if [[ ${directory%/} == fish ]]; then
+        if [[ -e  ~/.config/fish/functions/fisher.fish ]]; then
+            echo "fisher already installed"
+        else
+            read -r -p "Install fisher for fish?" response
+            case "$response" in
+                [yY][eE][sS]|[yY]) 
+                    git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
+                    echo "fisher installed in ~/.config/fish"
+                    ;;
+                *)
+                    echo "fisher not installed"
+                ;;
+            esac
+        fi
+    fi
+ 
     read -r -p "Symlink the contents of ${directory%/} into $HOME?" response
     case "$response" in
         [yY][eE][sS]|[yY]) 
