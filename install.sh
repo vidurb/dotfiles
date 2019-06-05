@@ -81,6 +81,7 @@ do
                     ~/tmux-config/install.sh
                     rm -rf ~/tmux-config
                     rm -f ~/.tmux.conf
+                    git clone https://github.com/arcticicestudio/nord-tmux ~/.tmux/plugins/nord-tmux
                     echo "tmux-config installed in ~/.tmux"
                     ;;
                 *)
