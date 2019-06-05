@@ -1,7 +1,8 @@
 function dl-on-do
-    ssh do wget -q $1
-    scp do:~/$(basename "$1") ./
-    ssh do rm -f $(basename "$1")
+    set file $argv
+    ssh do wget -q $file
+    scp "do:~/"(basename $file) ./
+    ssh do rm -f (basename $argv)
 end
 
 alias scale-right="xrandr --output eDP-1 --auto --output HDMI-1 --auto --panning 3840x2160+3840+0 --scale 2x2 --right-of eDP-1"
