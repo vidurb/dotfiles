@@ -44,6 +44,8 @@ do
             case "$response" in
                 [yY][eE][sS]|[yY]) 
                     git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
+                    git clone --recurse-submodules https://github.com/belak/prezto-contrib ~/.zprezto/contrib
+                    git clone https://github.com/lukechilds/zsh-nvm ~/.zprezto/contrib/zsh-nvm
                     echo "prezto installed in ~/.zprezto"
                     ;;
                 *)
@@ -64,6 +66,24 @@ do
                     ;;
                 *)
                     echo "fisher not installed"
+                ;;
+            esac
+        fi
+    fi
+    if [[ ${directory%/} == tmux ]]; then
+        if [[ -e  ~/.tmux/ ]]; then
+            echo "tmux-config already installed"
+        else
+            read -r -p "Install tmux-config for tmux?" response
+            case "$response" in
+                [yY][eE][sS]|[yY]) 
+                    git clone https://github.com/samoshkin/tmux-config.git ~/tmux-config
+                    ~/tmux-config/install.sh
+                    rm -rf ~/tmux-config
+                    echo "tmux-config installed in ~/.tmux"
+                    ;;
+                *)
+                    echo "tmux-config not installed"
                 ;;
             esac
         fi
