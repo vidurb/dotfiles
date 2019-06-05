@@ -26,6 +26,10 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# Correct symbols in TMUX
+export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+
 # Chromium Beta envvars
 export GOOGLE_API_KEY="AIzaSyAFCLypHm8zkYboGS9JMZow21tf-xz6JF8"
 export GOOGLE_DEFAULT_CLIENT_ID="2036720488-fbeu3aqqhkphbsoafveaojlmh7g07s4m.apps.googleusercontent.com"
