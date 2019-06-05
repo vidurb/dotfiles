@@ -27,6 +27,11 @@ refresh symlinks, so once the configuration files are installed, updating them
 from newer versions of this repository is as simple as running `install.sh`
 again.
 
+A recent addition is auto installation of dependencies. This feature depends on
+git and curl. I am yet to add a guard for the case where those are missing. 
+
+Currently, dependencies for neovim, vim, zsh, fish and tmux are installed.
+
 `clean.sh` is a utility that will delete existing configuration files so that
 they can be replaced using `install.sh`; it is separated from `install.sh` and
 confirms each deletion to reduce the chance of an existing configuration not
@@ -45,43 +50,49 @@ configuration files you're trying to install already exist. We're using GNU stow
 to symlink files into the correct places from this repository, rather than 
 copying files to the defined locations. You can use `clean.sh` to delete your
 old configuration files, or if you wish to keep your configuration/merge it with
-mine, feel free to fork this repo and add your own configurations before running
+mine, you can fork this repo and add your own configurations before running
 `clean.sh` and `install.sh`.
 
 
 ### Configs
 
 
-##### Alacritty
+##### alacritty
 Alacritty is my preferred terminal. This config is doesn't diverge much from the
 default config except for the usage of the Nord theme, but I anticipate that
 will change.
 
-##### Git
-My basic git config - very barebones, and unlikely to be useful for anyone
-else since it has my name and email address hardcoded. :P
+##### git
+My basic git config - unlikely to be useful for anyone else
 
-##### Mercurial (hg)
-My basic mercurial config - very barebones, and unlikely to be useful for anyone
-else since it has my name and email address hardcoded. :P
+##### mercurial (hg)
+My basic mercurial config - unlikely to be useful for anyone else
 
-##### Neovim
+##### neovim
 The Vim & Nvim configuration requires a vim plugin manager. The configuration is 
 written for [vim-plug](https://github.com/junegunn/vim-plug), but changing it to
 use another package manager is trivial.
 
-##### System Shell
+##### sh
 Just some bits I didn't want to lose track of when I reinstall my OS.
 
-##### Tmux
-A work in progress.
+##### tmux
+Just a clone of [tmux-config](https://github.com/samoshkin/tmux-config) for now,
+with the addition of the [nord-tmux](https://github.com/arcticicestudio/nord-tmux) theme.
 
-##### Vim
+##### vim
 Vim's configuration is symlinked to the Neovim configuration as I use the same
 configuration for both - see that heading for more.
 
-##### Zsh
-My Zsh config depends on [Prezto](https://github.com/sorin-ionescu/prezto).
+##### zsh
+My Zsh config depends on [prezto](https://github.com/sorin-ionescu/prezto), and includes
+[prezto-contrib](https://github.com/belak/prezto-contrib) and
+[zsh-nvm](https://github.com/lukechilds/zsh-nvm).
+
+##### fish
+I recently decided to try out fish (friendly interactive shell). The config depends
+on [fisher](https://github.com/jorgebucaran/fisher). 
+
 
 ### Screenshots
 #### My terminal and shell:
