@@ -15,4 +15,4 @@ alias mount-store="google-drive-ocamlfuse -label store /home/vidur/GoogleDrive/s
 alias mount-miranj="google-drive-ocamlfuse -label miranj /home/vidur/GoogleDrive/miranj"
 alias slack-term="slack-term --config $HOME/snap/slack-term/current/slack-term.json"
 alias clip="xclip -sel clip"
-    
+alias ls=exa
