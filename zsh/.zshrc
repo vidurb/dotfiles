@@ -55,5 +55,3 @@ alias craft="./craft"
 # Add yarn (should this go in .zprofile?)
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-# Add dasht completion
-source /home/vidur/dasht-2.3.0/etc/zsh/completions.zsh

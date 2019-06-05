@@ -65,9 +65,6 @@ fi
 export PATH="$HOME/.cargo/bin:$PATH"
 # use exa for ls
 alias ls=exa
-# Add dasht to path
-export PATH="$HOME/dasht-2.3.0/bin:$PATH"
-export MANPATH="$HOME/dasht-2.3.0/man:$MANPATH"
 # this was for symbols in tmux
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
