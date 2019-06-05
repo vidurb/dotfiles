@@ -1,5 +1,4 @@
 # Vidur's Dotfiles
-# I'm putting some credentials into this so no more public repo.
 
 This repo includes my 'dot files' (configuration files for most command-line 
 and some GUI applications) as well as basic tooling (shell scripts) I have 
@@ -37,13 +36,9 @@ they can be replaced using `install.sh`; it is separated from `install.sh` and
 confirms each deletion to reduce the chance of an existing configuration not
 from this repository being deleted by accident.
 
-`prereqs.sh` is a script that installs the prerequisites for the configurations;
-i.e. a plugin manager for vim, the prezto configuration framework for zsh, etc.
-Comments in `prereqs.sh` describe everything being installed.
-
 ### Repo Prerequisites
 The installation script requires [GNU stow](https://www.gnu.org/software/stow/) 
-to execute.
+to execute, as well as git & curl to download dependencies.
 
 If you encounter conflicts, the most likely cause is that some of the 
 configuration files you're trying to install already exist. We're using GNU stow 
