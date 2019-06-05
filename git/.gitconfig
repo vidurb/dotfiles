@@ -1,3 +1,5 @@
 [user]
-	name = Vidur Butalia
-	email = vidurbutalia@gmail.com
+name = Vidur Butalia
+email = vidurbutalia@gmail.com
+[core]
+editor = vim
