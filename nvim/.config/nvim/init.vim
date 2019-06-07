@@ -1,6 +1,3 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
 " Plugins
 call plug#begin()
 
@@ -12,10 +9,11 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'sjl/gundo.vim'
 Plug 'sgur/vim-editorconfig'
 Plug 'pangloss/vim-javascript'
+Plug 'dag/vim-fish'
 Plug 'mattn/emmet-vim'
 
 " Syntax
-Plug 'neomake/neomake'
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 Plug 'gabrielelana/vim-markdown'
 
 " Display
@@ -60,9 +58,6 @@ set wildmenu
 set wildmode=longest,list,full
 set wildignore=*.o,*.bak,*.data,*.class
 
-" Syntastic
-call neomake#configure#automake('nw', 750)
-
 " Gundo
 nnoremap <F5> :GundoToggle<CR>
 
@@ -86,3 +81,4 @@ set expandtab
 if has("termguicolors")
 	set termguicolors
 endif
+
