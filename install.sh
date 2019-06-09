@@ -72,16 +72,19 @@ do
     fi
     if [[ ${directory%/} == tmux ]]; then
         if [[ -e  ~/.tmux/ ]]; then
-            echo "tmux-config already installed"
+            echo "tmux addons already installed"
         else
-            read -r -p "Install tmux-config for tmux?" response
+            read -r -p "Install tpm for tmux?" response
             case "$response" in
-                [yY][eE][sS]|[yY]) 
-                    git clone https://github.com/samoshkin/tmux-config.git ~/tmux-config
-                    ~/tmux-config/install.sh
-                    rm -rf ~/tmux-config
-                    rm -f ~/.tmux.conf
-                    git clone https://github.com/arcticicestudio/nord-tmux ~/.tmux/plugins/nord-tmux
+                [yY][eE][sS]|[yY])
+                    mkdir -p ~/.tmux/plugins
+                    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+                    stow --no-folding --target=$HOME --restow tmux
+                    printf "Install TPM plugins\n"
+                    tmux new -d -s __noop >/dev/null 2>&1 || true 
+                    tmux set-environment -g TMUX_PLUGIN_MANAGER_PATH "~/.tmux/plugins"
+                    "$HOME"/.tmux/plugins/tpm/bin/install_plugins || true
+                    tmux kill-session -t __noop >/dev/null 2>&1 || true
                     echo "tmux-config installed in ~/.tmux"
                     ;;
                 *)
