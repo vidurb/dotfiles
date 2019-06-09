@@ -1,5 +1,9 @@
 set fish_greeting
 
+function view_json
+    cat $argv | json_reformat
+end
+
 alias scale-right="xrandr --output eDP-1 --auto --output HDMI-1 --auto --panning 3840x2160+3840+0 --scale 2x2 --right-of eDP-1"
 alias scale-right-nodash="xrandr --output eDP1 --auto --output HDMI1 --auto --panning 3840x2160+3840+0 --scale 2x2 --right-of eDP1"
 alias scale-left="xrandr --output eDP-1 --auto --panning 3840x2160+3840+0 --output HDMI-1 --auto --scale 2x2 --left-of eDP-1"
