@@ -16,3 +16,5 @@ alias mount-miranj="google-drive-ocamlfuse -label miranj /home/vidur/GoogleDrive
 alias slack-term="slack-term --config $HOME/snap/slack-term/current/slack-term.json"
 alias clip="xclip -sel clip"
 alias tmux="tmux -u -2"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

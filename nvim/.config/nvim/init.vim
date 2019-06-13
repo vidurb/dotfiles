@@ -13,8 +13,8 @@ Plug 'dag/vim-fish'
 Plug 'mattn/emmet-vim'
 
 " Syntax
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 Plug 'gabrielelana/vim-markdown'
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 
 " Display
 Plug 'luochen1990/rainbow'
@@ -82,3 +82,5 @@ if has("termguicolors")
 	set termguicolors
 endif
 
+" filetype settings
+autocmd FileType json syntax match Comment +\/\/.\+$+
