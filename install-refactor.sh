@@ -4,6 +4,14 @@ is_app_installed() {
   type "$1" &>/dev/null
 }
 
+if ! is_app_installed git; then
+    echo "Git is not installed - installation of plugins will fail"
+fi
+
+if ! is_app_installed curl; then
+    echo "Curl is not installed - installation of some plugins will fail"
+fi
+
 for directory in */;
 do
     if ! is_app_installed ${directory%/}; then
