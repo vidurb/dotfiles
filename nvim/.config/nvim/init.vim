@@ -21,6 +21,7 @@ Plug 'luochen1990/rainbow'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'bling/vim-airline'
 Plug 'godlygeek/csapprox'
+Plug 'chrisbra/Colorizer'
 
 " Theme
 Plug 'arcticicestudio/nord-vim'
@@ -81,6 +82,10 @@ set expandtab
 if has("termguicolors")
 	set termguicolors
 endif
+
+" Stop highlighting being deleted on bufleave
+let g:colorizer_disable_bufleave = 1
+let g:colorizer_use_virtual_text = 1
 
 " filetype settings
 autocmd FileType json syntax match Comment +\/\/.\+$+
