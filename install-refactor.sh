@@ -4,6 +4,11 @@ is_app_installed() {
   type "$1" &>/dev/null
 }
 
+if ! is_app_installed stow; then
+    echo "Stow is not installed - script is exiting"
+    exit 1
+fi
+
 if ! is_app_installed git; then
     echo "Git is not installed - installation of plugins will fail"
 fi
