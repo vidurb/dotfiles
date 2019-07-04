@@ -39,3 +39,6 @@ if [ -d "$HOME/.cargo/bin" ] ; then
     PATH="$HOME/.cargo/bin:$PATH"
 fi
 
+if [ -f "$HOME/.chromium-api-keys" ]
+    source ~/.chromium-api-keys
+fi
