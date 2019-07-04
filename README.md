@@ -70,6 +70,9 @@ use another package manager is trivial.
 
 ##### sh
 Just some bits I didn't want to lose track of when I reinstall my OS.
+If you use ubuntu-make, it will be added to $PATH in .profile. 
+The same goes for Rust/Cargo. There's also a line to source Chromium API keys,
+which you can put in ~/.chromium-api-keys
 
 ##### tmux
 Just a clone of [tmux-config](https://github.com/samoshkin/tmux-config) for now,
