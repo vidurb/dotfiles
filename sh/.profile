@@ -30,8 +30,12 @@ fi
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 
-# Ubuntu make installation of Ubuntu Make binary symlink
-PATH=/home/vidur/.local/share/umake/bin:$PATH
-# Rust cargo compiler
-export PATH="$HOME/.cargo/bin:$PATH"
+# Add ubuntu-make apps to $PATH if ubuntu-make is installed
+if [ -d "$HOME/.local/share/umake/bin" ] ; then
+    PATH=/home/vidur/.local/share/umake/bin:$PATH
+fi
+# Add Cargo & associated binaries to path if installed
+if [ -d "$HOME/.cargo/bin" ] ; then
+    PATH="$HOME/.cargo/bin:$PATH"
+fi
 
