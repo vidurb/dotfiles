@@ -1,9 +1,11 @@
 # Create or attach to Symfony tmux session
 function tmux_symfony --description="Creates/attaches to tmux session for symfony, arg is directory"
-    set SESSIONNAME $argv[1]
-    tmux has-session -t $SESSIONNAME > /dev/null 2> /dev/null
-    if test $status -ne 0  
-        tmux new-session -s $SESSIONNAME -n script -d
-    end
-    tmux attach -t $SESSIONNAME
+    set -l project_path $argv[1]
+    set -l session_name (string split -r -m1 '/' $project_path)[2]
+    tmux \
+    	new-session -AD -t $session_name -c $project_path \; \
+    	rename-window symfony \; \
+    	split-window -vb -p 25 'symfony server:start' \; \
+    	new-window -d -c $project_path -n vim 'vim src' \; \
+    	select-pane -D
 end
