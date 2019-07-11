@@ -2,7 +2,7 @@
 function tmux_symfony --description="Creates/attaches to tmux session for symfony, arg is directory"
     set -l project_path $argv[1]
     set -l session_name (string split -r -m1 '/' $project_path)[2]
-    if test $project_path = '/home/vidur/Sources/astra-dash'
+    if string match --quiet --ignore-case --regex "(astra-dash)" $project_path
         set server_command 'symfony proxy:start && symfony server:start --port=8002 --allow-http'
     else 
         set server_command 'symfony proxy:start && symfony server:start'
