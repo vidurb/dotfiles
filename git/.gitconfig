@@ -1,6 +1,13 @@
 [user]
-name = Vidur Butalia
-email = vidurbutalia@gmail.com
+        name = Vidur Butalia
+	email = vidurbutalia@gmail.com
+	signingKey = ""
 [core]
-editor = vim
-pager = diff-so-fancy | less --tabs=4 -RFX
+        editor = vim
+        pager = diff-so-fancy | less --tabs=4 -RFX
+[gpg]
+	program = gpg
+[commit]
+	gpgSign = false
+[tag]
+	forceSignAnnotated = false
