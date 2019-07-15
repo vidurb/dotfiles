@@ -3,6 +3,7 @@
     "port": 7080,
     "domains": {
         "api.getastra": "/home/vidur/Sources/astra-api",
-        "dash.getastra": "/home/vidur/Sources/astra-dash"
+        "dash.getastra": "/home/vidur/Sources/astra-dash",
+        "wordpress": "/home/vidur/Sources/local-wordpress"
     }
 }
