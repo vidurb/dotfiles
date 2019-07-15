@@ -5,7 +5,7 @@ function tmux_symfony --description="Creates/attaches to tmux session for symfon
     if string match --quiet --ignore-case --regex "(astra-dash)" $project_path
         set server_command 'symfony proxy:start && symfony server:start --port=8002 --allow-http'
     else if string match --quiet --ignore-case --regex "(local-wordpress)" $project_path
-        set server_command 'symfony proxy:start && symfony server:start --port=8003 --allow-http --passthru=wp/index.php'
+        set server_command 'symfony proxy:start && symfony server:start --port=8003 --allow-http --passthru=wp/index.php --document-root=wp'
     else 
         set server_command 'symfony proxy:start && symfony server:start'
     end
