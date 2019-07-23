@@ -87,8 +87,5 @@ endif
 let g:colorizer_disable_bufleave = 1
 let g:colorizer_use_virtual_text = 1
 
-" Set correct node version for coc.vim
-let g:coc_node_path = '/home/vidur/.asdf/shims/node'
-
 " filetype settings
 autocmd FileType json syntax match Comment +\/\/.\+$+
