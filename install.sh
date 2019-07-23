@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 is_app_installed() {
   type "$1" &>/dev/null
