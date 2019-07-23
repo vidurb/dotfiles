@@ -41,7 +41,7 @@ do
                 read -r -p "Install fisher for fish?" response
                 case "$response" in
                     [yY][eE][sS]|[yY]) 
-                        git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
+                        curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
                         echo "fisher installed in ~/.config/fish"
                         ;;
                     *)
