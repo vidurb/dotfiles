@@ -119,7 +119,7 @@ do
                 echo "Ignored."
                 ;;
             esac
-            if [[ -e  ~/.local/share/nvim/site/autoload/plug.vim ]]; then
+            if [[ -e  ~/.vim/autoload/plug.vim ]]; then
                 echo "vim-plug already installed"
             else
                 read -r -p "Install vim-plug for vim?" response
