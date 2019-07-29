@@ -14,6 +14,7 @@ Plug 'mattn/emmet-vim'
 
 " Syntax
 Plug 'gabrielelana/vim-markdown'
+Plug 'chr4/nginx.vim'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 
 " Display
