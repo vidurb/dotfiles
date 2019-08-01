@@ -42,3 +42,8 @@ fi
 if [ -f "$HOME/.chromium-api-keys" ]; then
     source ~/.chromium-api-keys;
 fi
+
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
