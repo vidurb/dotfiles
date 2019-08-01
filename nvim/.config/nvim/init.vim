@@ -59,6 +59,9 @@ set wildmenu
 set wildmode=longest,list,full
 set wildignore=*.o,*.bak,*.data,*.class
 
+" Clipboard
+set clipboard=unnamedplus
+
 " Gundo
 nnoremap <F5> :GundoToggle<CR>
 
@@ -86,6 +89,9 @@ endif
 " Stop highlighting being deleted on bufleave
 let g:colorizer_disable_bufleave = 1
 let g:colorizer_use_virtual_text = 1
+
+" Hardcode node
+let g:coc_node_path = '/home/vidur/.nvm/versions/node/v10.16.0/bin/node'
 
 " filetype settings
 autocmd FileType json syntax match Comment +\/\/.\+$+
