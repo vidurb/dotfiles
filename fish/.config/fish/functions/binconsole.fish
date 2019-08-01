@@ -1,5 +1,5 @@
 # Shortcut to bin/console for symfony projects
-function symfony-console --description "Shortcut for php bin/console"
+function binconsole --description "Shortcut for php bin/console"
 	if test -e bin/console
 		php bin/console $argv
 	else
