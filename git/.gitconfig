@@ -1,7 +1,6 @@
 [user]
         name = Vidur Butalia
-	email = vidur.butalia@getastra.com
-	signingKey = ""
+	email = vidurbutalia@gmail.com
 [core]
         editor = vim
 [gpg]
