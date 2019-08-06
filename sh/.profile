@@ -46,4 +46,6 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
-
+if [ -x "/usr/bin/xcape" ]; then
+    /usr/bin/xcape -e 'Control_L=Escape'
+fi
