@@ -4,6 +4,7 @@
     "domains": {
         "api.getastra": "/home/vidur/Sources/astra/api-core",
         "dash.getastra": "/home/vidur/Sources/astra/dash-core",
-        "localwordpress": "/home/vidur/Sources/local-wordpress"
+        "localwordpress": "/home/vidur/Sources/local-wordpress",
+        "vidur": "/home/vidur/Sources/vidur.dev"
     }
 }
