@@ -8,8 +8,11 @@ function tmux_symfony --description="Creates/attaches to tmux session for symfon
     else if string match --quiet --ignore-case --regex "(api)" $project_path
         set server_command 'symfony proxy:start && symfony server:start --port=8003 --allow-http'
         set project_name 'api/core'
-    else if string match --quiet --ignore-case --regex "(vidur.dev)" $project_path
+    else if string match --quiet --ignore-case --regex "(vapt)" $project_path
         set server_command 'symfony proxy:start && symfony server:start --port=8004 --allow-http'
+        set project_name 'vapt/core'
+    else if string match --quiet --ignore-case --regex "(vidur.dev)" $project_path
+        set server_command 'symfony proxy:start && symfony server:start --port=8005 --allow-http'
         set project_name 'vidur.dev'
     else 
         set server_command 'symfony proxy:start && symfony server:start'
