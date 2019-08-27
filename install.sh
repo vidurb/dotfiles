@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+config=
+directory=
+quiet=0
+
 is_app_installed() {
   type "$1" &>/dev/null
 }
@@ -10,9 +14,10 @@ print_command_help() {
            "Install vidur's dotfiles. git:vidurb/dotfiles" \
            "" \
            "Options:" \
-           " -q : Quiet mode - does not print output" \
-           " -c APPLICATION : Install config for APPLICATION" \
-           " -d DIRECTORY : Install config in a specific directory" \
+           " -h --help: Print this help message"\
+           " -q --quiet: Quiet mode - does not print output" \
+           " -c APPLICATION --config=APPLICATION: Install config for APPLICATION" \
+           " -d DIRECTORY --dir=DIRECTORY : Install config in a specific directory" \
            "" \
            "Thanks for using my dotfiles. Feel free to fork and PR, " \
            "and if you just want to customize your config locally, " \
@@ -39,7 +44,77 @@ if ! is_app_installed curl; then
     echo "Curl is not installed - installation of some plugins will fail"
 fi
 
-for directory in */;
+while :; do
+    case $1 in
+        -h|-\?\--help)
+            print_command_help
+            exit
+            ;;
+        -q|--quiet)
+            quiet=1
+            ;;
+        -c|--config)
+            if [ "$2" ]; then
+                config=$2
+                shift
+            else
+                print_message "-c/--config require an argument"
+                exit 1
+            fi
+            ;;
+        --config=?*)
+            config=${1#*=}
+            ;;
+        --config=)
+            print_message "-c/--config require an argument"
+            exit 1
+            ;;
+        -d|--dir)
+            if [ "$2" ]; then
+                directory=$2
+                shift
+            else
+                print_message "-c/--config require an argument"
+                exit 1
+            fi
+            ;;
+        --dir=?*)
+            directory=${1#*=}
+            ;;
+        --dir=)
+            print_message "-c/--config require an argument"
+            exit 1
+            ;;
+        --)
+            shift
+            break
+            ;;
+        -?*)
+            print_message 'Unknown option (ignored): %s\n' "$1"
+            ;;
+        *)
+            break
+            ;;
+    esac
+
+    shift
+done
+
+if [[ -z $directory ]]; then
+   directory=$HOME
+   print_message "Symlinking to home directory by default"
+fi
+
+if [[ -z $config ]]; then
+    config=(*/)
+    print_message "Installing all configs by default"
+else
+    config+="/"
+fi
+
+
+
+for directory in "${config[@]}";
 do
     if ! is_app_installed ${directory%/}; then
         printf "${directory%/} not installed - ignoring ${directory%/} config \n"
