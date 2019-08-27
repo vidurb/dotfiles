@@ -39,8 +39,14 @@ if [ -d "$HOME/.cargo/bin" ] ; then
     PATH="$HOME/.cargo/bin:$PATH"
 fi
 
+# Chromium API keys
 if [ -f "$HOME/.chromium-api-keys" ]; then
     source ~/.chromium-api-keys;
+fi
+
+# GitLab API keys
+if [ -f "$HOME/.gitlab-api-keys" ]; then
+    source ~/.gitlab-api-keys;
 fi
 
 if [ -d "$HOME/.local/bin" ] ; then
