@@ -4,6 +4,28 @@ is_app_installed() {
   type "$1" &>/dev/null
 }
 
+print_command_help() {
+    printf "%s\n" \
+           "install.sh" \
+           "Install vidur's dotfiles. git:vidurb/dotfiles" \
+           "" \
+           "Options:" \
+           " -q : Quiet mode - does not print output" \
+           " -c APPLICATION : Install config for APPLICATION" \
+           " -d DIRECTORY : Install config in a specific directory" \
+           "" \
+           "Thanks for using my dotfiles. Feel free to fork and PR, " \
+           "and if you just want to customize your config locally, " \
+           "add a .gitignore file with * in it to a config folder and then " \
+           "git won't bother you about untracked changes."
+}
+
+print_message() {
+    if [[ $QUIET -eq 0 ]]; then
+        printf "%s\n" "$@"
+    fi
+}
+
 if ! is_app_installed stow; then
     echo "Stow is not installed - script is exiting"
     exit 1
