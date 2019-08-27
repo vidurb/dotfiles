@@ -187,6 +187,21 @@ do
                 ;;
             esac
             ;;
+        emacs)
+            if ! [[ -e ~/.emacs.d ]]; then
+                git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+            fi
+            read -r -p "Symlink the contents of ${directory%/} into $HOME?" response
+            case "$response" in
+                [yY][eE][sS]|[yY]) 
+                    stow --no-folding --target=$HOME --restow $directory
+                    echo "Symlinked."
+                    ;;
+                *)
+                    echo "Ignored."
+                    ;;
+            esac
+        ;;
         *)
             read -r -p "Symlink the contents of ${directory%/} into $HOME?" response
             case "$response" in
