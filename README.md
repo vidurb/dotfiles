@@ -12,29 +12,33 @@ if you like the look of my tools. (Screenshots are at the bottom)
 
 ### Shell scripts
 
-`install.sh` is a script that uses GNU `stow` to symlink the configuration files
-in this repository into the correct locations. The locations are defined by the
-subfolder path and applied relative to user $HOME.
+New and improved: `install.sh` now has proper command line options and arguments.
+Features include turning off user interaction, automatically deleting existing files,
+automatically installing dependencies (for the configurations), and a couple more.
+Please see the command help below.
 
-For example, the Vim config is symlinked into the root of user $HOME because it 
-is in the root of the `vim` folder. Similarly, the Neovim configuration is 
-symlinked to `$HOME/.config/nvim/init.vim`, because the relative file path of
-init.vim inside the `nvim` folder is `/.config/nvim/init.vim`.
+```
+Welcome to Vidur's Dotfiles. This utility relies on GNU stow, git and curl
+Usage: ./install.sh [-t|--target-dir <arg>] [-c|--(no-)clear] [-q|--(no-)quiet] [-n|--(no-)no-interaction] [-i|--(no-)install-deps] [-v|--(no-)verbose] [-l|--list] [-h|--help] [--] [<config-1>] ... [<config-n>] ...
+        <config>: Configuration to install - defaults to all
+        -t, --target-dir: Target directory to symlink configs into (defaults to /home/vidur) (no default)
+        -c, --clear, --no-clear: Remove existing files without user intervention (off by default)
+        -q, --quiet, --no-quiet: Do not print error and status messages (off by default)
+        -n, --no-interaction, --no-no-interaction: Do not ask for user confirmation for anything (off by default)
+        -i, --install-deps, --no-install-deps: Do not ask for user confirmation to install dependencies (off by default)
+        -v, --verbose, --no-verbose: Print details status messages (off by default)
+        -l, --list: List all available configurations
+        -h, --help: Prints help
+```
 
-The installation scripts uses GNU `stow`s handy capability to automatically 
-refresh symlinks, so once the configuration files are installed, updating them
-from newer versions of this repository is as simple as running `install.sh`
-again.
+The main function of `install.sh` remains to symlink configuration files into their
+respective places using GNU stow. 
 
-A recent addition is auto installation of dependencies. This feature depends on
-git and curl. I am yet to add a guard for the case where those are missing. 
+For example, the Vim config is symlinked into the root of user $HOME because it is in the root of the vim folder. Similarly, the Neovim configuration is symlinked to $HOME/.config/nvim/init.vim, because the relative file path of init.vim inside the nvim folder is /.config/nvim/init.vim.
 
-Currently, dependencies for neovim, vim, zsh, fish and tmux are installed.
+A new feature is that the target directory can now be set at runtime - it defaults to $HOME.
 
-`clean.sh` is a utility that will delete existing configuration files so that
-they can be replaced using `install.sh`; it is separated from `install.sh` and
-confirms each deletion to reduce the chance of an existing configuration not
-from this repository being deleted by accident.
+Note that the dependencies still all install to $HOME - this is an oversight that will be fixed shortly.
 
 ### Repo Prerequisites
 The installation script requires [GNU stow](https://www.gnu.org/software/stow/) 
