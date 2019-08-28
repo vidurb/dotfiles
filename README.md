@@ -8,7 +8,17 @@ I use [Arctic Ice Studio](https://github.com/arcticicestudio)'s excellent Nord
 color scheme wherever possible. I would encourage you to check out their repos 
 if you like the look of my tools. (Screenshots are at the bottom)
 
+### Making local changes
 
+If you want to change the contents of one of the configuration files locally, but don't
+want to fork this repo/submit a merge request/etc., you can use this handy command to tell
+git to ignore a particular folder:
+
+`git update-index --skip-worktree <path-name>`
+
+or a particular file:
+
+`git update-index --assume-unchanged [path]`
 
 ### Shell scripts
 
