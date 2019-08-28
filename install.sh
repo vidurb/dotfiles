@@ -168,6 +168,11 @@ install_deps() {
         case $1 in
         fish|fish/)
             if [[ ! -e  ~/.config/fish/functions/fisher.fish ]]; then
+                if [[ $_arg_no_interaction == on ]] && [[ $_arg_install_deps == on ]]; then
+                    curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+                    info "fisher installed in ~/.config/fish"
+                    break
+                fi
                 if confirm "Install fisher for fish?" ; then
                     curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
                     info "fisher installed in ~/.config/fish"
@@ -178,6 +183,11 @@ install_deps() {
             ;;
         nvim|nvim/)
             if [[ ! -e  ~/.local/share/nvim/site/autoload/plug.vim ]]; then
+                if [[ $_arg_no_interaction == on ]] && [[ $_arg_install_deps == on ]]; then
+                    curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+                    info "vim-plug installed in ~/.local/share/nvim"
+                    break
+                fi
                 if confirm "Install vim-plug for nvim?"; then
                     curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
                     info "vim-plug installed in ~/.local/share/nvim"
@@ -188,6 +198,11 @@ install_deps() {
             ;;
         vim|vim/)
             if [[ ! -e  ~/.vim/autoload/plug.vim ]]; then
+                if [[ $_arg_no_interaction == on ]] && [[ $_arg_install_deps == on ]]; then
+                    curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+                    info "vim-plug installed in ~/.vim"
+                    break
+                fi
                 if confirm "Install vim-plug for vim?"; then
                     curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
                     info "vim-plug installed in ~/.vim"
@@ -198,6 +213,11 @@ install_deps() {
             ;;
         git|git/)
             if ! is_app_installed diff-so-fancy; then
+                if [[ $_arg_no_interaction == on ]] && [[ $_arg_install_deps == on ]]; then
+                    npm install -g diff-so-fancy
+                    info "diff-so-fancy installed"
+                    break
+                fi
                 if confirm "Install diff-so-fancy? npm is required"; then
                     npm install -g diff-so-fancy
                     info "diff-so-fancy installed"
@@ -208,6 +228,11 @@ install_deps() {
             ;;
         emacs|emacs/)
             if [[ ! -e ~/.emacs.d ]]; then
+                if [[ $_arg_no_interaction == on ]] && [[ $_arg_install_deps == on ]]; then
+                    git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+                    info "Spacemacs installed in ~/.emacs.d"
+                    break
+                fi
                 if confirm "Install spacemacs?"; then
                     git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
                     info "Spacemacs installed in ~/.emacs.d"
@@ -218,6 +243,11 @@ install_deps() {
             ;;
         zsh|zsh/)
             if [[ ! -e ~/.zprezto ]]; then
+                if [[ $_arg_no_interaction == on ]] && [[ $_arg_install_deps == on ]]; then
+                    install_zsh_deps
+                    info "Zsh plugins installed in ~/.zprezto"
+                    break
+                fi
                 if confirm "Install zprezto, zprezto-contrib and zsh-nvm?"; then
                     install_zsh_deps
                     info "Zsh plugins installed in ~/.zprezto"
@@ -228,6 +258,11 @@ install_deps() {
             ;;
         tmux|tmux/)
             if [[ ! -e ~/.tmux ]]; then
+                if [[ $_arg_no_interaction == on ]] && [[ $_arg_install_deps == on ]]; then
+                    install_tmux_deps
+                    info "TPM and tmux plugins installed in ~/.tmux"
+                    break
+                fi
                 if confirm "Install tpm and plugins?"; then
                     install_tmux_deps
                     info "TPM and tmux plugins installed in ~/.tmux"
@@ -237,29 +272,30 @@ install_deps() {
             fi
             ;;
         *)
-            info "No dependencies neccessary"
+            info "No dependencies necessary for ${1%/}"
             ;;
         esac
 }
 
 # Argument: config to delete files for
 remove_existing_config() {
-    local directory_files=`find -L "$1" -type f`
-    for file in "$directory_files[@]"; do
-        if  [[ "${_arg_no_interaction}" == "on" ]]; then
-            if [[ -e "${_arg_target_dir/${file}}" ]]; then
-                rm "${_arg_target_dir/${file}}"
+    local directory_files=`find -L $1 -type f`
+    for file in "${directory_files[@]}"; do
+        file=${file#*/}
+        if  [[ "${_arg_no_interaction}" == on ]]; then
+            if [[ -e ${_arg_target_dir}/${file} ]]; then
+                rm "${_arg_target_dir}/${file}"
                 info "Removing ${_arg_target_dir}/${file}"
             fi
         else
-            if [[ -h "${_arg_target_dir}/${file}" ]]; then
-                if confirm "Unlink symlink ${_arg_target_dir}/{$file}"; then
+            if [[ -h ${_arg_target_dir}/${file} ]]; then
+                if confirm "Unlink symlink ${_arg_target_dir}/${file}?"; then
                     unlink "${_arg_target_dir}/${file}"
                     info "Unlinked ${_arg_target_dir}/${file}"
                 fi
-            elif [[ -f "${_arg_target_dir}/${file}" ]]; then
-                if confirm "Remove file ${_arg_target_dir}/${file}"; then
-                    rm "${_arg_target_dir}"
+            elif [[ -f ${_arg_target_dir}/${file} ]]; then
+                if confirm "Remove file ${_arg_target_dir}/${file}?"; then
+                    rm "${_arg_target_dir}/${file}"
                     info "Removed ${_arg_target_dir}/${file}"
                 fi
             fi
@@ -442,21 +478,21 @@ assign_positional_args()
 parse_commandline "$@"
 assign_positional_args 1 "${_positionals[@]}"
 
-if [[ "${#_positionals[@]}" -eq 0 ]]; then
+if [[ ${#_positionals[@]} -eq 0 ]]; then
     _arg_config=(*/)
 else
     _arg_config="${_positionals}"
 fi
 
-if [[ "$_arg_verbose" == "on" ]]; then
+if [[ $_arg_verbose == on ]]; then
     LOG_LEVEL=7
 fi
 
-if [[ "$_arg_quiet" == "on" ]]; then
+if [[ $_arg_quiet == on ]]; then
     LOG_LEVEL=0
 fi
 
-if [[ -z "$_arg_target_dir" ]]; then
+if [[ -z $_arg_target_dir ]]; then
     _arg_target_dir="$HOME"
 fi
 
@@ -478,21 +514,23 @@ fi
 # Actual installation script
 
 for config in "${_arg_config[@]}"; do
-    if [[ "${_arg_clear}" == "on" ]]; then
+    if ! is_app_installed "${config%/}"; then
+        info "${config%/} not installed, skipping configuration installation"
+        continue
+    fi
+    if [[ ${_arg_clear} == on ]]; then
         remove_existing_config "$config"
     fi
-    if [[ "${_arg_install_deps}" == "on" ]] || [[ "${_arg_no_interaction}" == "on" ]]; then
-        install_deps "${config}"
-    else
-        if confirm "Install dependencies for ${config%/}?"; then
-            install_deps "${config}"
+    install_deps "${config}"
+    if [[ ${_arg_no_interaction} == on ]]; then
+        if stow --no-folding --target="${_arg_target_dir}" --restow "${config}"; then
+            info "Symlinked ${config%/} into ${_arg_target_dir}"
         fi
-    fi
-    if [[ "${_arg_no_interaction}" == "on" ]]; then
-        stow --no-folding --target="${_arg_target_dir}" --restow "${config}"
     else
-        if confirm "Symlink ${config%/} configuration into ${_arg_target_dir} ?"; then
-            stow --no-folding --target="${_arg_target_dir}" --restow "${config}"
+        if confirm "Symlink ${config%/} configuration into ${_arg_target_dir}?"; then
+            if stow --no-folding --target="${_arg_target_dir}" --restow "${config}"; then
+                info "Symlinked ${config%/} into ${_arg_target_dir}"
+            fi
         fi
     fi
 done
