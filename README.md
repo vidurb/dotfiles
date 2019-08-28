@@ -1,5 +1,7 @@
 # Vidur's Dotfiles
 
+##  It is a mistake to think you can solve any major problems just with potatoes.
+
 This repo includes my 'dot files' (configuration files for most command-line 
 and some GUI applications) as well as basic tooling (shell scripts) I have 
 written myself to set up my configuration on a new terminal.
