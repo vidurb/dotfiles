@@ -16,6 +16,7 @@ Plug 'mattn/emmet-vim'
 Plug 'gabrielelana/vim-markdown'
 Plug 'chr4/nginx.vim'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+Plug 'tmux-plugins/vim-tmux'
 
 " Display
 Plug 'luochen1990/rainbow'
