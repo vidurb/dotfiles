@@ -6,3 +6,5 @@ alias tmux="tmux -u -2"
 bass source ~/.profile
 # Set default editor
 set -gx EDITOR vim
+# Use starship theme
+eval (starship init fish)
