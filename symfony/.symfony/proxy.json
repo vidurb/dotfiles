@@ -5,6 +5,7 @@
         "api.getastra": "/home/vidur/Sources/astra/api-core",
         "dash.getastra": "/home/vidur/Sources/astra/dash-core",
         "vapt.getastra": "/home/vidur/Sources/astra/vapt-core/",
+        "securityscan.getastra": "/home/vidur/Sources/astra/dash/security-scan",
         "localwp": "/home/vidur/Sources/localwp",
         "vidur": "/home/vidur/Sources/vidur.dev"
     }
