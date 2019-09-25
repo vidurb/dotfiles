@@ -15,7 +15,7 @@ function tmux_symfony --description="Creates/attaches to tmux session for symfon
         set server_command 'symfony proxy:start && symfony server:start --port=8005 --allow-http'
         set project_name 'vidur.dev'
     else if string match --quiet --ignore-case --regex "(security-scan)" $project_path
-        set server command 'symfony proxy:start && symfony server:start --port=8006 --allow-http'
+        set server_command 'symfony proxy:start && symfony server:start --port=8006 --allow-http'
         set project_name 'security-scan'
         set yarn true
     else 
