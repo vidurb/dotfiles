@@ -3,6 +3,7 @@
 	email = vidurbutalia@gmail.com
 [core]
         editor = vim
+	autocrlf = input
 [gpg]
 	program = gpg
 [commit]
