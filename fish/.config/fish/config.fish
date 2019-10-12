@@ -8,3 +8,10 @@ bass source ~/.profile
 set -gx EDITOR vim
 # Use starship theme
 eval (starship init fish)
+# Check if exa/bat are installed
+if type "exa" >/dev/null;
+    alias ls=exa
+end
+if type "bat" >/dev/null;
+    alias cat=bat
+end
