@@ -1,0 +1,5 @@
+! Typeface: Source Code Pro
+#define typeface_bar_glyph  MetaPro Normal 13
+#define typeface_bar        pango:MetaPro Normal 24, FontAwesome 24
+#define typeface_rofi       MetaPro Normal 16
+#define typeface_terminal   Source Code Pro:pixelsize=16:antialias=true:autohint=true

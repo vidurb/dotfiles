@@ -514,9 +514,11 @@ fi
 # Actual installation script
 
 for config in "${_arg_config[@]}"; do
-    if ! is_app_installed "${config%/}"; then
-        info "${config%/} not installed, skipping configuration installation"
-        continue
+    if [[ "$config" != "regolith" ]]; then
+        if ! is_app_installed "${config%/}"; then
+            info "${config%/} not installed, skipping configuration installation"
+            continue
+        fi
     fi
     if [[ ${_arg_clear} == on ]]; then
         remove_existing_config "$config"
