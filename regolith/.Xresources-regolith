@@ -15,8 +15,8 @@
 ! NOTE: Font packages may need to be installed when enabling typefaces.
 ! Uncomment one and only one of the following font definitions:
 !#include "/etc/regolith/styles/typeface-sourcecodepro"
-!#include "/etc/regolith/styles/typeface-ubuntu"
-#include "~/.config/regolith/styles/typeface-metapro
+#include "/etc/regolith/styles/typeface-ubuntu"
+!#include "~/.config/regolith/styles/typeface-metapro
 
 ! -- Styles - Theme
 ! NOTE: GTK theme and icon packages may need to be installed when enabling themes.
