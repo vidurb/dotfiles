@@ -3,7 +3,9 @@ set fish_greeting
 # force tmux to be 256color and unicode compatible
 alias tmux="tmux -u -2"
 # Add to path from .profile
-bass source ~/.profile
+if functions -q bass
+    bass source ~/.profile
+end
 # Set default editor
 set -gx EDITOR vim
 # Use starship theme
