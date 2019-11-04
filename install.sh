@@ -274,7 +274,7 @@ install_deps() {
     	kitty|kitty/)
 	    if [[ ! -e ~/.config/kitty/nord.conf ]]; then
 		if confirm "Install nord-kitty theme?"; then
-	        curl -o ~/.config/kitty/ https://raw.githubusercontent.com/connorholyday/nord-kitty/master/nord.conf
+	        curl -o ~/.config/kitty/nord.conf https://raw.githubusercontent.com/connorholyday/nord-kitty/master/nord.conf
 		info "nord-kitty theme installed"
 	    	fi
 	    fi
