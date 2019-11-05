@@ -1,5 +1,5 @@
 {
-    "tld": "wip",
+    "tld": "dev",
     "port": 7080,
     "domains": {
         "api.getastra": "/home/vidur/src/astra/api/core",
