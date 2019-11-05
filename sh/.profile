@@ -55,6 +55,8 @@ fi
 if [ -x "/usr/bin/xcape" ]; then
     /usr/bin/xcape -e 'Control_L=Escape'
 fi
-# Ubuntu make installation of Ubuntu Make binary symlink
-PATH=/home/vidur/.local/share/umake/bin:$PATH
+
+if [ -d "$HOME/.config/composer/vendor/bin" ] ; then
+    PATH="$HOME/.config/composer/vendor/bin:$PATH"
+fi
 
