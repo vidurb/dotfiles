@@ -18,6 +18,10 @@ if type "bat" >/dev/null;
     alias cat=bat
 end
 
+if functions -q bax
+    bax 'eval "$(symfony-autocomplete)"'
+end
+
 #nord-theme
 set nord0 2e3440
 set nord1 3b4252
