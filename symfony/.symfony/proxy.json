@@ -2,11 +2,11 @@
     "tld": "wip",
     "port": 7080,
     "domains": {
-        "api.getastra": "/home/vidur/Sources/astra/api-core",
-        "dash.getastra": "/home/vidur/Sources/astra/dash-core",
-        "vapt.getastra": "/home/vidur/Sources/astra/vapt-core/",
-        "securityscan.getastra": "/home/vidur/Sources/astra/dash/security-scan",
-        "localwp": "/home/vidur/Sources/localwp",
-        "vidur": "/home/vidur/Sources/vidur.dev"
+        "api.getastra": "/home/vidur/src/astra/api/core",
+        "dash.getastra": "/home/vidur/src/astra/dash/core",
+        "vapt.getastra": "/home/vidur/src/astra/vapt/core/",
+        "securityscan.getastra": "/home/vidur/src/astra/dash/security-scan",
+        "localwp": "/home/vidur/src/localwp",
+        "vidur": "/home/vidur/src/vidur.dev"
     }
 }
