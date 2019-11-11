@@ -49,6 +49,11 @@ if [ -f "$HOME/.gitlab-api-keys" ]; then
     source ~/.gitlab-api-keys;
 fi
 
+# AWS API keys
+if [ -f "$HOME/.aws-api-keys" ]; then
+    source ~/.aws-api-keys;
+fi
+
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
