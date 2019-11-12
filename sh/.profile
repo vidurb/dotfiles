@@ -57,9 +57,6 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
-if [ -x "/usr/bin/xcape" ]; then
-    /usr/bin/xcape -e 'Control_L=Escape'
-fi
 
 if [ -d "$HOME/.config/composer/vendor/bin" ] ; then
     PATH="$HOME/.config/composer/vendor/bin:$PATH"
