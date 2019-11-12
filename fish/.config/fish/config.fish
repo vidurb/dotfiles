@@ -22,4 +22,3 @@ if functions -q bax
     bax 'eval "$(symfony-autocomplete)"'
 end
 
-fortune | cowsay | lolcat
