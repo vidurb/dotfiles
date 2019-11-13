@@ -2,6 +2,7 @@
 set fish_greeting
 # force tmux to be 256color and unicode compatible
 alias tmux="tmux -u -2"
+alias clip='xsel --clipboard --input'
 # Add to path from .profile
 if functions -q bass
     bass source ~/.profile
