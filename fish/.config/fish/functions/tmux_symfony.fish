@@ -24,9 +24,9 @@ function tmux_symfony --description="Creates/attaches to tmux session for symfon
     if test -n $TMUX
         if test $yarn
             tmux \
-    	        new-window -n $project_name "cd $project_path && $SHELL" \; \
-                split-window -vb -l 10 "cd $project_path && $server_command" \; \
-    	        split-window -vb -l 40 "cd $project_path && yarn watch" \; \
+                new-window -n $project_name "cd $project_path && yarn watch" \; \
+                split-window -vb -p 40 "cd $project_path && $server_command" \; \
+    	        split-window -vb -p 40 "cd $project_path && $SHELL" \; \
                 select-pane -D
         else
             tmux \
