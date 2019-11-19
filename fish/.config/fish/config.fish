@@ -13,7 +13,7 @@ set -gx EDITOR vim
 eval (starship init fish)
 # Check if exa/bat are installed
 if type "exa" >/dev/null;
-    alias ls=exa
+    alias ls="exa --icons"
 end
 if type "bat" >/dev/null;
     alias cat=bat
