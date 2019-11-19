@@ -95,3 +95,6 @@ let g:colorizer_use_virtual_text = 1
 
 " filetype settings
 autocmd FileType json syntax match Comment +\/\/.\+$+
+
+" Set colors
+set t_Co=256
