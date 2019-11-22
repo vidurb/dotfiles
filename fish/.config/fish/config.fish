@@ -23,3 +23,4 @@ if functions -q bax
     bax 'eval "$(symfony-autocomplete)"'
 end
 
+export ANSIBLE_COW_SELECTION=random
