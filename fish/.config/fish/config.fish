@@ -24,3 +24,4 @@ if functions -q bax
 end
 
 export ANSIBLE_COW_SELECTION=random
+export ANSIBLE_NOCOWS=1
