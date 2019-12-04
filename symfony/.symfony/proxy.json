@@ -6,6 +6,8 @@
         "dash.getastra": "/home/vidur/src/astra/dash/core",
         "vapt.getastra": "/home/vidur/src/astra/vapt/core/",
         "securityscan.getastra": "/home/vidur/src/astra/dash/security-scan",
+        "getastra": "/home/vidur/src/astra/web/core",
+        "www.getastra": "/home/vidur/src/astra/web/core",
         "localwp": "/home/vidur/src/localwp",
         "vidur": "/home/vidur/src/vidur.dev"
     }
