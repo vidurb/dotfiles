@@ -25,3 +25,4 @@ end
 
 export ANSIBLE_COW_SELECTION=random
 export ANSIBLE_NOCOWS=1
+export LESSCHARSET=utf-8
