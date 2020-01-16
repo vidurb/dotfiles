@@ -39,6 +39,11 @@ if [ -d "$HOME/.cargo/bin" ] ; then
     PATH="$HOME/.cargo/bin:$PATH"
 fi
 
+# Add go if installed
+if [ -d "$HOME/go/bin" ] ; then
+    PATH="$HOME/go/bin:$PATH"
+fi
+
 # Chromium API keys
 if [ -f "$HOME/.chromium-api-keys" ]; then
     source ~/.chromium-api-keys;
