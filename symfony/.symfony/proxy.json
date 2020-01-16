@@ -4,11 +4,12 @@
     "domains": {
         "api.getastra": "/home/vidur/src/astra/api/core",
         "dash.getastra": "/home/vidur/src/astra/dash/core",
-        "vapt.getastra": "/home/vidur/src/astra/vapt/core/",
-        "securityscan.getastra": "/home/vidur/src/astra/dash/security-scan",
         "getastra": "/home/vidur/src/astra/web/core",
-        "www.getastra": "/home/vidur/src/astra/web/core",
         "localwp": "/home/vidur/src/localwp",
-        "vidur": "/home/vidur/src/vidur.dev"
+        "my.getastra": "/home/vidur/src/astra/api/corev2",
+        "securityscan.getastra": "/home/vidur/src/astra/dash/security-scan",
+        "vapt.getastra": "/home/vidur/src/astra/vapt/core/",
+        "vidur": "/home/vidur/src/vidur.dev",
+        "www.getastra": "/home/vidur/src/astra/web/core"
     }
 }
