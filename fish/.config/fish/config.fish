@@ -23,6 +23,8 @@ if functions -q bax
     bax 'eval "$(symfony-autocomplete)"'
 end
 
+alias sc="symfony console"
+
 export ANSIBLE_COW_SELECTION=random
 export ANSIBLE_NOCOWS=1
 export LESSCHARSET=utf-8
