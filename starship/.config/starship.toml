@@ -4,3 +4,9 @@ symbol = "➜"     # The "symbol" segment is being set to "➜"
 
 [directory]
 truncate_to_repo = false
+
+[git_branch]
+truncation_length = 24
+
+[hg_branch]
+truncation_length = 24
