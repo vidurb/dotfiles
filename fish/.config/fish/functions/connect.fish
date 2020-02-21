@@ -20,5 +20,5 @@ end
 function _connect_help -d "Describe usage of servers command"
     printf '%s\n%s\n' \
     'connect - connect to remote tmux sessions in new kitty tabs' \
-    'Usage: connect <arguments> <server names>' \
+    'Usage: connect <arguments> <server names>' 
 end
