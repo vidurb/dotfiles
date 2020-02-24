@@ -32,7 +32,6 @@ end
 # Set default editor
 set -gx EDITOR vim
 # Use starship theme
-eval (starship init fish)
 # Check if exa/bat are installed
 if type "exa" >/dev/null;
     alias ls="exa --icons"
@@ -50,3 +49,5 @@ alias sc="symfony console"
 export ANSIBLE_COW_SELECTION=random
 export ANSIBLE_NOCOWS=1
 export LESSCHARSET=utf-8
+# Starship!
+starship init fish | source
