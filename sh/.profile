@@ -59,10 +59,6 @@ if [ -f "$HOME/.aws-api-keys" ]; then
     source ~/.aws-api-keys;
 fi
 
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
-
 if [ -d "$HOME/.npm-global/bin" ] ; then
     PATH="$HOME/.npm-global/bin:$PATH"
 fi
