@@ -3,10 +3,34 @@ set fish_greeting
 # force tmux to be 256color and unicode compatible
 alias tmux="tmux -u -2"
 alias clip='xsel --clipboard --input'
-# Add to path from .profile
-if functions -q bass
-    bass source ~/.profile
+
+if test -d "$HOME/bin";
+    set -x PATH $PATH "$HOME/bin/"
 end
+
+if test -d "$HOME/.local/bin";
+    set -x PATH $PATH "$HOME/bin"
+end
+if test -d "$HOME/bin";
+    set -x PATH $PATH "$HOME/.local/bin"
+end
+if test -d "$HOME/.cargo/bin";
+    set -x PATH $PATH "$HOME/.cargo/bin"
+end
+if test -d "$HOME/go/bin";
+    set -x PATH $PATH "$HOME/go/bin"
+end
+if test -d "$HOME/.npm-global/bin";
+    set -x PATH $PATH "$HOME/.npm-global/bin"
+end
+if test -d "$HOME/.config/composer/vendor/bin";
+    set -x PATH $PATH "$HOME/.config/composer/vendor/bin"
+end
+if test -d "$HOME/.composer/vendor/bin";
+    set -x PATH $PATH "$HOME/.composer/vendor/bin"
+end
+
+if test
 # Set default editor
 set -gx EDITOR vim
 # Use starship theme
