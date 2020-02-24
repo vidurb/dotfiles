@@ -29,8 +29,6 @@ end
 if test -d "$HOME/.composer/vendor/bin";
     set -x PATH $PATH "$HOME/.composer/vendor/bin"
 end
-
-if test
 # Set default editor
 set -gx EDITOR vim
 # Use starship theme
