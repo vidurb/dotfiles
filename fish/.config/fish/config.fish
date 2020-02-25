@@ -40,9 +40,15 @@ if type "bat" >/dev/null;
     alias cat=bat
 end
 
+if type "aws" >/dev/null;
+    complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'
+end
+
 if functions -q bax
     bax 'eval "$(symfony-autocomplete)"'
 end
+
+
 
 alias sc="symfony console"
 
