@@ -4,11 +4,12 @@ function connect -d "Connect to servers via ssh"
 
     if test \( -n "$_flag_h" \) -o \( -n "$_flag_help" \)
         _connect_help >&2
-        return
+        return 0
     end
 
     if test -z "$KITTY_WINDOW_ID"
         echo "This utility only works in kitty, sorry."
+        return 1
     end
 
     for server in $argv
