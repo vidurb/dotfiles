@@ -39,6 +39,11 @@ if [ -d "$HOME/.cargo/bin" ] ; then
     PATH="$HOME/.cargo/bin:$PATH"
 fi
 
+# Add go if installed
+if [ -d "$HOME/go/bin" ] ; then
+    PATH="$HOME/go/bin:$PATH"
+fi
+
 # Chromium API keys
 if [ -f "$HOME/.chromium-api-keys" ]; then
     source ~/.chromium-api-keys;
@@ -54,10 +59,6 @@ if [ -f "$HOME/.aws-api-keys" ]; then
     source ~/.aws-api-keys;
 fi
 
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
-
 if [ -d "$HOME/.npm-global/bin" ] ; then
     PATH="$HOME/.npm-global/bin:$PATH"
 fi
@@ -69,3 +70,4 @@ fi
 if [ -d "$HOME/.composer/vendor/bin" ] ; then
     PATH="$HOME/.composer/vendor/bin:$PATH"
 fi
+test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)

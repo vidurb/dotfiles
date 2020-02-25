@@ -5,6 +5,10 @@ function tmux_symfony --description="Creates/attaches to tmux session for symfon
     if string match --quiet --ignore-case --regex "(dash/core)" $project_path
         set server_command 'symfony proxy:start && symfony server:start --port=8002 --allow-http'
         set project_name 'dash/core'
+    else if string match --quiet --ignore-case --regex "(api/corev2)" $project_path
+        set server_command 'symfony proxy:start && symfony server:start --port=8003 --allow-http'
+        set project_name 'api/corev2'
+        set yarn true
     else if string match --quiet --ignore-case --regex "(api/core)" $project_path
         set server_command 'symfony proxy:start && symfony server:start --port=8003 --allow-http'
         set project_name 'api/core'
