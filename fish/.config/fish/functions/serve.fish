@@ -36,7 +36,7 @@ function _serve_project
         return 1
     end
 
-    tmux new-window -t $_serve_session_name -n $argv "cd $_serve_dir && $SHELL"
+    tmux new-window -t $_serve_session_name -n $argv "cd $_serve_project_dir && $SHELL"
 
     if test -f "$_serve_project_dir/composer.json"
         tmux split-window -t $argv -vb -p 40 "cd $_serve_project_dir && symfony proxy:start && symfony server:start"
