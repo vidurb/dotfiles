@@ -11,6 +11,7 @@ Plug 'sgur/vim-editorconfig'
 Plug 'pangloss/vim-javascript'
 Plug 'dag/vim-fish'
 Plug 'mattn/emmet-vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " Syntax
 Plug 'gabrielelana/vim-markdown'
