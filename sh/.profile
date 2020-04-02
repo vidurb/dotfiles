@@ -59,8 +59,8 @@ if [ -f "$HOME/.aws-api-keys" ]; then
     source ~/.aws-api-keys;
 fi
 
-if [ -d "$HOME/.npm-global/bin" ] ; then
-    PATH="$HOME/.npm-global/bin:$PATH"
+if [ -d "$HOME/.npm_modules/bin" ] ; then
+    PATH="$HOME/.npm_modules/bin:$PATH"
 fi
 
 if [ -d "$HOME/.config/composer/vendor/bin" ] ; then

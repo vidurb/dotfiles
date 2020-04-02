@@ -20,8 +20,8 @@ end
 if test -d "$HOME/go/bin";
     set -x PATH $PATH "$HOME/go/bin"
 end
-if test -d "$HOME/.npm-global/bin";
-    set -x PATH $PATH "$HOME/.npm-global/bin"
+if test -d "$HOME/.npm_modules/bin";
+    set -x PATH $PATH "$HOME/.npm_modules/bin"
 end
 if test -d "$HOME/.config/composer/vendor/bin";
     set -x PATH $PATH "$HOME/.config/composer/vendor/bin"
