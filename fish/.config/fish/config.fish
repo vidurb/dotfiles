@@ -2,6 +2,7 @@
 set fish_greeting
 # force tmux to be 256color and unicode compatible
 alias tmux="tmux -u -2"
+alias mosh="mosh -p 62713"
 alias clip='xsel --clipboard --input'
 
 if test -d "$HOME/bin";
