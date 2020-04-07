@@ -49,9 +49,14 @@ if functions -q bax
     bax 'eval "$(symfony-autocomplete)"'
 end
 
-
-
-alias sc="symfony console"
+if status --is-interactive
+    abbr --add --global a-g 'ansible-galaxy'
+    abbr --add --global a-v 'ansible-vault'
+    abbr --add --global gr git reset
+    abbr --add --global gl git log
+    abbr --add --global gs git status
+    abbf --add --global gf git fetch
+end
 
 # Set nord theme
 set -U fish_color_normal normal
