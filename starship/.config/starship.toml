@@ -10,3 +10,8 @@ truncation_length = 24
 
 [hg_branch]
 truncation_length = 24
+
+[time]
+disabled = false
+format = "%R "
+utc_time_offset = "+5.5"
