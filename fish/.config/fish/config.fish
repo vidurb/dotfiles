@@ -55,7 +55,7 @@ if status --is-interactive
     abbr --add --global gr git reset
     abbr --add --global gl git log
     abbr --add --global gs git status
-    abbf --add --global gf git fetch
+    abbr --add --global gf git fetch
 end
 
 # Set nord theme
