@@ -56,6 +56,7 @@ if status --is-interactive
     abbr --add --global gl git log
     abbr --add --global gs git status
     abbr --add --global gf git fetch
+    abbr --add --global sc symfony console
 end
 
 # Set nord theme
