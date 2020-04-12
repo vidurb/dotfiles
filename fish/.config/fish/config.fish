@@ -62,6 +62,7 @@ if status --is-interactive
     abbr --add --global merge-future lab mr create origin future -a vidur -m
     abbr --add --global merge-develop lab mr create origin develop -a vidur -m
     abbr --add --global sc symfony console
+    abbr --add --global d-c docker-compose
 end
 
 # Set nord theme
