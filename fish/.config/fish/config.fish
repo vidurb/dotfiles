@@ -34,14 +34,14 @@ end
 set -gx EDITOR vim
 # Use starship theme
 # Check if exa/bat are installed
-if type "exa" >/dev/null;
+if type -q "exa" ;
     alias ls="exa --icons"
 end
-if type "bat" >/dev/null;
+if type -q "bat";
     alias cat=bat
 end
 
-if type "aws" >/dev/null;
+if type -q "aws";
     complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'
 end
 
