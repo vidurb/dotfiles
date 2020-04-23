@@ -63,6 +63,7 @@ if status --is-interactive
     abbr --add --global merge-develop lab mr create origin develop -a vidur -m
     abbr --add --global sc symfony console
     abbr --add --global d-c docker-compose
+    abbr --add --global sbc bin/console
 end
 
 # Set nord theme
