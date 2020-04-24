@@ -57,7 +57,7 @@ if status --is-interactive
     abbr --add --global gs git status
     abbr --add --global gf git fetch
     abbr --add --global gco git checkout
-    abbr --add --global gfpa git fetch --prune --all
+    abbr --add --global gfap git fetch --all --prune
     abbr --add --global merge-master lab mr create origin master -a vidur -m
     abbr --add --global merge-future lab mr create origin future -a vidur -m
     abbr --add --global merge-develop lab mr create origin develop -a vidur -m
