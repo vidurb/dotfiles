@@ -5,7 +5,7 @@ alias tmux="tmux -u -2"
 alias mosh="mosh -p 62713"
 alias clip='xsel --clipboard --input'
 
-cat "$__fish_config_dir/bindirs.txt" | read --line --array __extra_path_dirs
+cat "$__fish_config_dir/bindirs.txt" | read --list -d : __extra_path_dirs
 
 for dir in __extra_path_dirs
     if test -d $dir

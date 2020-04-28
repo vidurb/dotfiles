@@ -1,8 +1,1 @@
-~/bin
-~/.local/bin
-~/.cargo/bin
-~/go/bin
-~/.npm_modules/bin
-~/.config/composer/vendor/bin
-~/.config/.composer/vendor/bin
-/snap/bin
+~/bin:~/.local/bin:~/.cargo/bin:~/go/bin:~/.npm_modules/bin:~/.config/composer/vendor/bin:~/.config/.composer/vendor/bin:/snap/bin
