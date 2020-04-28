@@ -5,31 +5,16 @@ alias tmux="tmux -u -2"
 alias mosh="mosh -p 62713"
 alias clip='xsel --clipboard --input'
 
-if test -d "$HOME/bin";
-    set -x PATH $PATH "$HOME/bin/"
+cat "$fish_config/bindirs.txt" | read --line --array __extra_path_dirs
+
+for dir in __extra_path_dirs
+    if test -d $dir
+        if not contains $dir $PATH
+            set PATH $PATH $dir
+        end
+    end
 end
 
-if test -d "$HOME/.local/bin";
-    set -x PATH $PATH "$HOME/bin"
-end
-if test -d "$HOME/bin";
-    set -x PATH $PATH "$HOME/.local/bin"
-end
-if test -d "$HOME/.cargo/bin";
-    set -x PATH $PATH "$HOME/.cargo/bin"
-end
-if test -d "$HOME/go/bin";
-    set -x PATH $PATH "$HOME/go/bin"
-end
-if test -d "$HOME/.npm_modules/bin";
-    set -x PATH $PATH "$HOME/.npm_modules/bin"
-end
-if test -d "$HOME/.config/composer/vendor/bin";
-    set -x PATH $PATH "$HOME/.config/composer/vendor/bin"
-end
-if test -d "$HOME/.composer/vendor/bin";
-    set -x PATH $PATH "$HOME/.composer/vendor/bin"
-end
 # Set default editor
 set -gx EDITOR vim
 # Use starship theme
