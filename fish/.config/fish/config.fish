@@ -19,21 +19,6 @@ end
 set -gx EDITOR vim
 # Use starship theme
 # Check if exa/bat are installed
-if type -q "exa" ;
-    alias ls="exa --icons"
-end
-if type -q "bat";
-    alias cat=bat
-end
-
-if type -q "aws";
-    complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'
-end
-
-if functions -q bax
-    bax 'eval "$(symfony-autocomplete)"'
-end
-
 if status --is-interactive
     abbr --add --global a-g 'ansible-galaxy'
     abbr --add --global a-v 'ansible-vault'
@@ -49,6 +34,23 @@ if status --is-interactive
     abbr --add --global sc symfony console
     abbr --add --global d-c docker-compose
     abbr --add --global sbc bin/console
+if type -q "exa" ;
+    alias ls="exa --icons"
+end
+if type -q "bat";
+    alias cat=bat
+end
+if type -q "aws";
+    complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'
+end
+if functions -q bax
+    bax 'eval "$(symfony-autocomplete)"'
+end
+if type -q "code-insiders";
+    if not type -q "code";
+        alias code=code-insiders
+    end
+end
 end
 
 # Set nord theme
