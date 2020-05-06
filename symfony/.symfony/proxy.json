@@ -3,11 +3,12 @@
     "port": 7080,
     "domains": {
         "api.getastra": "/home/vidur/src/astra/api/core",
+        "apiv2.getastra": "/home/vidur/src/astra/api/corev2",
+        "craft-test": "/home/vidur/src/test-roadrunner-craft",
         "dash.getastra": "/home/vidur/src/astra/dash/core",
         "gatekeeper": "/home/vidur/src/astra/client/gk",
         "getastra": "/home/vidur/src/astra/web/core",
         "localwp": "/home/vidur/src/localwp",
-        "apiv2.getastra": "/home/vidur/src/astra/api/corev2",
         "securityscan.getastra": "/home/vidur/src/astra/dash/security-scan",
         "vapt.getastra": "/home/vidur/src/astra/vapt/core/",
         "vidur": "/home/vidur/src/vidur.dev",
