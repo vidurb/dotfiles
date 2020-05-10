@@ -5,8 +5,8 @@ alias tmux="tmux -u -2"
 alias mosh="mosh -p 62713"
 alias clip='xsel --clipboard --input'
 
+# Add extra directories to path from bindirs.txt
 cat "$__fish_config_dir/bindirs.txt" | read --list -d : __extra_path_dirs
-
 for dir in __extra_path_dirs
     if test -d $dir
         if not contains $dir $PATH
@@ -14,11 +14,13 @@ for dir in __extra_path_dirs
         end
     end
 end
-
+# Source environment variables from relevant files
+for envfile in $HOME/.*.env.fish
+    source $envfile
+end
 # Set default editor
 set -gx EDITOR vim
-# Use starship theme
-# Check if exa/bat are installed
+# Quality-of-Life improvements for interactive shells
 if status --is-interactive
     abbr --add --global a-g 'ansible-galaxy'
     abbr --add --global a-v 'ansible-vault'
@@ -34,23 +36,28 @@ if status --is-interactive
     abbr --add --global sc symfony console
     abbr --add --global d-c docker-compose
     abbr --add --global sbc bin/console
-if type -q "exa" ;
-    alias ls="exa --icons"
-end
-if type -q "bat";
-    alias cat=bat
-end
-if type -q "aws";
-    complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'
-end
-if functions -q bax
-    bax 'eval "$(symfony-autocomplete)"'
-end
-if type -q "code-insiders";
-    if not type -q "code";
-        alias code=code-insiders
+    # Use exa instead of ls
+    if type -q "exa" ;
+        alias ls="exa --icons"
     end
-end
+    # Use bat instead of cat
+    if type -q "bat";
+        alias cat=bat
+    end
+    # Autocomplete awscli
+    if type -q "aws";
+        complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'
+    end
+    # Autocomplete symfony console
+    if functions -q bax
+        bax 'eval "$(symfony-autocomplete)"'
+    end
+    # Use code-insiders instead of code if code is not installed
+    if type -q "code-insiders";
+        if not type -q "code";
+            alias code=code-insiders
+        end
+    end
 end
 
 # Set nord theme
