@@ -37,8 +37,8 @@ if status --is-interactive
     abbr --add --global d-c docker-compose
     abbr --add --global sbc bin/console
     # Use exa instead of ls
-    if type -q "exa" ;
-        alias ls="exa --icons"
+    if type -q "lsd" ;
+        alias ls="lsd"
     end
     # Use bat instead of cat
     if type -q "bat";
