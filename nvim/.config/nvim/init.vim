@@ -12,6 +12,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'dag/vim-fish'
 Plug 'mattn/emmet-vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'lambdalisue/suda.vim'
 
 " Syntax
 Plug 'gabrielelana/vim-markdown'
@@ -92,7 +93,7 @@ endif
 " Stop highlighting being deleted on bufleave
 let g:colorizer_disable_bufleave = 1
 let g:colorizer_use_virtual_text = 1
-
+let g:suda#prefix = 'sudo://'
 
 " filetype settings
 autocmd FileType json syntax match Comment +\/\/.\+$+
