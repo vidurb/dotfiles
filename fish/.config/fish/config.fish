@@ -50,7 +50,9 @@ if status --is-interactive
     end
     # Autocomplete symfony console
     if functions -q bax
-        bax 'eval "$(symfony-autocomplete)"'
+        if type -q "symfony-autocomplete"
+            bax 'eval "$(symfony-autocomplete)"'
+        end
     end
     # Use code-insiders instead of code if code is not installed
     if type -q "code-insiders";
