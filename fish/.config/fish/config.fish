@@ -1,12 +1,12 @@
 # Add extra directories to path from bindirs.txt
 cat "$__fish_config_dir/bindirs.txt" | read --list -d : __extra_path_dirs
-for dir in __extra_path_dirs
-    if test -d $dir
-        if not contains $dir $PATH
-            set PATH $PATH $dir
-        end
-    end
-end
+# for dir in __extra_path_dirs
+#     if test -d $dir
+#         if not contains $dir $PATH
+#             set PATH $PATH $dir
+#         end
+#     end
+# end
 # Source environment variables from relevant files
 for envfile in $HOME/.*.env.fish
     source $envfile
@@ -37,12 +37,6 @@ if status --is-interactive
     # Autocomplete awscli
     if type -q "aws";
         complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'
-    end
-    # Autocomplete symfony console
-    if functions -q bax
-        if type -q "symfony-autocomplete"
-            bax 'eval "$(symfony-autocomplete)"'
-        end
     end
     # Use code-insiders instead of code if code is not installed
     if type -q "code-insiders";

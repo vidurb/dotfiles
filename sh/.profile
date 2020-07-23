@@ -34,6 +34,7 @@ export LC_CTYPE=en_US.UTF-8
 if [ -d "$HOME/.local/share/umake/bin" ] ; then
     PATH=/home/vidur/.local/share/umake/bin:$PATH
 fi
+
 # Add Cargo & associated binaries to path if installed
 if [ -d "$HOME/.cargo/bin" ] ; then
     PATH="$HOME/.cargo/bin:$PATH"
@@ -63,13 +64,9 @@ if [ -d "$HOME/.npm_modules/bin" ] ; then
     PATH="$HOME/.npm_modules/bin:$PATH"
 fi
 
-if [ -d "$HOME/.config/composer/vendor/bin" ] ; then
-    PATH="$HOME/.config/composer/vendor/bin:$PATH"
+if [ -d "$XDG_CONFIG_HOME/.composer/vendor/bin" ] ; then
+    PATH="$XDG_CONFIG_HOME/.composer/vendor/bin:$PATH"
 fi
 
-if [ -d "$HOME/.composer/vendor/bin" ] ; then
-    PATH="$HOME/.composer/vendor/bin:$PATH"
-fi
 test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
 
-export PATH="$HOME/.cargo/bin:$PATH"
