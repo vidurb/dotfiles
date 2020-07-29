@@ -1,7 +1,8 @@
 {
-    "tld": "wip",
+    "tld": "test",
     "port": 7080,
     "domains": {
-        "prettymenu": "/home/vidur/src/prettymenu-php"
+        "prettymenu": "/home/vidur/src/prettymenu-php",
+        "www.prettymenu": "/home/vidur/src/prettymenu-php"
     }
 }
