@@ -9,4 +9,4 @@ ExecStop=/usr/local/bin/symfony proxy:stop
 StandardOutput=journal
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
