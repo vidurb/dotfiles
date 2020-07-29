@@ -4,7 +4,9 @@ Description=Symfony CLI Proxy
 [Service]
 ExecStart=/usr/local/bin/symfony proxy:start
 Type=oneshot
-RemainAfterExit=yes
+RemainAfterExit=true
+ExecStop=/usr/local/bin/symfony proxy:stop
+StandardOutput=journal
 
 [Install]
 WantedBy=multi-user.target
