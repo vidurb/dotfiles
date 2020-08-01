@@ -6,19 +6,18 @@ Plug 'tpope/vim-fugitive'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'sjl/gundo.vim'
-Plug 'sgur/vim-editorconfig'
-Plug 'pangloss/vim-javascript'
-Plug 'dag/vim-fish'
-Plug 'mattn/emmet-vim'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'lambdalisue/suda.vim'
+Plug 'tmux-plugins/vim-tmux-focus-events'
 
 " Syntax
+Plug 'editorconfig/editorconfig-vim'
 Plug 'gabrielelana/vim-markdown'
+Plug 'pangloss/vim-javascript'
+Plug 'dag/vim-fish'
 Plug 'chr4/nginx.vim'
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tmux-plugins/vim-tmux'
+Plug 'kevinoid/vim-jsonc'
 
 " Display
 Plug 'luochen1990/rainbow'
