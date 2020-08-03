@@ -1,0 +1,13 @@
+[user]
+        name = Vidur Butalia
+	email = vidurbutalia@gmail.com
+[core]
+        editor = vim
+	autocrlf = input
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[gpg]
+	program = gpg
+[commit]
+	gpgSign = false
+[tag]
+	forceSignAnnotated = false

@@ -1,0 +1,17 @@
+# Replace the "❯" symbol in the prompt with "➜"
+[character]      # The name of the module we are confguring is "character"
+symbol = "➜"     # The "symbol" segment is being set to "➜"
+
+[directory]
+truncate_to_repo = false
+
+[git_branch]
+truncation_length = 24
+
+[hg_branch]
+truncation_length = 24
+
+[time]
+disabled = false
+format = "%R "
+utc_time_offset = "+5.5"
