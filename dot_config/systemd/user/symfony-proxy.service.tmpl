@@ -1,0 +1,16 @@
+{{ if eq .chezmoi.os "linux" }}
+[Unit]
+Description=Symfony CLI Proxy
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=/usr/local/bin/symfony proxy:start
+Type=oneshot
+RemainAfterExit=true
+ExecStop=/usr/local/bin/symfony proxy:stop
+StandardOutput=journal
+
+[Install]
+WantedBy=default.target
+{{ end }}
