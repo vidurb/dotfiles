@@ -1,12 +1,4 @@
 # Add extra directories to path from bindirs.txt
-cat "$__fish_config_dir/bindirs.txt" | read --list -d : __extra_path_dirs
-for dir in __extra_path_dirs
-    if test -d $dir
-        if not contains $dir $PATH
-            set PATH $PATH $dir
-        end
-    end
-end
 # Source environment variables from relevant files
 for envfile in $HOME/.*.env.fish
     source $envfile
