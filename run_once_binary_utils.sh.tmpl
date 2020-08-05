@@ -2,8 +2,24 @@
     {{ if eq .chezmoi.osRelease.idLike "debian" }}
         {{ if eq .data.bootstrap "yes" }}
                 #!/bin/sh
-                echo "This script will eventually install starship, bat, lsd, and fx by downloading their binaries"
-                echo "\e[1mThis script is yet to be finished - run_once_binary_utils.sh.tmpl"
+                echo "This utility installs the following software: bat, lsd, fx, starship and diff-so-fancy"
+                BAT_DL_LINK=$(curl -s https://api.github.com/repos/sharkdp/bat/releases/latest | grep -P -o "(https:\/\/github.com\/sharkdp\/bat\/releases\/download\/v\d*\.?\d+\.\d+\/bat_\d*\.?\d+\.\d+_amd64\.deb)" -)
+                LSD_DL_LINK=$(curl -s https://api.github.com/repos/Peltoche/lsd/releases/latest | grep -P -o "(https:\/\/github.com\/Peltoche\/lsd\/releases\/download\/\d*\.?\d+\.\d+\/lsd_\d*\.?\d+\.\d+_amd64\.deb)" -)
+                FX_DL_LINK=$(curl -s https://api.github.com/repos/antonmdev/fx/releases/latest | grep -P -o "(https:\/\/github.com\/antonmedv\/fx\/releases\/download\/\d*\.?\d+\.\d+\/fx-linux\.zip)" -)
+                STARSHIP_DL_LINK=$(curl -s https://api.github.com/repos/starship/starship/releases/latest | grep -P -o '(https:\/\/github.com\/starship\/starship\/releases\/download\/v\d*\.?\d+\.\d+\/starship-x86_64-unknown-linux-gnu.tar.gz)"' -)
+                wget -q -o bat.deb "$BAT_DL_LINK"
+                wget -q -o lsd.deb "$LSD_DL_LINK"
+                wget -q -o fx.zip "$FX_DL_LINK"
+                wget -q -u starship.tar.gz "$STARSHIP_DL_LINK"
+                sudo dpkg -i bat.deb lsd.deb
+                rm bat.deb lsd.deb
+                unzip fx.zip
+                sudo mv fx-linux /usr/local/bin/fx
+                rm fx.zip
+                tar xzvf starship.tar.gz
+                sudo mv starship /usr/local/bin/
+                rm starship.tar.gz
+                echo "Installed bat & lsd with deb and fx & starship with binary"
             {{ if eq .data.terminal "yes" }}
                 #!/bin/sh
                 echo "\e[1mThis script is yet to be finished - run_once_binary_utils.sh.tmpl"
