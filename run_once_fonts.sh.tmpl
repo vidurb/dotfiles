@@ -1,8 +1,4 @@
-{{ if eq .chezmoi.os "linux" }}
-{{ if eq .chezmoi.osRelease.idLike "debian" }}
-{{ if eq .bootstrap "yes" }}
-{{ if eq .terminal "yes" }}
-#!/bin/sh
+{{ if eq .chezmoi.os "linux" }}{{ if eq .chezmoi.osRelease.idLike "debian" }}{{ if eq .bootstrap "yes" }}{{ if eq .terminal "yes" }}#!/bin/sh
 echo "\e[1mThis script is yet to be finished - run_once_fonts.sh.tmpl"
 {{ end }}
 {{ end }}

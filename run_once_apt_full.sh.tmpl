@@ -1,14 +1,9 @@
-{{ if eq .chezmoi.os "linux" }}
-{{ if eq .chezmoi.osRelease.idLike "debian" }}
-{{ if eq .bootstrap "yes" }}
-{{ if eq .terminal "yes" }}
-#!/bin/sh
+{{ if eq .chezmoi.os "linux" }}{{ if eq .chezmoi.osRelease.idLike "debian" }}{{ if eq .bootstrap "yes" }}{{ if eq .terminal "yes" }}#!/bin/sh
 echo "Installing software for user terminals - emacs, kitty, zeal, vlc, powertop, solaar"
 sudo apt install --yes emacs git kitty zeal vlc powertop solaar solaar-gnome3 nodejs npm composer docker.io docker-compose
 git clone --quiet https://github.com/syl20bnr/spacemacs ~/.emacs.d
 curl -o ~/.config/kitty/nord.conf https://raw.githubusercontent.com/connorholyday/nord-kitty/master/nord.conf                
 {{ else }}
-#!/bin/sh
 echo "\e[1mNot installing packages as .data.terminal is not set to yes."
 {{ end }}
 {{ end }}
