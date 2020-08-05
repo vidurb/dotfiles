@@ -2,6 +2,7 @@
     {{ if eq .chezmoi.osRelease.idLike "debian" }}
         {{ if eq .data.bootstrap "yes" }}
                 #!/bin/sh
+                echo "This script will eventually install starship, bat, lsd, and fx by downloading their binaries"
                 echo "\e[1mThis script is yet to be finished - run_once_binary_utils.sh.tmpl"
             {{ if eq .data.terminal "yes" }}
                 #!/bin/sh
