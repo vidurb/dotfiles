@@ -1,11 +1,13 @@
 {{ if eq .chezmoi.os "linux" }}
     {{ if eq .chezmoi.osRelease.idLike "debian" }}
         {{ if eq .data.bootstrap "yes" }}
+            #!/bin/sh
             echo "\e[1mInstalling basic system dependencies from distribution repositories."
             echo "\e[0mThis will not install third-party repositories."
             echo "Packages to be installed: stow, fish, tmux, git, curl, wget, neovim, gawk"
             sudo apt install --yes stow fish tmux git curl wget neovim gawk
         {{ else }}
+            #!/bin/sh
             echo "\e[1mNot installing packages as .data.bootstrap is not set to yes."
         {{ end }}
     {{ end }}

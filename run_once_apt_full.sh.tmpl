@@ -2,8 +2,10 @@
     {{ if eq .chezmoi.osRelease.idLike "debian" }}
         {{ if eq .data.bootstrap "yes" }}
             {{ if eq .data.terminal "yes" }}
+                #!/bin/sh
                 echo "\e[1mThis script is yet to be finished - run_once_apt_full.sh"
             {{ else }}
+                #!/bin/sh
                 echo "\e[1mNot installing packages as .data.terminal is not set to yes."
             {{ end }}
         {{ end }}
