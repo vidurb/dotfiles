@@ -1,4 +1,4 @@
-{{ if eq .chezmoi.os "linux" }}{{ if eq .chezmoi.osRelease.idLike "debian" }}{{ if eq .bootstrap "yes" }}#!/bin/sh
+{{ if eq .chezmoi.os "linux" }}{{ if eq .chezmoi.osRelease.idLike "debian" }}#!/bin/sh{{ if eq .bootstrap "yes" }}
 echo "This utility installs the following software: bat, lsd, fx, starship and diff-so-fancy"
 BAT_DL_LINK=$(curl -s https://api.github.com/repos/sharkdp/bat/releases/latest | grep -P -o "(https:\/\/github.com\/sharkdp\/bat\/releases\/download\/v\d*\.?\d+\.\d+\/bat_\d*\.?\d+\.\d+_amd64\.deb)" -)
 LSD_DL_LINK=$(curl -s https://api.github.com/repos/Peltoche/lsd/releases/latest | grep -P -o "(https:\/\/github.com\/Peltoche\/lsd\/releases\/download\/\d*\.?\d+\.\d+\/lsd_\d*\.?\d+\.\d+_amd64\.deb)" -)
