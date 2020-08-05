@@ -7,8 +7,11 @@ echo "Installing add-on scripts and utilities - fisher for fish, vim-plug for vi
 curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-if "test ! -d ~/.tmux/plugins/tpm" \
-"run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins'"
+if test ! -d ~/.tmux/plugins/tpm
+then
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    ~/.tmux/plugins/tpm/bin/install_plugins
+fi
 echo "Installed packages and addons"     
 {{ else }}
 echo "Not installing packages as .data.bootstrap is not set to yes."
