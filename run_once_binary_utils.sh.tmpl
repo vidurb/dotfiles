@@ -5,19 +5,24 @@ LSD_DL_LINK=$(curl -s https://api.github.com/repos/Peltoche/lsd/releases/latest 
 FX_DL_LINK=$(curl -s https://api.github.com/repos/antonmedv/fx/releases/latest | grep -P -o "(https:\/\/github.com\/antonmedv\/fx\/releases\/download\/\d*\.?\d+\.\d+\/fx-linux\.zip)" -)
 STARSHIP_DL_LINK=$(curl -s https://api.github.com/repos/starship/starship/releases/latest | grep -P -o '(https:\/\/github.com\/starship\/starship\/releases\/download\/v\d*\.?\d+\.\d+\/starship-x86_64-unknown-linux-gnu.tar.gz(?!.sha256"))' -)
 BLE_DL_LINK=$(curl -s https://api.github.com/repos/akinomyoga/ble.sh/releases/latest | grep -P -o "(https:\/\/github.com\/akinomyoga\/ble.sh\/releases\/download\/v\d*.?\d+.\d+\/ble-\d*.?\d+.\d+.tar.xz)" -)
-wget -q -O bat.deb "$BAT_DL_LINK"
-wget -q -O lsd.deb "$LSD_DL_LINK"
-wget -q -O fx.zip "$FX_DL_LINK"
-wget -q -O starship.tar.gz "$STARSHIP_DL_LINK"
-wget -q -O ble.tar.xz "$BLE_DL_LINK"
+echo "Fetching latest archives/packages"
+wget -O bat.deb "$BAT_DL_LINK"
+wget -O lsd.deb "$LSD_DL_LINK"
+wget -O fx.zip "$FX_DL_LINK"
+wget -O starship.tar.gz "$STARSHIP_DL_LINK"
+wget -O ble.tar.xz "$BLE_DL_LINK"
+echo "Installing bat and deb"
 sudo dpkg -i bat.deb lsd.deb
 rm bat.deb lsd.deb
+echo "Installing fx"
 unzip fx.zip
 sudo mv fx-linux /usr/local/bin/fx
 rm fx.zip
+echo "Installing starship"
 tar xzvf starship.tar.gz
 sudo mv starship /usr/local/bin/
 rm starship.tar.gz
+echo "Installing ble"
 tar xJf ble.tar.xz
 mv ble-* ~/.ble
 rm ble.tar.xz
