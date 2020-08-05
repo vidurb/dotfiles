@@ -7,10 +7,10 @@
                 LSD_DL_LINK=$(curl -s https://api.github.com/repos/Peltoche/lsd/releases/latest | grep -P -o "(https:\/\/github.com\/Peltoche\/lsd\/releases\/download\/\d*\.?\d+\.\d+\/lsd_\d*\.?\d+\.\d+_amd64\.deb)" -)
                 FX_DL_LINK=$(curl -s https://api.github.com/repos/antonmdev/fx/releases/latest | grep -P -o "(https:\/\/github.com\/antonmedv\/fx\/releases\/download\/\d*\.?\d+\.\d+\/fx-linux\.zip)" -)
                 STARSHIP_DL_LINK=$(curl -s https://api.github.com/repos/starship/starship/releases/latest | grep -P -o '(https:\/\/github.com\/starship\/starship\/releases\/download\/v\d*\.?\d+\.\d+\/starship-x86_64-unknown-linux-gnu.tar.gz)"' -)
-                wget -q -o bat.deb "$BAT_DL_LINK"
-                wget -q -o lsd.deb "$LSD_DL_LINK"
-                wget -q -o fx.zip "$FX_DL_LINK"
-                wget -q -u starship.tar.gz "$STARSHIP_DL_LINK"
+                wget -q -O bat.deb "$BAT_DL_LINK"
+                wget -q -O lsd.deb "$LSD_DL_LINK"
+                wget -q -O fx.zip "$FX_DL_LINK"
+                wget -q -O starship.tar.gz "$STARSHIP_DL_LINK"
                 sudo dpkg -i bat.deb lsd.deb
                 rm bat.deb lsd.deb
                 unzip fx.zip
