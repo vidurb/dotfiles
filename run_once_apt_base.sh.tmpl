@@ -1,21 +1,21 @@
 {{ if eq .chezmoi.os "linux" }}
-    {{ if eq .chezmoi.osRelease.idLike "debian" }}
-        {{ if eq .bootstrap "yes" }}
-            #!/bin/sh
-            echo "Installing basic system dependencies from distribution repositories."
-            echo "This will not install third-party repositories."
-            echo "Packages to be installed: stow, fish, tmux, git, curl, wget, neovim, gawk, jq, ansible, docker, docker-compose, unzip"
-            sudo apt install --yes stow fish tmux git curl wget neovim gawk jq docker.io docker-compose ansible unzip
-            echo "Installing add-on scripts and utilities - fisher for fish, vim-plug for vim/nvim"
-            curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
-            curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-            curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-            if "test ! -d ~/.tmux/plugins/tpm" \
-                "run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins'"
-            echo "Installed packages and addons"     
-        {{ else }}
-            #!/bin/sh
-            echo "Not installing packages as .data.bootstrap is not set to yes."
-        {{ end }}
-    {{ end }}
+{{ if eq .chezmoi.osRelease.idLike "debian" }}
+{{ if eq .bootstrap "yes" }}
+#!/bin/sh
+echo "Installing basic system dependencies from distribution repositories."
+echo "This will not install third-party repositories."
+echo "Packages to be installed: stow, fish, tmux, git, curl, wget, neovim, gawk, jq, ansible, docker, docker-compose, unzip"
+sudo apt install --yes stow fish tmux git curl wget neovim gawk jq docker.io docker-compose ansible unzip
+echo "Installing add-on scripts and utilities - fisher for fish, vim-plug for vim/nvim"
+curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+if "test ! -d ~/.tmux/plugins/tpm" \
+"run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins'"
+echo "Installed packages and addons"     
+{{ else }}
+#!/bin/sh
+echo "Not installing packages as .data.bootstrap is not set to yes."
+{{ end }}
+{{ end }}
 {{ end }}
