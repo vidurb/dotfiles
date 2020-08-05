@@ -1,6 +1,6 @@
 {{ if eq .chezmoi.os "linux" }}
     {{ if eq .chezmoi.osRelease.idLike "debian" }}
-        {{ if eq .data.bootstrap "yes" }}
+        {{ if eq .bootstrap "yes" }}
             #!/bin/sh
             echo "Installing basic system dependencies from distribution repositories."
             echo "This will not install third-party repositories."
