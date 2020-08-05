@@ -2,8 +2,8 @@
 echo "This utility installs the following software: bat, lsd, fx, starship and diff-so-fancy"
 BAT_DL_LINK=$(curl -s https://api.github.com/repos/sharkdp/bat/releases/latest | grep -P -o "(https:\/\/github.com\/sharkdp\/bat\/releases\/download\/v\d*\.?\d+\.\d+\/bat_\d*\.?\d+\.\d+_amd64\.deb)" -)
 LSD_DL_LINK=$(curl -s https://api.github.com/repos/Peltoche/lsd/releases/latest | grep -P -o "(https:\/\/github.com\/Peltoche\/lsd\/releases\/download\/\d*\.?\d+\.\d+\/lsd_\d*\.?\d+\.\d+_amd64\.deb)" -)
-FX_DL_LINK=$(curl -s https://api.github.com/repos/antonmdev/fx/releases/latest | grep -P -o "(https:\/\/github.com\/antonmedv\/fx\/releases\/download\/\d*\.?\d+\.\d+\/fx-linux\.zip)" -)
-STARSHIP_DL_LINK=$(curl -s https://api.github.com/repos/starship/starship/releases/latest | grep -P -o '(https:\/\/github.com\/starship\/starship\/releases\/download\/v\d*\.?\d+\.\d+\/starship-x86_64-unknown-linux-gnu.tar.gz)"' -)
+FX_DL_LINK=$(curl -s https://api.github.com/repos/antonmedv/fx/releases/latest | grep -P -o "(https:\/\/github.com\/antonmedv\/fx\/releases\/download\/\d*\.?\d+\.\d+\/fx-linux\.zip)" -)
+STARSHIP_DL_LINK=$(curl -s https://api.github.com/repos/starship/starship/releases/latest | grep -P -o '(https:\/\/github.com\/starship\/starship\/releases\/download\/v\d*\.?\d+\.\d+\/starship-x86_64-unknown-linux-gnu.tar.gz(?!.sha256"))' -)
 BLE_DL_LINK=$(curl -s https://api.github.com/repos/akinomyoga/ble.sh/releases/latest | grep -P -o "(https:\/\/github.com\/akinomyoga\/ble.sh\/releases\/download\/v\d*.?\d+.\d+\/ble-\d*.?\d+.\d+.tar.xz)" -)
 wget -q -O bat.deb "$BAT_DL_LINK"
 wget -q -O lsd.deb "$LSD_DL_LINK"
