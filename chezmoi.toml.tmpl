@@ -1,0 +1,7 @@
+{{- $email := promptString "Enter the email to use for this deployment" -}}
+{{- $bootstrap := promptString "Bootstrap this deployment with scripts? Enter yes or no" -}}
+{{- $terminal := promptString "Is this deployment on a user terminal? Enter yes or no" -}}
+[data]
+    email = "{{ $email }}"
+    bootstrap = "{{ $bootstrap }}"
+    terminal = "{{ $terminal }}"
