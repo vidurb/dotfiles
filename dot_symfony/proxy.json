@@ -4,6 +4,7 @@
     "domains": {
         "latelaw": "/home/vidur/src/latelaw",
         "prettymenu": "/home/vidur/src/prettymenu-php",
+        "treblo-dl": "/home/vidur/src/treblo-download-server",
         "www.prettymenu": "/home/vidur/src/prettymenu-php"
     }
 }

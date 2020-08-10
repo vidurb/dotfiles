@@ -8,6 +8,10 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# Correct symbols in TMUX
+export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+
 # Add ubuntu-make apps to $PATH if ubuntu-make is installed
 if [ -d "$HOME/.local/share/umake/bin" ] ; then
     PATH=/home/vidur/.local/share/umake/bin:$PATH
