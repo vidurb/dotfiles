@@ -206,8 +206,10 @@ set wildmenu
 set wildmode=longest,list,full
 set wildignore=*.o,*.bak,*.data,*.class
 
+{{ if eq .chezmoi.os "linux" }}
 " Clipboard
 set clipboard=unnamedplus
+{{ end }}
 
 " Theme
 colorscheme nord 
@@ -224,7 +226,9 @@ endif
 " Stop highlighting being deleted on bufleave
 let g:colorizer_disable_bufleave = 1
 let g:colorizer_use_virtual_text = 1
+{{ if eq .chezmoi.os "linux" }}
 let g:suda#prefix = 'sudo://'
+{{ end }}
 
 " Set colors
 set t_Co=256
