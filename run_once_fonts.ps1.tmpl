@@ -1,6 +1,6 @@
 {{ if eq .chezmoi.os "windows" }}
-    {{ if eq .data.bootstrap "yes" }}
-        {{ if eq .data.terminal "yes" }}
+    {{ if eq .bootstrap "yes" }}
+        {{ if eq .terminal "yes" }}
             Write-Outout "This script is yet to be finished - run_once_fonts.ps1.tmpl"
         {{ end }}
     {{ end }}
