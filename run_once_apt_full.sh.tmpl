@@ -4,7 +4,7 @@ sudo apt install --yes emacs git kitty zeal vlc powertop solaar solaar-gnome3 no
 git clone --quiet https://github.com/syl20bnr/spacemacs ~/.emacs.d
 curl -o ~/.config/kitty/nord.conf https://raw.githubusercontent.com/connorholyday/nord-kitty/master/nord.conf                
 {{ else }}
-echo "\e[1mNot installing packages as .data.terminal is not set to yes."
+echo "\e[1mNot installing packages as .terminal is not set to yes."
 {{ end }}
 {{ end }}
 {{ end }}
