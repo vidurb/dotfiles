@@ -1,6 +1,6 @@
 {{ if eq .chezmoi.os "linux" }}{{ if eq .chezmoi.osRelease.idLike "debian" }}{{ if eq .bootstrap "yes" }}#!/bin/sh{{ if eq .terminal "yes" }}
-echo "Installing software for user terminals - emacs, kitty, zeal, vlc, powertop, solaar"
-sudo apt install --yes emacs git kitty zeal vlc powertop solaar solaar-gnome3 nodejs npm composer docker.io docker-compose
+echo "Installing software for user terminals - emacs, kitty, zeal, vlc, powertop"
+sudo apt install --yes emacs git kitty zeal vlc powertop nodejs npm composer docker.io docker-compose
 git clone --quiet https://github.com/syl20bnr/spacemacs ~/.emacs.d
 curl -o ~/.config/kitty/nord.conf https://raw.githubusercontent.com/connorholyday/nord-kitty/master/nord.conf                
 {{ else }}
