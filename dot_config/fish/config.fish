@@ -1,14 +1,9 @@
-# Add extra directories to path from bindirs.txt
-# Source environment variables from relevant files
-for envfile in $HOME/.*.env.fish
-    source $envfile
-end
 # Set default editor
 set -gx EDITOR vim
 # Quality-of-Life improvements for interactive shells
 if status --is-interactive
-    abbr --add --global a-g 'ansible-galaxy'
-    abbr --add --global a-v 'ansible-vault'
+    abbr --add --global a-g ansible-galaxy
+    abbr --add --global a-v ansible-vault
     abbr --add --global gr git reset
     abbr --add --global gl git log
     abbr --add --global gs git status
@@ -40,9 +35,6 @@ if status --is-interactive
     # Remove shell greeting
     set fish_greeting
 
-    # force tmux to be 256color and unicode compatible
-    alias tmux="tmux -u -2"
-    alias mosh="mosh -p 62713"
     alias clip='xsel --clipboard --input'
 
     # Set nord theme
