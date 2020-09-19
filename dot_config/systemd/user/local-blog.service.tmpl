@@ -5,7 +5,7 @@ Wants=network-online.target
 After=network-online.target
 
 [Service]
-ExecStart=/usr/local/bin/symfony local:server:start -d --dir=/home/v  idur/src/vidur.dev/backend
+ExecStart=/usr/local/bin/symfony local:server:start -d --dir=/home/vidur/src/vidur.dev/backend
 Type=oneshot
 RemainAfterExit=true
 ExecStop=/usr/local/bin/symfony local:server:stop --dir=/home/vidur/src/vidur.dev/backend
