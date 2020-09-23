@@ -33,6 +33,7 @@ Plug 'arcticicestudio/nord-vim'
 
 call plug#end()  
 
+{{ if eq .terminal "yes" }}
 " Settings recommended by coc.nvim
 set hidden
 set nobackup
@@ -177,7 +178,9 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-set nu          
+{{ end }}
+
+set nu
 set autoindent    " useful when writing code to maintain indenting
                   "  goes back one indent while still in insert mode
 
