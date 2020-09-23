@@ -1,0 +1,3 @@
+{{ if ne .terminal "yes" }}
+private_dot_ssh
+{{end}}
