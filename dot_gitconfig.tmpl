@@ -1,13 +1,20 @@
 [user]
-        name = Vidur Butalia
+	name = Vidur Butalia
 	email = vidurbutalia@gmail.com
 [core]
-        editor = vim
+	editor = vim
 	autocrlf = input
+{{ if eq .terminal "yes" }}
 	pager = diff-so-fancy | less --tabs=4 -RFX
+{{ end }}
 [gpg]
 	program = gpg
 [commit]
 	gpgSign = false
 [tag]
 	forceSignAnnotated = false
+
+{{ if ne .terminal "yes" }}
+[credential]
+	helper = store
+{{ end }}
