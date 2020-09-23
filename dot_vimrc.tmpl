@@ -15,7 +15,9 @@ Plug 'gabrielelana/vim-markdown'
 Plug 'pangloss/vim-javascript'
 Plug 'dag/vim-fish'
 Plug 'chr4/nginx.vim'
+{{ if eq .terminal "yes" }}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+{{ end }}
 Plug 'tmux-plugins/vim-tmux'
 Plug 'kevinoid/vim-jsonc'
 
