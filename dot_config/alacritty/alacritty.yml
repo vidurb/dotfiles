@@ -350,8 +350,8 @@ colors:
 #   - (Windows) powershell
 shell:
   program: /usr/bin/fish
-  args:
-    - -c tmux new -A -s vidur
+  # args:
+  #   - -c tmux new -A -s vidur
 
 # Startup directory
 #
