@@ -15,3 +15,13 @@ truncation_length = 24
 disabled = false
 format = "%R "
 utc_time_offset = "+5.5"
+
+[hostname]
+ssh_only = false
+prefix = ""
+suffix = ""
+trim_at = "."
+disabled = false
+
+[username]
+show_always = true
