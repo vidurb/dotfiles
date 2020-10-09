@@ -13,7 +13,7 @@ truncation_length = 24
 
 [time]
 disabled = false
-format = "[$time] ($style) "
+format = "[$time]($style) "
 utc_time_offset = "+5.5"
 style = "bold #8fbcbb"
 
