@@ -19,8 +19,6 @@ style = "bold #8fbcbb"
 
 [hostname]
 ssh_only = false
-prefix = ""
-suffix = ""
 trim_at = "."
 disabled = false
 style = "bold dimmed #8fbcbb"
