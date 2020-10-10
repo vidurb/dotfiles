@@ -1,3 +1,4 @@
 {{ if ne .terminal "yes" }}
 .ssh/config
+.tmate.conf
 {{end}}
