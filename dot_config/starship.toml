@@ -1,6 +1,7 @@
 # Replace the "❯" symbol in the prompt with "➜"
 [character]      # The name of the module we are confguring is "character"
-symbol = "➜"     # The "symbol" segment is being set to "➜"
+success_symbol = "[➜](bold green)"
+error_symbol = "[✗](bold red)"
 
 [directory]
 truncate_to_repo = false
@@ -27,3 +28,4 @@ style = "bold dimmed #8fbcbb"
 show_always = true
 style_user = "bold #8fbcbb"
 style_root = "bold #bf616a"
+
