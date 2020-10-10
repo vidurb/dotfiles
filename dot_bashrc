@@ -8,8 +8,6 @@ case $- in
       *) return;;
 esac
 
-source "$HOME/.ble/ble.sh" --noattach
-
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -107,5 +105,3 @@ if ! shopt -oq posix; then
 fi
 
 test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
-
-((_ble_bash)) && ble-attach
