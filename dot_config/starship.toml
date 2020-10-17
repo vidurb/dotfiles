@@ -22,6 +22,7 @@ style = "bold #8fbcbb"
 ssh_only = false
 trim_at = "."
 disabled = false
+format =  "on [$hostname]($style) "
 style = "bold dimmed #8fbcbb"
 
 [username]
