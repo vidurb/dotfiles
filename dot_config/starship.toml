@@ -5,6 +5,7 @@ error_symbol = "[✗](bold red)"
 
 [directory]
 truncate_to_repo = false
+format = "in [$path]($style)[$read_only]($read_only_style) "
 
 [git_branch]
 truncation_length = 24
@@ -29,4 +30,5 @@ style = "bold dimmed #8fbcbb"
 show_always = true
 style_user = "bold #8fbcbb"
 style_root = "bold #bf616a"
+format = "[$user]($style) "
 
