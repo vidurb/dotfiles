@@ -1,4 +1,4 @@
-# remap prefix from 'C-b' to 'C-a'
+{{ if eq .chezmoi.os "linux" }}# remap prefix from 'C-b' to 'C-a'
 unbind C-b
 set-option -g prefix C-a
 bind-key C-a send-prefix
@@ -60,3 +60,4 @@ set -g @plugin 'Morantron/tmux-fingers'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run -b '~/.tmux/plugins/tpm/tpm'
+{{ end }}
