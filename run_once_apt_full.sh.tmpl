@@ -10,6 +10,6 @@ echo "Please enter your password when queried."
 sudo apt install --yes emacs git kitty zeal vlc
 curl -o ~/.config/kitty/nord.conf https://raw.githubusercontent.com/connorholyday/nord-kitty/master/nord.conf                
 {{ else }}
-echo -e "\e[1m\e[33mNot installing base software as .gui is not set to yes\e[0m" 
+echo -e "\e[1m\e[33mNot installing GUI software as .gui is not set to yes\e[0m" 
 {{ end }}
 {{ end }}
