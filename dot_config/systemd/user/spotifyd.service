@@ -1,4 +1,3 @@
-{{ if eq .chezmoi.os "linux" }}
 [Unit]
 Description=A spotify playing daemon
 Documentation=https://github.com/Spotifyd/spotifyd
@@ -14,4 +13,3 @@ RestartSec=12
 
 [Install]
 WantedBy=default.target
-{{ end }}

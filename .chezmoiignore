@@ -1,4 +1,17 @@
-{{ if ne .terminal "yes" }}
+{{ if ne .encrypted "yes" }}
 .ssh/config
 .tmate.conf
-{{end}}
+{{ end }}
+{{ if eq .chezmoi.os "windows" }}
+.fonts
+.config
+.local
+.bash_profile
+.bashrc
+.dir_colors
+.gitnow
+.profile
+.tmux.conf
+.vimrc
+.tmate.conf
+{{ end }}

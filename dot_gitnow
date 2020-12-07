@@ -1,4 +1,4 @@
-{{ if eq .chezmoi.os "linux" }}[ keybindings ]
+[ keybindings ]
 
 # Alt + S
 #state = \es
@@ -32,5 +32,3 @@
 
 # Alt + H
 #hotfix = \eh
-
-{{ end }}

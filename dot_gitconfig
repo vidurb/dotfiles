@@ -5,9 +5,6 @@
 [core]
 	editor = vim
 	autocrlf = input
-{{ if eq .terminal "yes" }}
-	pager = diff-so-fancy | less --tabs=4 -RFX
-{{ end }}
 [gpg]
 	program = gpg
 [commit]

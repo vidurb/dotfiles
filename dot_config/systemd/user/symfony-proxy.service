@@ -1,4 +1,3 @@
-{{ if eq .chezmoi.os "linux" }}
 [Unit]
 Description=Symfony CLI Proxy
 Wants=network-online.target
@@ -13,4 +12,3 @@ StandardOutput=journal
 
 [Install]
 WantedBy=default.target
-{{ end }}
