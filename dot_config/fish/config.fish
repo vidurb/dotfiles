@@ -7,6 +7,7 @@ set PATH ~/.cargo/bin $PATH
 set PATH ~/go/bin $PATH
 set PATH ~/.npm_modules/bin $PATH
 set PATH ~/.config/composer/vendor/bin $PATH
+set PATH /snap/bin $PATH
 
 
 # Quality-of-Life improvements for interactive shells
