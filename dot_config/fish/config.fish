@@ -1,5 +1,14 @@
 # Set default editor
 set -gx EDITOR vim
+set PATH ~/bin $PATH
+set PATH ~/.local/bin $PATH
+set PATH ~/.local/share/umake/bin $PATH
+set PATH ~/.cargo/bin $PATH
+set PATH ~/go/bin $PATH
+set PATH ~/.npm_modules/bin $PATH
+set PATH ~/.config/composer/vendor/bin $PATH
+
+
 # Quality-of-Life improvements for interactive shells
 if status --is-interactive
     abbr --add --global a-g ansible-galaxy
