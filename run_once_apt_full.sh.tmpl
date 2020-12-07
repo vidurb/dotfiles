@@ -1,10 +1,15 @@
-{{ if eq .chezmoi.os "linux" }}{{ if eq .chezmoi.osRelease.idLike "debian" }}{{ if eq .bootstrap "yes" }}#!/bin/sh{{ if eq .terminal "yes" }}
-echo "Installing software for user terminals - emacs, kitty, zeal, vlc, powertop, nodejs, npm, docker.io, docker-compose, neovim"
-sudo apt install --yes emacs git kitty zeal vlc powertop nodejs npm docker.io docker-compose neovim
+{{ if and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.idLike "debian") }}#!/bin/sh
+{{ if eq .gui "yes" }}
+echo -e "\e[4mThis utility installs the following software:\e[0m\e[32m
+- emacs
+- kitty
+- zeal
+- vlc
+\e[0m"
+echo "Please enter your password when queried."
+sudo apt install --yes emacs git kitty zeal vlc
 curl -o ~/.config/kitty/nord.conf https://raw.githubusercontent.com/connorholyday/nord-kitty/master/nord.conf                
 {{ else }}
-echo "\e[1mNot installing packages as .terminal is not set to yes."
-{{ end }}
-{{ end }}
+echo -e "\e[1m\e[33mNot installing base software as .gui is not set to yes\e[0m" 
 {{ end }}
 {{ end }}

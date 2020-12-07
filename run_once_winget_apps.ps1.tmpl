@@ -1,5 +1,4 @@
-{{ if eq .chezmoi.os "windows" }}{{ if eq .bootstrap "yes" }}{{ if eq .terminal "yes" }}
-
+{{ if eq .chezmoi.os "windows" }}{{ if eq .bootstrap "yes" }}
 # Get the ID and security principal of the current user account
 $myWindowsID=[System.Security.Principal.WindowsIdentity]::GetCurrent()
 $myWindowsPrincipal=new-object System.Security.Principal.WindowsPrincipal($myWindowsID)
@@ -38,21 +37,23 @@ else
  
    }
 
-if ('S-1-5-32-544' -notin [System.Security.Principal.WindowsIdentity]::GetCurrent().Groups) {
-    throw 'Script must run as admin!'
-}
-
-$fontsFolder = "dot_fonts"
-
-foreach ($font in Get-ChildItem -Path $fontsFolder -File) {
-    $dest = "C:\Windows\Fonts\$font"
-    if (Test-Path -Path $dest) {
-        "Font $font already installed."
-    }
-    else {
-        $font | Copy-Item -Destination $dest
-    }
-}
-
-
-{{ end }}{{ end }}{{ end }}
+Write-Outout "This script installs the following applications using the winget package manager:
+- 7zip
+- Visual Studio Code
+- Git
+- Windows Terminal Preview
+- Spotify
+- WinDirStat
+- VLC
+- PowerToys
+- Firefox Developer Edition"
+winget install --exact 7zip.7zip
+winget install --exact Microsoft.VisualStudioCode
+winget install --exact Git.Git
+winget install --exact Microsoft.WindowsTerminalPreview
+winget install --exact Spotify.Spotify
+winget install --exact WinDirStat.WinDirStat
+winget install --exact VideoLAN.VLC
+winget install --exact Microsoft.PowerToys
+winget install --exact Mozilla.FirefoxDeveloperEdition
+{{ end }}{{ end }}

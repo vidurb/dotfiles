@@ -1,5 +1,4 @@
-{{ if eq .chezmoi.os "windows" }}{{ if eq .bootstrap "yes" }}{{ if eq .terminal "yes" }}
-
+{{ if eq .chezmoi.os "windows" }}{{ if eq .bootstrap "yes" }}
 # Get the ID and security principal of the current user account
 $myWindowsID=[System.Security.Principal.WindowsIdentity]::GetCurrent()
 $myWindowsPrincipal=new-object System.Security.Principal.WindowsPrincipal($myWindowsID)
@@ -37,22 +36,11 @@ else
    exit
  
    }
-
-if ('S-1-5-32-544' -notin [System.Security.Principal.WindowsIdentity]::GetCurrent().Groups) {
-    throw 'Script must run as admin!'
-}
-
-$fontsFolder = "dot_fonts"
-
-foreach ($font in Get-ChildItem -Path $fontsFolder -File) {
-    $dest = "C:\Windows\Fonts\$font"
-    if (Test-Path -Path $dest) {
-        "Font $font already installed."
-    }
-    else {
-        $font | Copy-Item -Destination $dest
-    }
-}
-
-
-{{ end }}{{ end }}{{ end }}
+Write-Output "This script installs the winget package manager."
+$wingetReleases = "https://api.github.com/repos/microsoft/winget-cli/releases"
+$wingetFilename = "winget.appxbundle"
+$dl_url = (Invoke-WebRequest  -UseBasicParsing $releases | ConvertFrom-Json)[0].assets[1].browser_download_url
+Invoke-WebRequest -UseBasicParsing $dl_url -out $filename
+Add-AppxPackage $filename
+Write-Outout "This script is yet to be finished - run_once_winget_base.ps1.tmpl"
+{{ end }}{{ end }}
