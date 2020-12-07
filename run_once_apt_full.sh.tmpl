@@ -1,4 +1,4 @@
-{{ if and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.idLike "debian") }}#!/bin/sh
+{{ if eq .chezmoi.os "linux" }}{{ if and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.idLike "debian") }}#!/bin/sh
 {{ if eq .gui "yes" }}
 echo -e "\e[4mThis utility installs the following software:\e[0m\e[32m
 - emacs
@@ -12,4 +12,4 @@ curl -o ~/.config/kitty/nord.conf https://raw.githubusercontent.com/connorholyda
 {{ else }}
 echo -e "\e[1m\e[33mNot installing GUI software as .gui is not set to yes\e[0m" 
 {{ end }}
-{{ end }}
+{{ end }}{{ end }}

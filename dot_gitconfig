@@ -11,8 +11,3 @@
 	gpgSign = false
 [tag]
 	forceSignAnnotated = false
-
-{{ if ne .terminal "yes" }}
-[credential]
-	helper = store
-{{ end }}
