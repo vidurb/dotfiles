@@ -15,4 +15,7 @@
 .vimrc
 .tmate.conf
 {{ end }}
+{{ if eq .chezmoi.os "linux }}
+AppData
+{{ end }}
 README.md
