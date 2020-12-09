@@ -12,14 +12,12 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 " Syntax
 Plug 'editorconfig/editorconfig-vim'
 Plug 'chr4/nginx.vim'
-{{ if eq .terminal "yes" }}
 Plug 'gabrielelana/vim-markdown'
 Plug 'pangloss/vim-javascript'
 Plug 'dag/vim-fish'
 Plug 'kevinoid/vim-jsonc'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-{{ end }}
 
 " Display
 Plug 'luochen1990/rainbow'
