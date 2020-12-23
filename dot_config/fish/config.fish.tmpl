@@ -76,7 +76,7 @@ if status --is-interactive
     starship init fish | source
 end
 
-{{ if eq .chezmoi.os "linux" }}{{ if (contains "microsoft-WSL2" .chezmoi.kernel.osrelease) }}
-set -x DISPLAY (awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
-set -x LIBGL_ALWAYS_INDIRECT 1
+{{ if eq .chezmoi.os "linux" }}{{ if (contains "microsoft" .chezmoi.kernel.osrelease) }}
+set -gx DISPLAY (awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
+set -gx LIBGL_ALWAYS_INDIRECT 1
 {{ end }}{{ end }}
