@@ -1,7 +1,9 @@
 {
     "tld": "test",
+    "host": "localhost",
     "port": 7080,
     "domains": {
+        "blacksheep": "/home/vidur/src/blacksheep",
         "blog.vidur": "/home/vidur/src/vidur.dev/backend"
     }
 }
