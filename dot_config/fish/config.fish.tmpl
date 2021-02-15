@@ -7,6 +7,7 @@ set PATH ~/.cargo/bin $PATH
 set PATH ~/go/bin $PATH
 set PATH ~/.npm_modules/bin $PATH
 set PATH ~/.config/composer/vendor/bin $PATH
+set PATH ~/.emacs.d/bin $PATH
 set PATH /snap/bin $PATH
 
 
@@ -21,6 +22,7 @@ if status --is-interactive
     abbr --add --global gco git checkout
     abbr --add --global gfap git fetch --all --prune
     abbr --add --global sc symfony console
+    abbr --add --global sphp symfony php
     abbr --add --global d-c docker-compose
     abbr --add --global sbc bin/console
     # Use exa instead of ls
