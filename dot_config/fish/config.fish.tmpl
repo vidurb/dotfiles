@@ -46,6 +46,10 @@ if status --is-interactive
         end
     end
 
+    if type -q "nvim";
+        alias vim=nvim
+    end
+
     # Remove shell greeting
     set fish_greeting
 
