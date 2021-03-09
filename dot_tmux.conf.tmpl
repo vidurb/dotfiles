@@ -18,7 +18,10 @@ set -g status-justify left
 set -g status-right-length 100
 set -g status-right ""
 
+{{ if eq .chezmoi.os "linux" }}
 set -g default-shell /usr/bin/fish
+set -g default-terminal "screen-256color"
+{{ end }}
 
 set-option -g mouse on
 
@@ -31,7 +34,6 @@ unbind '"'  # split-window
 bind C-x confirm-before -p "kill other windows? (y/n)" "kill-window -a" # kill other windows
 bind Q confirm-before -p "kill-session #S? (y/n)" kill-session # exit
 # Try to fix colors
-set -g default-terminal "screen-256color"
 
 # Copy xsel stuff
 bind-key    -T copy-mode    C-w               send-keys -X copy-pipe-and-cancel "xsel -i -b"
