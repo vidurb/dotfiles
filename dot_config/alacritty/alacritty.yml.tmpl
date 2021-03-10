@@ -348,8 +348,10 @@ colors:
 #   - (macOS) /bin/bash --login
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
+{{ if eq .chezmoi.os "linux" }}
 shell:
   program: /usr/bin/fish
+{{ end }}
   # args:
   #   - -c tmux new -A -s vidur
 
