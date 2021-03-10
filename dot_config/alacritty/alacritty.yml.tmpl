@@ -99,6 +99,8 @@ window:
 # Font configuration
 font:
 {{ if eq .chezmoi.os "darwin" -}}
+
+
   normal:
     family: PragmataPro Mono
     style: Regular
@@ -113,7 +115,11 @@ font:
     style: Bold Italic
 
   size: 12.0
+
+
 {{ else if eq .chezmoi.os "linux" -}}
+
+
   normal:
     family: Pragmata Pro Mono
     style: Regular
@@ -128,6 +134,8 @@ font:
     style: Bold Italic
 
   size: 12.0
+
+
 {{ end }}
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
