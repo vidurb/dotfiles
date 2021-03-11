@@ -1,45 +1,43 @@
 # Set default editor
-set -gx EDITOR vim
-set PATH ~/bin $PATH
-set PATH ~/.local/bin $PATH
-set PATH ~/.local/share/umake/bin $PATH
-set PATH ~/.cargo/bin $PATH
-set PATH ~/go/bin $PATH
-set PATH ~/.npm_modules/bin $PATH
-set PATH ~/.config/composer/vendor/bin $PATH
-set PATH ~/.emacs.d/bin $PATH
-set PATH /snap/bin $PATH
-set PATH /opt/homebrew/bin $PATH
-set -Ux MOZ_USE_XINPUT2 1
+set -gx EDITOR nvim
+{{ if eq .chezmoi.os "darwin" }}
+fish_add_path /opt/homebrew/bin
+{{ else if eq .chezmoi.os "linux" }}
+fish_add_path /snap/bin
+fish_add_path ~/.local/share/umake/bin
+fish_add_path ~/.local/bin
+set -gx MOZ_USE_XINPUT2 1
+{{ end }}
+fish_add_path ~/bin
+fish_add_path ~/.cargo/bin
+fish_add_path ~/go/bin
+fish_add_path ~/.npm_modules/bin
+fish_add_path ~/.config/composer/vendor/bin
+fish_add_path ~/.emacs.d/bin
 
 
 # Quality-of-Life improvements for interactive shells
 if status --is-interactive
     abbr --add --global a-g ansible-galaxy
     abbr --add --global a-v ansible-vault
-    abbr --add --global gr git reset
-    abbr --add --global gl git log
-    abbr --add --global gs git status
-    abbr --add --global gf git fetch
-    abbr --add --global gco git checkout
-    abbr --add --global gfap git fetch --all --prune
-    abbr --add --global sc symfony console
-    abbr --add --global sphp symfony php
+    abbr --add --global s-c symfony console
+    abbr --add --global s-php symfony php
     abbr --add --global d-c docker-compose
-    abbr --add --global sbc bin/console
-    # Use exa instead of ls
+    abbr --add --global s-bc bin/console
+    abbr --add --global nerb n exec erbium
+
     if type -q "lsd" ;
         alias ls="lsd"
     end
-    # Use bat instead of cat
+
     if type -q "bat";
         alias cat=bat
     end
-    # Autocomplete awscli
+
     if type -q "aws";
         complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'
     end
-    # Use code-insiders instead of code if code is not installed
+
     if type -q "code-insiders";
         if not type -q "code";
             alias code=code-insiders
@@ -53,7 +51,11 @@ if status --is-interactive
     # Remove shell greeting
     set fish_greeting
 
+    {{ if eq .chezmoi.os "darwin" }}
+    alias clip=pbcopy
+    {{ else if eq .chezmoi.os "linux" }}
     alias clip='xsel --clipboard --input'
+    {{ end }}
 
     # Set nord theme
     set -U fish_color_normal normal
@@ -83,8 +85,3 @@ if status --is-interactive
     # Make shell prompt rocket
     starship init fish | source
 end
-
-{{ if eq .chezmoi.os "linux" }}{{ if (contains "microsoft" .chezmoi.kernel.osrelease) }}
-set -gx DISPLAY (awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
-set -gx LIBGL_ALWAYS_INDIRECT 1
-{{ end }}{{ end }}
