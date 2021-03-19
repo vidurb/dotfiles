@@ -74,6 +74,9 @@ set -g @plugin 'nhdaly/tmux-better-mouse-mode'
 set -g @plugin 'fcsonline/tmux-thumbs'
 
 set -g @thumbs-key F
+{{ if eq .chezmoi.os "darwin" }}
+set -g @thumbs-command 'echo -n {} | pbcopy'
+{{ end }}
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run -b '~/.tmux/plugins/tpm/tpm'
