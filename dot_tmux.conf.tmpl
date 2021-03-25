@@ -22,8 +22,12 @@ set -g status-right ""
 {{ if eq .chezmoi.os "darwin" }}
 set -g default-shell /opt/homebrew/bin/fish
 {{ else if eq .chezmoi.os "linux" }}
+  {{ if eq .terminal "yes" }}
+  set -g default-terminal "alacritty"
+  {{ else }}
+  set -g default-terminal "screen-256color"
+  {{ end }}
 set -g default-shell /usr/bin/fish
-set -g default-terminal "screen-256color"
 {{ end }}
 
 set-option -g mouse on
