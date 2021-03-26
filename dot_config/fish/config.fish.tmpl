@@ -26,6 +26,10 @@ if status --is-interactive
     abbr --add --global s-bc bin/console
     abbr --add --global nerb n exec erbium
     abbr --add --global nfer n exec fermium
+    
+    {{ if eq .chezmoi.os "linux" }}
+    abbr --add --global ssh TERM=screen-256color ssh
+    {{ end }}
 
     if type -q "lsd" ;
         alias ls="lsd"
