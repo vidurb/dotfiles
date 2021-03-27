@@ -82,7 +82,7 @@ set -g @thumbs-key F
 {{ if eq .chezmoi.os "darwin" }}
 set -g @thumbs-command 'echo -n {} | pbcopy'
 {{ else if eq .chezmoi.os "linux" }}
-set -g @thumbs-command 'xsel --clipboard --input'
+set -g @thumbs-command 'echo -n {} | xsel --clipboard --input'
 {{ end }}
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
