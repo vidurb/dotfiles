@@ -29,6 +29,7 @@ if status --is-interactive
     
     {{ if eq .chezmoi.os "linux" }}
     abbr --add --global ssh TERM=screen-256color ssh
+    set -x TMPDIR /tmp
     {{ end }}
 
     if type -q "lsd" ;
