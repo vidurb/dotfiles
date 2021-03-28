@@ -17,5 +17,6 @@ AppData
 .tmux.conf
 .vimrc
 .tmate.conf
+.doom.d/
 {{ end }}
 README.md
