@@ -2,6 +2,9 @@
 .ssh/config
 .tmate.conf
 {{ end }}
+{{ if ne .chezmoi.os "windows" }}
+AppData
+{{ end }}
 {{ if eq .chezmoi.os "windows" }}
 .fonts
 .config
@@ -15,10 +18,4 @@
 .vimrc
 .tmate.conf
 {{ end }}
-{{ if eq .chezmoi.os "linux" }}
-AppData
-{{ end }}
-{{ if eq .chezmoi.os "darwin" -}}
-AppData
-{{ end -}}
 README.md
