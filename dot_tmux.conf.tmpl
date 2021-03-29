@@ -23,8 +23,7 @@ set -g status-right ""
 set -g default-shell /opt/homebrew/bin/fish
 {{ else if eq .chezmoi.os "linux" }}
   {{ if eq .terminal "yes" }}
-  set -g default-terminal "screen-256color"
-  set-option -ga terminal-overrides ",screen-256color:Tc"
+  set-option -ga terminal-overrides ",alacritty:Tc"
   {{ else }}
   set -g default-terminal "screen-256color"
   {{ end }}
