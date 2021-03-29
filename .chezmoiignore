@@ -1,3 +1,4 @@
+.vscode
 {{ if ne .encrypted "yes" }}
 .ssh/config
 .tmate.conf
@@ -6,17 +7,21 @@
 AppData
 {{ end }}
 {{ if eq .chezmoi.os "windows" }}
-.fonts
 .config
 .local
-.bash_profile
-.bashrc
-.dir_colors
 .gitnow
-.profile
 .tmux.conf
 .vimrc
-.tmate.conf
 .doom.d/
+{{ end }}
+{{ if ne .chezmoi.os "linux" }}
+.bash_profile
+.bashrc
+.profile
+.fonts
+.config/systemd
+.local/share/gedit
+*.sh
+.dir_colors
 {{ end }}
 README.md
