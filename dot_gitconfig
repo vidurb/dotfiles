@@ -3,7 +3,7 @@
     email = vidurbutalia@gmail.com
     signingkey = 163918B37AA12853
 [core]
-	editor = vim
+	editor = nvim
 	autocrlf = input
 	pager = diff-so-fancy | less --tabs=4 -RFX
 [gpg]
