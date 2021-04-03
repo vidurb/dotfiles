@@ -1,0 +1,1 @@
+complete -x -c switch-kubeconfig -d "Config" -a "(find ~/.kube -type f -maxdepth 1 -exec basename {} \;)"
