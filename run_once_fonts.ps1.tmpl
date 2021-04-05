@@ -1,6 +1,6 @@
 {{- if eq .chezmoi.os "windows" -}}
-{{- if .bootstrap -}}
-{{- if .terminal -}}
+{{- if eq .bootstrap "true" -}}
+{{- if eq .terminal "true" -}}
 # Get the ID and security principal of the current user account
 $myWindowsID=[System.Security.Principal.WindowsIdentity]::GetCurrent()
 $myWindowsPrincipal=new-object System.Security.Principal.WindowsPrincipal($myWindowsID)

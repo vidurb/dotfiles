@@ -12,7 +12,7 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 " Syntax
 Plug 'editorconfig/editorconfig-vim'
 Plug 'chr4/nginx.vim'
-{{- if .terminal }}
+{{- if eq .terminal "true" }}
 Plug 'gabrielelana/vim-markdown'
 Plug 'pangloss/vim-javascript'
 Plug 'dag/vim-fish'
@@ -30,7 +30,7 @@ Plug 'chrisbra/Colorizer'
 Plug 'arcticicestudio/nord-vim'
 call plug#end()  
 
-{{ if .terminal }}
+{{ if eq .terminal "true" }}
 " Settings recommended by coc.nvim
 set hidden
 set nobackup

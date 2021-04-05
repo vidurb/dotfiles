@@ -1,7 +1,7 @@
 {{- if eq .chezmoi.os "linux" -}}
 {{- if and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.idLike "debian") -}}
 #!/bin/sh
-{{ if .bootstrap }}
+{{ if eq .bootstrap "true" }}
 echo -e "\e[4mThis utility installs the following software:\e[0m\e[32m
 - fish (including fisher)
 - tmux (including tpm)
