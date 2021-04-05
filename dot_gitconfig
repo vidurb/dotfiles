@@ -16,6 +16,6 @@
 	diffFilter = diff-so-fancy --patch
 
 [url "git@github.com"]
-  insteadOf = gh:
+  insteadOf = gh
   pushInsteadOf = https://github.com/
   pushInsteadOf = git://github.com/
