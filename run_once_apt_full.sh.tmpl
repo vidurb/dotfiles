@@ -1,7 +1,7 @@
 {{- if eq .chezmoi.os "linux" -}}
 {{- if and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.idLike "debian") -}}
 #!/bin/sh
-{{- if .gui -}}
+{{ if .gui }}
 echo -e "\e[4mThis utility installs the following software:\e[0m\e[32m
 - emacs
 - kitty
@@ -11,7 +11,7 @@ echo -e "\e[4mThis utility installs the following software:\e[0m\e[32m
 echo "Please enter your password when queried."
 sudo apt install --yes emacs git kitty zeal vlc
 curl -o ~/.config/kitty/nord.conf https://raw.githubusercontent.com/connorholyday/nord-kitty/master/nord.conf                
-{{- else -}}
+{{ else }}
 echo -e "\e[1m\e[33mNot installing GUI software as .gui is not set to yes\e[0m" 
 {{- end -}}
 {{- end -}}
