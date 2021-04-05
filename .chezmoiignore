@@ -1,8 +1,4 @@
 .vscode
-{{ if ne .encrypted "yes" }}
-.ssh/config
-.tmate.conf
-{{ end }}
 {{ if ne .chezmoi.os "windows" }}
 AppData
 {{ end }}
