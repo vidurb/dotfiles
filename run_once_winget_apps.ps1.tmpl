@@ -1,4 +1,5 @@
-{{ if eq .chezmoi.os "windows" }}{{ if eq .bootstrap "yes" }}
+{{- if eq .chezmoi.os "windows" -}}
+{{- if .bootstrap -}}
 # Get the ID and security principal of the current user account
 $myWindowsID=[System.Security.Principal.WindowsIdentity]::GetCurrent()
 $myWindowsPrincipal=new-object System.Security.Principal.WindowsPrincipal($myWindowsID)
@@ -56,4 +57,5 @@ winget install --exact WinDirStat.WinDirStat
 winget install --exact VideoLAN.VLC
 winget install --exact Microsoft.PowerToys
 winget install --exact Mozilla.FirefoxDeveloperEdition
-{{ end }}{{ end }}
+{{- end -}}
+{{- end -}}

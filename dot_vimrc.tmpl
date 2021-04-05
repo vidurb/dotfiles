@@ -12,14 +12,14 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 " Syntax
 Plug 'editorconfig/editorconfig-vim'
 Plug 'chr4/nginx.vim'
-{{ if eq .terminal "yes" }}
+{{- if terminal -}}
 Plug 'gabrielelana/vim-markdown'
 Plug 'pangloss/vim-javascript'
 Plug 'dag/vim-fish'
 Plug 'kevinoid/vim-jsonc'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-{{ end }}
+{{- end -}}
 
 " Display
 Plug 'luochen1990/rainbow'
@@ -33,7 +33,7 @@ Plug 'arcticicestudio/nord-vim'
 
 call plug#end()  
 
-{{ if eq .terminal "yes" }}
+{{- if terminal -}}
 " Settings recommended by coc.nvim
 set hidden
 set nobackup
@@ -178,7 +178,7 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-{{ end }}
+{{- end -}}
 
 set nu
 set autoindent    " useful when writing code to maintain indenting
@@ -211,10 +211,10 @@ set wildmenu
 set wildmode=longest,list,full
 set wildignore=*.o,*.bak,*.data,*.class
 
-{{ if eq .chezmoi.os "linux" }}
+{{- if eq .chezmoi.os "linux" -}}
 " Clipboard
 set clipboard=unnamedplus
-{{ end }}
+{{- end -}}
 
 " Theme
 colorscheme nord 
@@ -233,9 +233,9 @@ endif
 " Stop highlighting being deleted on bufleave
 let g:colorizer_disable_bufleave = 1
 let g:colorizer_use_virtual_text = 1
-{{ if eq .chezmoi.os "linux" }}
+{{- if eq .chezmoi.os "linux" -}}
 let g:suda#prefix = 'sudo://'
-{{ end }}
+{{- end -}}
 
 " Set colors
 set t_Co=256

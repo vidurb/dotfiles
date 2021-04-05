@@ -19,16 +19,16 @@ set -g status-right-length 100
 set -g status-right ""
 
 
-{{ if eq .chezmoi.os "darwin" }}
+{{- if eq .chezmoi.os "darwin" -}}
 set -g default-shell /opt/homebrew/bin/fish
-{{ else if eq .chezmoi.os "linux" }}
-  {{ if eq .terminal "yes" }}
+{{- else if eq .chezmoi.os "linux" -}}
+  {{- if .terminal -}}
   set-option -ga terminal-overrides ",alacritty:Tc"
-  {{ else }}
+  {{- else -}}
   set -g default-terminal "screen-256color"
-  {{ end }}
+  {{- end -}}
 set -g default-shell /usr/bin/fish
-{{ end }}
+{{- end -}}
 
 set-option -g mouse on
 
@@ -42,7 +42,7 @@ bind C-x confirm-before -p "kill other windows? (y/n)" "kill-window -a" # kill o
 bind Q confirm-before -p "kill-session #S? (y/n)" kill-session # exit
 
 # Linux & mac specific keyboard handling
-{{ if eq .chezmoi.os "darwin" }}
+{{- if eq .chezmoi.os "darwin" -}}
 bind-key    -T copy-mode    C-w               send-keys -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
 bind-key    -T copy-mode    MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
 bind-key    -T copy-mode    M-w               send-keys -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
@@ -50,7 +50,7 @@ bind-key    -T copy-mode-vi C-j               send-keys -X copy-pipe-and-cancel 
 bind-key    -T copy-mode-vi Enter             send-keys -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
 bind-key    -T copy-mode-vi y                 send-keys -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
 bind-key    -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
-{{ else if eq .chezmoi.os "linux" }}
+{{- else if eq .chezmoi.os "linux" -}}
 bind-key    -T copy-mode    C-w               send-keys -X copy-pipe-and-cancel "xsel -i -b"
 bind-key    -T copy-mode    MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "xsel -i -b"
 bind-key    -T copy-mode    M-w               send-keys -X copy-pipe-and-cancel "xsel -i -b"
@@ -58,7 +58,7 @@ bind-key    -T copy-mode-vi C-j               send-keys -X copy-pipe-and-cancel 
 bind-key    -T copy-mode-vi Enter             send-keys -X copy-pipe-and-cancel "xsel -i -b"
 bind-key    -T copy-mode-vi y                 send-keys -X copy-pipe-and-cancel "xsel -i -b"
 bind-key    -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "xsel -i -b"
-{{ end }}
+{{- end -}}
 
 
 # List of plugins
@@ -78,11 +78,11 @@ set -g @plugin 'nhdaly/tmux-better-mouse-mode'
 set -g @plugin 'fcsonline/tmux-thumbs'
 
 set -g @thumbs-key F
-{{ if eq .chezmoi.os "darwin" }}
+{{- if eq .chezmoi.os "darwin" -}}
 set -g @thumbs-command 'echo -n {} | pbcopy'
-{{ else if eq .chezmoi.os "linux" }}
+{{- else if eq .chezmoi.os "linux"-}}
 set -g @thumbs-command 'echo -n {} | xsel --clipboard --input'
-{{ end }}
+{{- end -}}
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run -b '~/.tmux/plugins/tpm/tpm'

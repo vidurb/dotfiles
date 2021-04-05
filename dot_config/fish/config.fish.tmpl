@@ -1,16 +1,16 @@
 # Set default editor
 set -gx EDITOR nvim
-{{ if eq .chezmoi.os "darwin" }}
+{{- if eq .chezmoi.os "darwin" -}}
 fish_add_path /opt/homebrew/bin
 source ~/google-cloud-sdk/path.fish.inc
 set -gx ANDROID_HOME ~/Library/Android/sdk
-{{ else if eq .chezmoi.os "linux" }}
+{{- else if eq .chezmoi.os "linux" -}}
 fish_add_path /snap/bin
 fish_add_path ~/.local/share/umake/bin
 fish_add_path ~/.local/bin
 set -gx MOZ_USE_XINPUT2 1
 set -gx ANDROID_HOME ~/Android/Sdk
-{{ end }}
+{{- end -}}
 fish_add_path $ANDROID_HOME/emulator
 fish_add_path $ANDROID_HOME/tools
 fish_add_path $ANDROID_HOME/tools/bin
@@ -60,11 +60,11 @@ if status --is-interactive
     # Remove shell greeting
     set fish_greeting
 
-    {{ if eq .chezmoi.os "darwin" }}
+    {{- if eq .chezmoi.os "darwin" -}}
     alias clip=pbcopy
-    {{ else if eq .chezmoi.os "linux" }}
+    {{- else if eq .chezmoi.os "linux" -}}
     alias clip='xsel --clipboard --input'
-    {{ end }}
+    {{- end -}}
 
     # Set nord theme
     set -U fish_color_normal normal

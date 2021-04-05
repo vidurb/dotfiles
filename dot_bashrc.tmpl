@@ -106,7 +106,9 @@ fi
 
 test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
 
-{{ if eq .chezmoi.os "linux" }}{{ if (contains "microsoft" .chezmoi.kernel.osrelease) }}
+{{- if eq .chezmoi.os "linux" -}}
+{{- if (contains "microsoft" .chezmoi.kernel.osrelease) -}}
 export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
 export LIBGL_ALWAYS_INDIRECT=1
-{{ end }}{{ end }}
+{{- end -}}
+{{- end -}}

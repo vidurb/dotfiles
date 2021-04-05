@@ -1,5 +1,6 @@
-{{ if eq .chezmoi.os "windows" }}{{ if eq .bootstrap "yes" }}{{ if eq .terminal "yes" }}
-
+{{- if eq .chezmoi.os "windows" -}}
+{{- if .bootstrap -}}
+{{- if .terminal -}}
 # Get the ID and security principal of the current user account
 $myWindowsID=[System.Security.Principal.WindowsIdentity]::GetCurrent()
 $myWindowsPrincipal=new-object System.Security.Principal.WindowsPrincipal($myWindowsID)
@@ -53,6 +54,6 @@ foreach ($font in Get-ChildItem -Path $fontsFolder -File) {
         $font | Copy-Item -Destination $dest
     }
 }
-
-
-{{ end }}{{ end }}{{ end }}
+{{- end -}}
+{{- end -}}
+{{- end -}}

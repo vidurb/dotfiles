@@ -1,4 +1,5 @@
-{{ if eq .chezmoi.os "windows" }}{{ if eq .bootstrap "yes" }}
+{{- if eq .chezmoi.os "windows" -}}
+{{- if .bootstrap -}}
 # Get the ID and security principal of the current user account
 $myWindowsID=[System.Security.Principal.WindowsIdentity]::GetCurrent()
 $myWindowsPrincipal=new-object System.Security.Principal.WindowsPrincipal($myWindowsID)
@@ -43,4 +44,5 @@ $dl_url = (Invoke-WebRequest  -UseBasicParsing $releases | ConvertFrom-Json)[0].
 Invoke-WebRequest -UseBasicParsing $dl_url -out $filename
 Add-AppxPackage $filename
 Write-Outout "This script is yet to be finished - run_once_winget_base.ps1.tmpl"
-{{ end }}{{ end }}
+{{- end -}}
+{{- end -}}

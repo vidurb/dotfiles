@@ -1,4 +1,7 @@
 .vscode
+{{- if not .keys -}}
+.ssh/authorized_keys
+{{- end -}}
 {{ if ne .chezmoi.os "windows" }}
 AppData
 {{ end }}
