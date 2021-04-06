@@ -32,3 +32,15 @@ style_user = "bold #8fbcbb"
 style_root = "bold #bf616a"
 format = "[$user]($style) "
 
+[aws]
+format = 'on [$symbol($profile ) ($region )]($style)'
+symbol = ""
+[aws.region_aliases]
+ap-south-1 = "mum"
+
+[gcloud]
+format = 'on [$symbol ($region)]($style) '
+symbol = ""
+[gcloud.region_aliases]
+asia-south1 = "mum"
+
