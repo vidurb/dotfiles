@@ -1,3 +1,60 @@
+format = """
+$username\
+$hostname\
+$shlvl\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$hg_branch\
+$docker_context\
+$package\
+$cmake\
+$dart\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$helm\
+$java\
+$julia\
+$kotlin\
+$nim\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$purescript\
+$python\
+$ruby\
+$rust\
+$scala\
+$swift\
+$terraform\
+$vagrant\
+$zig\
+$nix_shell\
+$conda\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$kubernetes\
+$env_var\
+$crystal\
+$custom\
+$cmd_duration\
+$line_break\
+$lua\
+$jobs\
+$battery\
+$time\
+$status\
+$shell\
+$character"""
+
 # Replace the "❯" symbol in the prompt with "➜"
 [character]      # The name of the module we are confguring is "character"
 success_symbol = "[➜](bold green)"
@@ -33,14 +90,20 @@ style_root = "bold #bf616a"
 format = "[$user]($style) "
 
 [aws]
-format = 'on [$symbol($profile ) ($region )]($style)'
-symbol = ""
+format = '[$symbol($profile ) ($region )]($style)'
+symbol = ""
 [aws.region_aliases]
 ap-south-1 = "mum"
 
 [gcloud]
-format = 'on [$symbol ($region)]($style) '
+format = '[$symbol ($region)]($style) '
 symbol = ""
 [gcloud.region_aliases]
 asia-south1 = "mum"
 
+[kubernetes]
+disabled = false
+format = '[$symbol$context( \($namespace\))]($style) '
+[kubernetes.context_aliases]
+"arn:aws:eks:ap-south-1:844975015264:cluster/test" = "test-cluster"
+"gke_maha-mela_asia-south1_mela-cluster" = "mela-cluster"
