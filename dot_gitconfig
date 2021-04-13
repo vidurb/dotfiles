@@ -2,6 +2,8 @@
     name = Vidur Butalia
     email = vidurbutalia@gmail.com
     signingkey = 163918B37AA12853
+	github = vidurb
+	gitlab = vidurb
 [core]
 	editor = nvim
 	autocrlf = input
