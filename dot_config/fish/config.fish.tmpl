@@ -10,6 +10,7 @@ fish_add_path ~/.local/share/umake/bin
 fish_add_path ~/.local/bin
 set -gx MOZ_USE_XINPUT2 1
 set -gx ANDROID_HOME ~/Android/Sdk
+set -gx TMPDIR /tmp
 {{- end }}
 fish_add_path $ANDROID_HOME/emulator
 fish_add_path $ANDROID_HOME/tools
