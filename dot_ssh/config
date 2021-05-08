@@ -14,18 +14,6 @@ Host sleipnir
   HostName sleipnir.vidur.xyz
   User root
 
-Host mum1-1
-  HostName mum1-1.xn--j2bun4bl.com
-
-Host mum1-2
-  HostName mum1-2.xn--j2bun4bl.com
-
-Host mum2-1
-  HostName mum2-1.xn--j2bun4bl.com
-
-Host mum2-2
-  HostName mum2-2.xn--j2bun4bl.com
-
-Host mum3-1
-  HostName mum3-1.vidur.xyz
+Host mum1
+  HostName mum1.xn--j2bun4bl.com
 
