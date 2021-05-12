@@ -90,14 +90,12 @@ style_root = "bold #bf616a"
 format = "[$user]($style) "
 
 [aws]
-format = '[$symbol($profile ) ($region )]($style)'
-symbol = ""
+format = '[ ($profile) ($region )]($style)'
 [aws.region_aliases]
 ap-south-1 = "mum"
 
 [gcloud]
-format = '[$symbol ($region)]($style) '
-symbol = ""
+format = '[ ($active) ($region)]($style) '
 [gcloud.region_aliases]
 asia-south1 = "mum"
 
@@ -107,3 +105,9 @@ format = '[$symbol$context( \($namespace\))]($style) '
 [kubernetes.context_aliases]
 "arn:aws:eks:ap-south-1:844975015264:cluster/test" = "test-cluster"
 "gke_maha-mela_asia-south1_mela-cluster" = "mela-cluster"
+"vidur.butalia@mahamela.in@metal.ap-south-1.eksctl.io" = "metal-cluster"
+"vidur.butalia@mahamela.in@bare.ap-south-1.eksctl.io" = "bare-cluster"
+
+[shlvl]
+disabled = false
+format = "[ $shlvl]($style) "
