@@ -16,7 +16,8 @@ echo "\e[4mThis utility installs the following software:\e[0m\e[32m
 echo "Please enter your password when queried."
 sudo apt install --yes fish neovim tmux git curl wget gawk jq unzip
 echo "Installing add-on scripts and utilities"
-curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+fish -c "curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher"
+fish -c "fisher update"
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 git clone --depth 1 https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 echo "\e[32mInstalled fish, tmux, git, curl, wget, gawk, jq, unzip and neovim\e[0m"
