@@ -21,3 +21,5 @@
   insteadOf = gh
   pushInsteadOf = https://github.com/
   pushInsteadOf = git://github.com/
+[pull]
+	rebase = true
