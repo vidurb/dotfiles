@@ -14,8 +14,6 @@
 	gpgSign = false
 [tag]
 	forceSignAnnotated = false
-[interactive]
-	diffFilter = diff-so-fancy --patch
 
 [url "git@github.com"]
   insteadOf = gh
