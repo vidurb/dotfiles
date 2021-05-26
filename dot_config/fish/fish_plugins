@@ -1,5 +1,7 @@
-jorgebucaran/nvm.fish
+jorgebucaran/fisher
 joseluisq/gitnow
 jethrokuan/z
-jorgebucaran/fisher
+jorgebucaran/nvm.fish
 evanlucas/fish-kubectl-completions
+aliz-ai/google-cloud-sdk-fish-completion
+oh-my-fish/plugin-aws
