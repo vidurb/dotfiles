@@ -1,7 +1,7 @@
 [user]
     name = Vidur Butalia
     email = vidurbutalia@gmail.com
-    signingkey = 163918B37AA12853
+	signingkey = 0F4ADAA0FC20D621
 	github = vidurb
 	gitlab = vidurb
 [core]
