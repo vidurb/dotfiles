@@ -1,23 +1,22 @@
 [user]
     name = Vidur Butalia
     email = vidurbutalia@gmail.com
-	signingkey = 0F4ADAA0FC20D621
-	github = vidurb
-	gitlab = vidurb
+    signingkey = B37619823FAEE5C5508D3F770F4ADAA0FC20D621
+    github = vidurb
+    gitlab = vidurb
 [core]
-	editor = nvim
-	autocrlf = input
-	pager = diff-so-fancy | less --tabs=4 -RFX
+    editor = nvim
+    autocrlf = input
+    pager = diff-so-fancy | less --tabs=4 -RFX
 [gpg]
-	program = gpg
+    program = gpg
 [commit]
-	gpgSign = false
+    gpgSign = true
 [tag]
-	forceSignAnnotated = false
-
+    forceSignAnnotated = false
 [url "git@github.com"]
-  insteadOf = gh
-  pushInsteadOf = https://github.com/
-  pushInsteadOf = git://github.com/
+    insteadOf = gh
+    pushInsteadOf = https://github.com/
+    pushInsteadOf = git://github.com/
 [pull]
-	rebase = true
+    rebase = true
