@@ -4,6 +4,7 @@ set -gx EDITOR nvim
 fish_add_path /opt/homebrew/bin
 source ~/google-cloud-sdk/path.fish.inc
 set -gx ANDROID_HOME ~/Library/Android/sdk
+set -gx JAVA_HOME /opt/homebrew/Caskroom/android-studio-preview-beta/2020.3.1.19/Android Studio Preview.app/Contents/jre/Contents/Home
 {{- else if eq .chezmoi.os "linux" }}
 fish_add_path /snap/bin
 fish_add_path ~/.local/share/umake/bin
