@@ -2,6 +2,7 @@
 set -gx EDITOR nvim
 {{- if eq .chezmoi.os "darwin" }}
 fish_add_path /opt/homebrew/bin
+fish_add_path /opt/homebrew/opt/libpq/bin
 source ~/google-cloud-sdk/path.fish.inc
 set -gx ANDROID_HOME ~/Library/Android/sdk
 set -gx JAVA_HOME /opt/homebrew/Caskroom/android-studio-preview-beta/2020.3.1.19/Android Studio Preview.app/Contents/jre/Contents/Home
