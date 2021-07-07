@@ -39,6 +39,7 @@ if status --is-interactive
     abbr --add --global s-bc bin/console
     abbr --add --global gfap git fetch --all --prune --prune-tags
     abbr --add --global pr gh pr
+    abbr --add --global anthos-kube  env HTTPS_PROXY=http://localhost:8118 \
 
     if type -q "lsd" ;
         alias ls="lsd"
