@@ -103,11 +103,9 @@ asia-south1 = "mum"
 disabled = false
 format = '[$symbol$context( \($namespace\))]($style) '
 [kubernetes.context_aliases]
-"arn:aws:eks:ap-south-1:844975015264:cluster/test" = "test-cluster"
 "gke_maha-mela_asia-south1_mela-cluster" = "mela-cluster"
-"vidur.butalia@mahamela.in@infra.ap-south-1.eksctl.io" = "infra-cluster"
-"gke_aws_default_namaste-cluster_gke-70cf5dca" = "namaste-cluster"
-"gke_aws_management_gke-4ea176ab" = "aws-control-cluster"
+"vidur.butalia@mahamela.in@metal.ap-south-1.eksctl.io" = "metal-cluster"
+"vidur.butalia@mahamela.in@namaste.ap-south-1.eksctl.io" = "namaste-cluster"
 [shlvl]
 disabled = false
 format = "[ $shlvl]($style) "
