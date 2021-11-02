@@ -46,11 +46,11 @@ if status --is-interactive
     abbr --add --global s-bc bin/console
     abbr --add --global gfap git fetch --all --prune --prune-tags
     abbr --add --global pr gh pr
-    abbr --add --global automator-status systemctl status 'pa-*'
-    abbr --add --global automator-logs sudo journalctl -u 'pa-*'
-    abbr --add --global builder-status systemctl status 'builder-*'
-    abbr --add --global builder-restart sudo systemctl restart 'builder-worker*'
-    abbr --add --global builder-logs sudo journalctl -u 'builder-*'
+    abbr --add --global automator-status "systemctl status 'pa-*'"
+    abbr --add --global automator-logs "sudo journalctl -u 'pa-*'"
+    abbr --add --global builder-status "systemctl status 'builder-*'"
+    abbr --add --global builder-restart "sudo systemctl restart 'builder-worker*'"
+    abbr --add --global builder-logs "sudo journalctl -u 'builder-*'"
 
     if type -q "lsd" ;
         alias ls="lsd"
