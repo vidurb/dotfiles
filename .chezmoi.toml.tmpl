@@ -5,6 +5,7 @@
 {{- $encrypted := promptBool "Install SSH config and other encrypted configs" -}}
 {{- $utils := promptBool "Install utils" -}}
 {{- $terminal := promptBool "Is this deployment on a user terminal" -}}
+{{- $keyid := promptString "Enter the GPG keyid for this device" -}}
 
 [data]
     email = "{{ $email }}"
@@ -14,3 +15,4 @@
     keys = "{{ $keys }}"
     encrypted = "{{ $encrypted }}"
     utils = "{{ $utils }}"
+    keyid = "{{ $keyid }}"
