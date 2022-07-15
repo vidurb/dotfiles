@@ -34,10 +34,14 @@ fish_add_path ~/.config/composer/vendor/bin
 fish_add_path ~/.emacs.d/bin
 fish_add_path ~/.krew/bin
 fish_add_path ~/.poetry/bin
+fish_add_path ~/.pub-cache/bin
 
 
 # Quality-of-Life improvements for interactive shells
 if status --is-interactive
+
+    test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+    
     abbr --add --global a-g ansible-galaxy
     abbr --add --global a-v ansible-vault
     abbr --add --global s-c symfony console
