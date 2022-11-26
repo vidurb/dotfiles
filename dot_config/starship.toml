@@ -7,47 +7,32 @@ $git_branch\
 $git_commit\
 $git_state\
 $git_status\
-$hg_branch\
 $docker_context\
 $package\
-$cmake\
 $dart\
-$dotnet\
 $elixir\
 $elm\
 $erlang\
 $golang\
 $helm\
 $java\
-$julia\
 $kotlin\
-$nim\
 $nodejs\
-$ocaml\
-$perl\
 $php\
-$purescript\
 $python\
 $ruby\
 $rust\
-$scala\
 $swift\
 $terraform\
-$vagrant\
-$zig\
-$nix_shell\
-$conda\
 $memory_usage\
 $aws\
 $gcloud\
 $openstack\
 $kubernetes\
 $env_var\
-$crystal\
 $custom\
 $cmd_duration\
 $line_break\
-$lua\
 $jobs\
 $battery\
 $time\
@@ -56,12 +41,12 @@ $shell\
 $character"""
 
 # Replace the "❯" symbol in the prompt with "➜"
-[character]      # The name of the module we are confguring is "character"
+[character] # The name of the module we are confguring is "character"
 success_symbol = "[➜](bold green)"
 error_symbol = "[✗](bold red)"
 
 [directory]
-truncate_to_repo = false
+truncate_to_repo = true
 format = "in [$path]($style)[$read_only]($read_only_style) "
 
 [git_branch]
@@ -77,10 +62,10 @@ utc_time_offset = "+5.5"
 style = "bold #8fbcbb"
 
 [hostname]
-ssh_only = false
+ssh_only = true
 trim_at = "."
 disabled = false
-format =  "on [$hostname]($style) "
+format = "on [$hostname]($style) "
 style = "bold dimmed #8fbcbb"
 
 [username]
@@ -90,22 +75,21 @@ style_root = "bold #bf616a"
 format = "[$user]($style) "
 
 [aws]
-format = '[ ($profile) ($region )]($style)'
+format = '[ ($profile)]($style)'
 [aws.region_aliases]
 ap-south-1 = "mum"
 
 [gcloud]
-format = '[ ($active) ($region)]($style) '
-[gcloud.region_aliases]
-asia-south1 = "mum"
+format = '[ ($active)]($style) '
 
 [kubernetes]
 disabled = false
-format = '[$symbol$context( \($namespace\))]($style) '
+format = '[$symbol$context]($style) '
 [kubernetes.context_aliases]
-"gke_maha-mela_asia-south1_mela-cluster" = "mela-cluster"
-"vidur.butalia@mahamela.in@metal.ap-south-1.eksctl.io" = "metal-cluster"
-"vidur.butalia@mahamela.in@namaste.ap-south-1.eksctl.io" = "namaste-cluster"
+"Vidur@production.us-east-1.eksctl.io" = "sw-prod"
+"Vidur@staging.ap-south-1.eksctl.io" = "sw-stg"
+"gke_swadesh-money-app_asia-south2-a_staging" = "gke-sw-staging"
+"gke_swadesh-money-app_us-central1_production" = "gke-sw-prod"
 [shlvl]
 disabled = false
 format = "[ $shlvl]($style) "

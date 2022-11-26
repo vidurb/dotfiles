@@ -1,39 +1,26 @@
 {{- if eq .chezmoi.os "linux" -}}
 {{- if and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.idLike "debian") -}}
 #!/bin/sh
-{{ if eq .utils "true" }}
-echo "\e[4mThis utility installs the following software:\e[0m\e[32m 
-- bat
-- lsd
-- fx
-- starship\e[0m"
 {{ if eq .chezmoi.arch "amd64" }}
 BAT_DL_LINK=$(curl -s https://api.github.com/repos/sharkdp/bat/releases/latest | grep -P -o "(https:\/\/github.com\/sharkdp\/bat\/releases\/download\/v\d*\.?\d+\.\d+\/bat_\d*\.?\d+\.\d+_amd64\.deb)" -)
 LSD_DL_LINK=$(curl -s https://api.github.com/repos/Peltoche/lsd/releases/latest | grep -P -o "(https:\/\/github.com\/Peltoche\/lsd\/releases\/download\/\d*\.?\d+\.\d+\/lsd_\d*\.?\d+\.\d+_amd64\.deb)" -)
-FX_DL_LINK=$(curl -s https://api.github.com/repos/antonmedv/fx/releases/latest | grep -P -o "(https:\/\/github.com\/antonmedv\/fx\/releases\/download\/\d*\.?\d+\.\d+\/fx-linux\.zip)" -)
 STARSHIP_DL_LINK=$(curl -s https://api.github.com/repos/starship/starship/releases/latest | grep -P -o '(https:\/\/github.com\/starship\/starship\/releases\/download\/v\d*\.?\d+\.\d+\/starship-x86_64-unknown-linux-gnu.tar.gz(?!.sha256"))' -)
 echo "Fetching latest archives/packages"
 wget -O bat.deb "$BAT_DL_LINK"
 wget -O lsd.deb "$LSD_DL_LINK"
-wget -O fx.zip "$FX_DL_LINK"
 wget -O starship.tar.gz "$STARSHIP_DL_LINK"
 echo "Installing bat and deb"
 sudo dpkg -i bat.deb lsd.deb
 rm bat.deb lsd.deb
-echo "Installing fx"
-unzip fx.zip
-sudo mv fx-linux /usr/local/bin/fx
-rm fx.zip
 echo "Installing starship"
 tar xzvf starship.tar.gz
 sudo mv starship /usr/local/bin/
 rm starship.tar.gz
-echo "\e[32mInstalled bat & lsd with deb and fx & starship with binary\e[0m"
 {{ else }}
-echo "\e[1m\e[33mNot installing binary utilities as the architecture is not correctly detected.\e[0m"
+echo "\e[1m\e[33mNot installing binary utilities as the architecture is not supported.\e[0m"
 {{ end }}
-{{ else }}
-echo "\e[1m\e[33mNot installing binary utilities as .utils is not set to yes\e[0m" 
 {{- end -}}
-{{- end -}}
+{{- else if .chezmoi.os "darwin" -}}
+#!/bin/sh
+brew install bat lsd starship
 {{ end }}

@@ -11,7 +11,6 @@ AppData
 .gitnow
 .tmux.conf
 .vimrc
-.doom.d/
 {{ end }}
 {{ if ne .chezmoi.os "linux" }}
 .bash_profile
@@ -22,5 +21,8 @@ AppData
 .local/share/gedit
 *.sh
 .dir_colors
+{{ end }}
+{{ if ne .chezmoi.os "darwin" }}
+Library
 {{ end }}
 README.md

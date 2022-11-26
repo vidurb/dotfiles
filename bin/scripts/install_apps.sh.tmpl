@@ -1,0 +1,15 @@
+{{- if and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.idLike "debian") -}}
+#!/bin/sh
+sudo apt install --yes fish neovim tmux git curl jq unzip
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+fisher install joseluisq/gitnow
+fisher install jethrokuan/z
+fisher install aliz-ai/google-cloud-sdk-fish-completion
+{{- else if eq .chezmoi.os "darwin" -}}
+#!/bin/sh
+brew install fish neovim tmux curl jq
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+fisher install joseluisq/gitnow
+fisher install jethrokuan/z
+fisher install aliz-ai/google-cloud-sdk-fish-completion
+{{ end }}

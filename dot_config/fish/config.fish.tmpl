@@ -1,17 +1,13 @@
-# Set default editor
-set -gx EDITOR nvim
+if type -q nvim;
+    set -gx EDITOR nvim
+end
 {{- if eq .chezmoi.os "darwin" }}
 fish_add_path /opt/homebrew/bin
 fish_add_path /opt/homebrew/opt/libpq/bin
 fish_add_path /opt/homebrew/opt/openssl@1.1/bin
-fish_add_path /Users/vidur/.pgo/postgres
 source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
 set -gx ANDROID_HOME ~/Library/Android/sdk
 set -gx JAVA_HOME /Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home
-set -gx PGOUSER /Users/vidur/.pgo/postgres/pgouser
-set -gx PGO_CA_CERT /Users/vidur/.pgo/postgres/client.crt
-set -gx PGO_CLIENT_CERT /Users/vidur/.pgo/postgres/client.crt
-set -gx PGO_CLIENT_KEY /Users/vidur/.pgo/postgres/client.key
 {{- else if eq .chezmoi.os "linux" }}
 fish_add_path /snap/bin
 fish_add_path ~/.local/share/umake/bin
@@ -37,60 +33,9 @@ fish_add_path ~/.poetry/bin
 fish_add_path ~/.pub-cache/bin
 
 
-# Quality-of-Life improvements for interactive shells
 if status --is-interactive
 
     test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
-    
-    abbr --add --global a-g ansible-galaxy
-    abbr --add --global a-v ansible-vault
-    abbr --add --global s-c symfony console
-    abbr --add --global s-php symfony php
-    abbr --add --global d-c docker compose
-    abbr --add --global s-bc bin/console
-    abbr --add --global gfap git fetch --all --prune --prune-tags
-    abbr --add --global pr gh pr
-    abbr --add --global automator-status "systemctl status 'pa-*'"
-    abbr --add --global automator-logs "sudo journalctl -u 'pa-*'"
-    abbr --add --global builder-status "systemctl status 'builder-*'"
-    abbr --add --global builder-restart "sudo systemctl restart 'builder-worker*'"
-    abbr --add --global builder-logs "sudo journalctl -u 'builder-*'"
-
-    if type -q "lsd" ;
-        alias ls="lsd"
-    end
-
-    if type -q "bat";
-        alias cat=bat
-    end
-
-    if type -q "aws";
-        complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'
-    end
-
-    if type -q "code-insiders";
-        if not type -q "code";
-            alias code=code-insiders
-        end
-    end
-
-    if type -q "nvim";
-        alias vim=nvim
-    end
-
-    if type -q "dust";
-        alias du=dust
-    end
-
-    if type -q "duf";
-        alias df=duf
-    end
-
-    if type -q "procs";
-        alias ps=procs
-    end
-
-    # Remove shell greeting
     set fish_greeting
 
     {{- if eq .chezmoi.os "darwin" }}
@@ -99,7 +44,6 @@ if status --is-interactive
     alias clip='xsel --clipboard --input'
     {{- end }}
 
-    # Set nord theme
     set -U fish_color_normal normal
     set -U fish_color_command 81a1c1
     set -U fish_color_quote a3be8c
@@ -124,6 +68,7 @@ if status --is-interactive
     set -U fish_pager_color_prefix white --bold --underline
     set -U fish_pager_color_progress brwhite --background=cyan
 
-    # Make shell prompt rocket
-    starship init fish | source
+    if type -q starship;
+        starship init fish | source
+    end
 end

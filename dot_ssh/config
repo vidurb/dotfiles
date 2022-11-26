@@ -1,6 +1,3 @@
 Compression yes
 VerifyHostKeyDNS yes
 
-Host centerpoint
-  HostName centerpoint.vidur.xyz
-
