@@ -1,7 +1,7 @@
 [user]
     name = Vidur Butalia
     email = vidurbutalia@gmail.com
-    signingkey = {{ .keyid }}
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJU97RohQALfbzhqvOU/rmwIf58dkfWULQL4jDnwOguw
     github = vidurb
     gitlab = vidurb
 [core]
@@ -25,7 +25,7 @@
     diffFilter = delta --color-only
 
 [gpg]
-    program = gpg
+    format = ssh
 [commit]
     gpgSign = true
 [tag]
@@ -36,3 +36,10 @@
     pushInsteadOf = git://github.com/
 [pull]
     rebase = true
+[gpg "ssh"]
+    allowedSignersFile = /Users/vidur/.ssh/allowed_signers
+{{- if eq .chezmoi.os "linux" -}}
+    program = /opt/1Password/op-ssh-sign
+{{- else if eq .chezmoi.os "darwin" -}}
+    program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+{{- end -}}
