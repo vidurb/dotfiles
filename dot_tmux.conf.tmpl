@@ -22,11 +22,6 @@ set -g status-right ""
 {{ if eq .chezmoi.os "darwin" }}
 set -g default-shell /opt/homebrew/bin/fish
 {{- else if eq .chezmoi.os "linux" -}}
-  {{ if .terminal }}
-  set-option -ga terminal-overrides ",alacritty:Tc"
-  {{ else }}
-  set -g default-terminal "screen-256color"
-  {{ end }}
 set -g default-shell /usr/bin/fish
 {{ end }}
 
