@@ -1,10 +1,6 @@
 {{- $email := promptString "Enter the email to use for git" -}}
-{{- $bootstrap := promptBool "Bootstrap this deployment with scripts" -}}
-{{- $gui := promptBool "Install GUI apps" -}}
 {{- $keys := promptBool "Update ~/.ssh/authorized_keys" -}}
 {{- $encrypted := promptBool "Install SSH config and other encrypted configs" -}}
-{{- $utils := promptBool "Install utils" -}}
-{{- $terminal := promptBool "Is this deployment on a user terminal" -}}
 {{- $keyid := promptString "Enter the GPG keyid for this device" -}}
 
 [data]
