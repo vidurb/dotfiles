@@ -27,16 +27,16 @@ font:
   size: 12.0
 {{ else if eq .chezmoi.os "linux" }}
   normal:
-    family: {{ template "linxfont" }}
+    family: {{ template "linuxfont" }}
     style: Regular
   bold:
-    family: {{ template "linxfont" }}
+    family: {{ template "linuxfont" }}
     style: Bold
   italic:
-    family: {{ template "linxfont" }}
+    family: {{ template "linuxfont" }}
     style: Italic
   bold_italic:
-    family: {{ template "linxfont" }}
+    family: {{ template "linuxfont" }}
     style: Bold Italic
   size: 12.0
 {{ end }}
