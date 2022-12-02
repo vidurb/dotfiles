@@ -20,7 +20,7 @@ rm starship.tar.gz
 echo "\e[1m\e[33mNot installing binary utilities as the architecture is not supported.\e[0m"
 {{ end }}
 {{- end -}}
-{{- else if .chezmoi.os "darwin" -}}
+{{- else if eq .chezmoi.os "darwin" -}}
 #!/bin/sh
 brew install bat lsd starship
 {{ end }}
