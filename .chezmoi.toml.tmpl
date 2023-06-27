@@ -1,10 +1,8 @@
 {{- $email := promptString "Enter the email to use for git" -}}
 {{- $keys := promptBool "Update ~/.ssh/authorized_keys" -}}
 {{- $encrypted := promptBool "Install SSH config and other encrypted configs" -}}
-{{- $keyid := promptString "Enter the GPG keyid for this device" -}}
 
 [data]
     email = "{{ $email }}"
     keys = "{{ $keys }}"
     encrypted = "{{ $encrypted }}"
-    keyid = "{{ $keyid }}"

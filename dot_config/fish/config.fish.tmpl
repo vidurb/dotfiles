@@ -6,6 +6,7 @@ fish_add_path /opt/homebrew/bin
 fish_add_path /opt/homebrew/opt/libpq/bin
 fish_add_path /opt/homebrew/opt/openssl@1.1/bin
 source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
+source /opt/homebrew/share/google-cloud-sdk/path.fish.inc
 set -gx ANDROID_HOME ~/Library/Android/sdk
 set -gx JAVA_HOME /Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home
 {{- else if eq .chezmoi.os "linux" }}
@@ -26,7 +27,7 @@ fish_add_path ~/bin
 fish_add_path ~/.cargo/bin
 fish_add_path ~/go/bin
 fish_add_path ~/.npm_modules/bin
-fish_add_path ~/.config/composer/vendor/bin
+fish_add_path ~/.composer/vendor/bin
 fish_add_path ~/.emacs.d/bin
 fish_add_path ~/.krew/bin
 fish_add_path ~/.poetry/bin
@@ -40,9 +41,14 @@ if status --is-interactive
 
     {{- if eq .chezmoi.os "darwin" }}
     alias clip=pbcopy
+    set -gx PNPM_HOME "/Users/vidur/Library/pnpm"
+    fish_add_path $PNPM_HOME
     {{- else if eq .chezmoi.os "linux" }}
     alias clip='xsel --clipboard --input'
     {{- end }}
+
+    # enable tabtab
+    [ -f ~/.config/tabtab/fish/__tabtab.fish ]; and . ~/.config/tabtab/fish/__tabtab.fish; or true
 
     set -U fish_color_normal normal
     set -U fish_color_command 81a1c1
