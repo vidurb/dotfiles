@@ -1,0 +1,11 @@
+{{- if eq .chezmoi.os "linux" -}}
+# shellcheck shell=bash
+pupdate() { case ":${PATH:=$1}:" in *:"$1":*) ;; *) PATH="$1:$PATH" ;; esac; }
+pupdate "$HOME/.local/bin"
+pupdate "$HOME/.cargo/bin"
+pupdate "$HOME/bin"
+pupdate "$HOME/.npm_modules/bin"
+pupdate "$HOME/.composer/bin"
+pupdate "$HOME/.yarn/bin"
+pupdate "$HOME/.pub-cache/bin"
+{{- end }}
