@@ -61,7 +61,7 @@ local plugins = {
          "docker-compose-language-service",
          "dockerfile-language-server",
          "elixir-ls",
-         "eslint-ls",
+         "eslint-lsp",
          "firefox-debug-adapter",
          "gh",
          "hadolint",
