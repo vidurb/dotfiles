@@ -97,6 +97,12 @@ local plugins = {
   { "hrsh7th/nvim-cmp", dependencies = { { "zbirenbaum/copilot-cmp", config = true } }, opts = overrides.cmp },
   { "iamcco/markdown-preview.nvim", ft = { "markdown" } },
   { "NeoGitOrg/neogit", dependencies = "nvim-lua/plenary.nvim", lazy = false, config = true },
+  {
+    "pwntester/octo.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim", "nvim-tree/nvim-web-devicons" },
+    config = true,
+    lazy = false
+  },
 }
 
 return plugins
