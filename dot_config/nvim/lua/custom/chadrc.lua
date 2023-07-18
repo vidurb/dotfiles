@@ -1,10 +1,11 @@
----@type ChadrcConfig 
- local M = {}
- M.ui = {
-  theme = 'nord',
-  nvdash = { 
-    load_on_startup = true
-  }
+---@type ChadrcConfig
+local M = {}
+M.ui = {
+  theme = "nord",
+  nvdash = {
+    load_on_startup = true,
+  },
 }
- M.plugins = "custom.plugins"
- return M
+M.mappings = require "custom.mappings"
+M.plugins = "custom.plugins"
+return M
