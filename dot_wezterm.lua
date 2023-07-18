@@ -16,7 +16,10 @@ config.use_fancy_tab_bar = true
 
 config.window_frame = {
 	font = wezterm.font("Univers LT Std", { weight = "Bold" }),
+	active_titlebar_bg = "#2e3440",
 }
+
+config.window_decorations = "RESIZE"
 
 config.inactive_pane_hsb = { saturation = 0.9, brightness = 0.8 }
 
