@@ -24,5 +24,6 @@ AppData
 {{ end }}
 {{ if ne .chezmoi.os "darwin" }}
 Library
+dot_hammerspoon
 {{ end }}
 README.md
