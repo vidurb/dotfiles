@@ -1,3 +1,5 @@
+local overrides = require "custom.configs.overrides"
+
 local plugins = {
   {
     "neovim/nvim-lspconfig",
@@ -86,6 +88,13 @@ local plugins = {
       },
     },
   },
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = true,
+  },
+  { "hrsh7th/nvim-cmp", dependencies = { { "zbirenbaum/copilot-cmp", config = true } }, opts = overrides.cmp },
   { "iamcco/markdown-preview.nvim", ft = { "markdown" } },
   { "NeoGitOrg/neogit", dependencies = "nvim-lua/plenary.nvim", lazy = false, config = true },
 }
