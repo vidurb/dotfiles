@@ -8,9 +8,15 @@ end
 
 config.color_scheme = "nord"
 
-config.font_size = 13.0
+config.font_size = 14.0
 
 config.check_for_updates = false
+
+config.use_fancy_tab_bar = true
+
+config.window_frame = {
+	font = wezterm.font("Univers LT Std", { weight = "Bold" }),
+}
 
 config.inactive_pane_hsb = { saturation = 0.9, brightness = 0.8 }
 
