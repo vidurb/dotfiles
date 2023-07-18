@@ -75,6 +75,7 @@ local plugins = {
         "misspell",
         "prettierd",
         "prisma-language-server",
+        "pyright",
         "ruff",
         "shellcheck",
         "sqlfmt",
