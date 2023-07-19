@@ -94,6 +94,10 @@ local plugins = {
     cmd = "Copilot",
     event = "InsertEnter",
     config = true,
+    opts = {
+      suggestion = { enabled = false },
+      panel = { enabled = false },
+    },
   },
   { "hrsh7th/nvim-cmp", dependencies = { { "zbirenbaum/copilot-cmp", config = true } }, opts = overrides.cmp },
   { "iamcco/markdown-preview.nvim", ft = { "markdown" } },
@@ -102,7 +106,7 @@ local plugins = {
     "pwntester/octo.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim", "nvim-tree/nvim-web-devicons" },
     config = true,
-    lazy = false
+    lazy = false,
   },
 }
 
