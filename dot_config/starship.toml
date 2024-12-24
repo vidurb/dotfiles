@@ -40,24 +40,31 @@ $status\
 $shell\
 $character"""
 
-# Replace the "❯" symbol in the prompt with "➜"
-[character] # The name of the module we are confguring is "character"
-success_symbol = "[➜](bold green)"
-error_symbol = "[✗](bold red)"
+[character]
+success_symbol = "[→](bold green)"
+error_symbol = "[⚠️](bold red)"
 
 [directory]
 truncate_to_repo = true
 format = "in [$path]($style)[$read_only]($read_only_style) "
 
 [git_branch]
-truncation_length = 24
+truncation_length = 36
 
-[hg_branch]
-truncation_length = 24
+[git_commit]
+tag_symbol = ''
+
+[git_state]
+rebase = ' rebasing'
+merge = ' merging'
+revert = ' reverting'
+cherry_pick = ' cherry-picking'
+bisect = ' bisecting'
+format = '\($state( $progress_current/$progress_total)($style)\) '
 
 [time]
 disabled = false
-format = "[$time]($style) "
+format = "[󰅐 $time]($style) "
 utc_time_offset = "+5.5"
 style = "bold #8fbcbb"
 
@@ -78,6 +85,8 @@ format = "[$user]($style) "
 format = '[ ($profile)]($style)'
 [aws.region_aliases]
 ap-south-1 = "mum"
+eu-central-1 = "fra"
+ap-southeast-1 = "syd"
 
 [gcloud]
 format = '[ ($active)]($style) '
@@ -85,11 +94,12 @@ format = '[ ($active)]($style) '
 [kubernetes]
 disabled = false
 format = '[$symbol$context]($style) '
-[kubernetes.context_aliases]
-"Vidur@production.us-east-1.eksctl.io" = "sw-prod"
-"Vidur@staging.ap-south-1.eksctl.io" = "sw-stg"
-"gke_swadesh-money-app_asia-south2-a_staging" = "gke-sw-staging"
-"gke_swadesh-money-app_us-central1_production" = "gke-sw-prod"
+
 [shlvl]
 disabled = false
 format = "[ $shlvl]($style) "
+
+[memory_usage]
+disabled = false
+threshold = 80
+
