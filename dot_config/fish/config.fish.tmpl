@@ -51,6 +51,8 @@ fish_add_path ~/.poetry/bin
 fish_add_path ~/.pub-cache/bin
 # doom-emacs cli
 fish_add_path ~/.config/emacs/bin
+# local bin for pipx packages
+fish_add_path ~/.local/bin
 
 if status --is-interactive
 
@@ -61,6 +63,7 @@ if status --is-interactive
     alias clip=pbcopy
     set -gx PNPM_HOME "/Users/vidur/Library/pnpm"
     fish_add_path $PNPM_HOME
+    alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
     {{- else if eq .chezmoi.os "linux" }}
     alias clip='xsel --clipboard --input'
     {{- end }}
@@ -95,4 +98,10 @@ if status --is-interactive
     if type -q starship;
         starship init fish | source
     end
+
+    if type -q zoxide;
+        zoxide init fish | source
+    end
+
+    enable_transience
 end
