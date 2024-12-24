@@ -8,6 +8,9 @@ end
 
 config.color_scheme = "nord"
 
+config.font = wezterm.font 'PragmataPro Mono Liga'
+config.line_height = 1.2
+
 config.font_size = 14.0
 
 config.check_for_updates = false
