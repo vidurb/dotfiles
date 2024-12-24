@@ -1,0 +1,90 @@
+[default]
+source_profile=ah-saml
+region=ap-southeast-2
+role_arn=arn:aws:iam::682033505652:role/AHC-PEP-MVP-Role
+output=yaml
+
+[profile zilu-dev]
+source_profile=ah-saml
+region=eu-central-1
+role_arn=arn:aws:iam::218508410248:role/AHC-PEP-MVP-Role
+
+[profile zilu-prod-eu]
+source_profile=ah-saml
+region=eu-central-1
+role_arn=arn:aws:iam::455993752382:role/AHC-PEP-MVP-Role
+
+[profile zilu-prod-de]
+source_profile=ah-saml
+region=eu-central-1
+role_arn=arn:aws:iam::579276275796:role/AHC-PEP-MVP-Role
+
+[profile zilu-uk]
+source_profile=ah-saml
+region=eu-central-1
+role_arn=arn:aws:iam::022499036545:role/AHC-PEP-MVP-Role
+
+[profile zilu-uk-uat]
+source_profile=ah-saml
+region=eu-west-2
+role_arn=arn:aws:iam::339712830592:role/AHC-PEP-MVP-Role
+
+[profile rozi-dev]
+source_profile=ah-saml
+region=eu-central-1
+role_arn=arn:aws:iam::637423266665:role/AHC-PEP-MVP-Role
+
+[profile rozi-prod-eu]
+source_profile=ah-saml
+region=eu-central-1
+role_arn=arn:aws:iam::975050258536:role/AHC-PEP-MVP-Role
+
+[profile rozi-prod-de]
+source_profile=ah-saml
+region=eu-central-1
+role_arn=arn:aws:iam::012239246721:role/AHC-PEP-MVP-Role
+
+[profile pep]
+source_profile=ah-saml
+region=ap-southeast-2
+role_arn=arn:aws:iam::344941213420:role/AHC-PEP-MVP-Role
+
+[profile pep-da]
+source_profile=ah-saml
+region=ap-southeast-2
+role_arn=arn:aws:iam::454985246264:role/AHC-PEP-MVP-Role
+
+[profile pep-connect]
+source_profile=ah-saml
+region=eu-central-1
+role_arn=arn:aws:iam::730335538334:role/AHC-PEP-MVP-Role
+
+[profile pep-enhancements]
+source_profile=ah-saml
+region=ap-southeast-2
+role_arn=arn:aws:iam::682033505652:role/AHC-PEP-MVP-Role
+
+[profile pep-nurse-ui]
+source_profile=ah-saml
+region=ap-southeast-2
+role_arn=arn:aws:iam::730335538334:role/AHC-PEP-MVP-Role
+
+[profile averitas-dev]
+source_profile=ah-saml
+region=us-west-2
+role_arn=arn:aws:iam::140023386993:role/AHC-PEP-MVP-Role
+
+[profile averitas-uat]
+source_profile=ah-saml
+region=us-west-2
+role_arn=arn:aws:iam::209479273857:role/AHC-PEP-MVP-Role
+
+[profile indivior-dev]
+source_profile=ah-saml
+region=us-west-2
+role_arn=arn:aws:iam::302263076818:role/AHC-PEP-MVP-Role
+
+[profile indivior-uat]
+source_profile=ah-saml
+region=us-west-2
+role_arn=arn:aws:iam::717279690886:role/AHC-PEP-MVP-Role
