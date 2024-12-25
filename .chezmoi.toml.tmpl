@@ -1,8 +1,10 @@
 {{- $email := promptString "Enter the email to use for git" -}}
 {{- $keys := promptBool "Update ~/.ssh/authorized_keys" -}}
 {{- $encrypted := promptBool "Install SSH config and other encrypted configs" -}}
+{{- $1password := promptBool "Enable 1Password SSH Agent" -}}
 
 [data]
     email = "{{ $email }}"
     keys = "{{ $keys }}"
     encrypted = "{{ $encrypted }}"
+    1password = "{{ $1password }}"
