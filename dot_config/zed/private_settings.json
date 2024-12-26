@@ -1,0 +1,71 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "ui_font_size": 14,
+  "buffer_font_size": 14,
+  "buffer_font_family": "PragmataPro Mono Liga",
+  "theme": {
+    "mode": "system",
+    "light": "One Dark",
+    "dark": "One Dark"
+  },
+  "restore_on_startup": "none",
+  "languages": {
+    "Python": {
+      "tab_size": 4,
+      "formatter": "language_server",
+      "format_on_save": "on"
+    },
+    "JavaScript": {
+      "tab_size": 2,
+      "formatter": [
+        {
+          "code_actions": {
+            "source.fixAll.eslint": true,
+            "source.organizeImports": true
+          }
+        },
+        {
+          "external": {
+            "command": "prettier",
+            "arguments": ["--stdin-filepath", "{buffer_path}"]
+          }
+        }
+      ],
+      "format_on_save": "on"
+    },
+    "TypeScript": {
+      "tab_size": 2,
+      "formatter": [
+        {
+          "code_actions": {
+            "source.fixAll.eslint": true,
+            "source.organizeImports": true
+          }
+        },
+        {
+          "external": {
+            "command": "prettier",
+            "arguments": ["--stdin-filepath", "{buffer_path}"]
+          }
+        }
+      ],
+      "format_on_save": "on"
+    },
+    "JSON": {
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": ["--stdin-filepath", "{buffer_path}"]
+        }
+      },
+      "format_on_save": "on"
+    }
+  }
+}
