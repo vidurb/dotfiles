@@ -74,14 +74,9 @@ config.set_environment_variables = {}
 config.ssh_domains = {
 	{
 		name = "centerpoint",
-		remote_address = "centerpoint.beetabus.vidur.xyz",
+		remote_address = "centerpoint.sda.vidur.xyz",
 		username = "vidur",
-	},
-	{
-		name = "matrix",
-		remote_address = "matrix.vidur.xyz",
-		username = "ubuntu",
-	},
+	}
 }
 
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
@@ -96,5 +91,8 @@ else
 	config.default_prog = { "fish", "-l" }
 	table.insert(config.launch_menu, { label = "bash", args = { "bash", "-l" } })
 end
+
+local cmd_sender = wezterm.plugin.require("https://github.com/aureolebigben/wezterm-cmd-sender")
+cmd_sender.apply_to_config(config)
 
 return config

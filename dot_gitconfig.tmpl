@@ -20,10 +20,8 @@
     syntax-theme = Nord
     navigate = true
     line-numbers = true
-
 [interactive]
     diffFilter = delta --color-only
-
 [gpg]
     format = ssh
 [commit]
@@ -36,6 +34,8 @@
     pushInsteadOf = git://github.com/
 [pull]
     rebase = true
+[push]
+    autoSetupRemote = true
 [gpg "ssh"]
     allowedSignersFile = /Users/vidur/.ssh/allowed_signers
 {{ if eq .chezmoi.os "linux" }}
