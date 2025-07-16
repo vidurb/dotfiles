@@ -27,4 +27,5 @@ if status --is-interactive
         alias ps=procs
     end
 
+    alias uuid4="uuidgen | tr A-F a-f"
 end
