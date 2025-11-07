@@ -27,15 +27,18 @@
       "tab_size": 2,
       "formatter": [
         {
-          "code_actions": {
-            "source.fixAll.eslint": true,
-            "source.organizeImports": true
-          }
+          "code_action": "source.fixAll.eslint"
+        },
+        {
+          "code_action": "source.organizeImports"
         },
         {
           "external": {
             "command": "prettier",
-            "arguments": ["--stdin-filepath", "{buffer_path}"]
+            "arguments": [
+              "--stdin-filepath",
+              "{buffer_path}"
+            ]
           }
         }
       ],
@@ -45,15 +48,18 @@
       "tab_size": 2,
       "formatter": [
         {
-          "code_actions": {
-            "source.fixAll.eslint": true,
-            "source.organizeImports": true
-          }
+          "code_action": "source.fixAll.eslint"
+        },
+        {
+          "code_action": "source.organizeImports"
         },
         {
           "external": {
             "command": "prettier",
-            "arguments": ["--stdin-filepath", "{buffer_path}"]
+            "arguments": [
+              "--stdin-filepath",
+              "{buffer_path}"
+            ]
           }
         }
       ],
