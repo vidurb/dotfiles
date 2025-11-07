@@ -1,6 +1,12 @@
 {
+  "agent": {
+    "default_model": {
+      "provider": "google",
+      "model": "gemini-2.5-pro"
+    }
+  },
   "features": {
-    "edit_prediction_provider": "copilot"
+    "edit_prediction_provider": "codestral"
   },
   "ui_font_size": 14,
   "buffer_font_size": 14,
