@@ -74,7 +74,7 @@ config.set_environment_variables = {}
 config.ssh_domains = {
 	{
 		name = "centerpoint",
-		remote_address = "centerpoint.sda.vidur.xyz",
+		remote_address = "centerpoint.beetabus.vidur.xyz",
 		username = "vidur",
 	}
 }
