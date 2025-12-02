@@ -1,4 +1,42 @@
 {
+  "ssh_connections": [
+    {
+      "host": "caddy.beetabus.vidur.xyz",
+      "username": "root",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/etc/caddy"
+          ]
+        }
+      ]
+    },
+    {
+      "host": "authelia.beetabus.vidur.xyz",
+      "username": "root",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/etc/authelia"
+          ]
+        }
+      ]
+    },
+    {
+      "host": "configarr.beetabus.vidur.xyz",
+      "username": "root",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/opt/configarr"
+          ]
+        }
+      ]
+    }
+  ],
   "agent": {
     "default_model": {
       "provider": "google",
