@@ -69,7 +69,7 @@ utc_time_offset = "+5.5"
 style = "bold #8fbcbb"
 
 [hostname]
-ssh_only = true
+ssh_only = false
 trim_at = "."
 disabled = false
 format = "on [$hostname]($style) "
