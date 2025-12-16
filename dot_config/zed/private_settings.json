@@ -6,9 +6,7 @@
       "args": [],
       "projects": [
         {
-          "paths": [
-            "/etc/caddy"
-          ]
+          "paths": ["/etc/caddy"]
         }
       ]
     },
@@ -18,9 +16,7 @@
       "args": [],
       "projects": [
         {
-          "paths": [
-            "/etc/authelia"
-          ]
+          "paths": ["/etc/authelia"]
         }
       ]
     },
@@ -30,9 +26,7 @@
       "args": [],
       "projects": [
         {
-          "paths": [
-            "/opt/configarr"
-          ]
+          "paths": ["/opt/configarr"]
         }
       ]
     }
@@ -51,8 +45,8 @@
   "buffer_font_family": "PragmataPro Mono Liga",
   "theme": {
     "mode": "system",
-    "light": "One Dark",
-    "dark": "One Dark"
+    "light": "Nord Dark",
+    "dark": "Nord Dark"
   },
   "restore_on_startup": "none",
   "languages": {
@@ -73,10 +67,7 @@
         {
           "external": {
             "command": "prettier",
-            "arguments": [
-              "--stdin-filepath",
-              "{buffer_path}"
-            ]
+            "arguments": ["--stdin-filepath", "{buffer_path}"]
           }
         }
       ],
@@ -94,10 +85,7 @@
         {
           "external": {
             "command": "prettier",
-            "arguments": [
-              "--stdin-filepath",
-              "{buffer_path}"
-            ]
+            "arguments": ["--stdin-filepath", "{buffer_path}"]
           }
         }
       ],
