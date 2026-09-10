@@ -1,0 +1,72 @@
+apiVersion: v1
+clusters:
+- cluster:
+    server: https://vidur.kubernetes.eu-central-1.omni.siderolabs.io
+  name: vidur-centerpoint
+- cluster:
+    server: https://vidur.kubernetes.eu-central-1.omni.siderolabs.io
+  name: vidur-errantventure
+- cluster:
+    server: https://vidur.kubernetes.eu-central-1.omni.siderolabs.io
+  name: vidur-sinkhole
+contexts:
+- context:
+    cluster: vidur-centerpoint
+    namespace: default
+    user: vidur-centerpoint-me@vidur.dev
+  name: vidur-centerpoint
+- context:
+    cluster: vidur-errantventure
+    namespace: default
+    user: vidur-errantventure-me@vidur.dev
+  name: vidur-errantventure
+- context:
+    cluster: vidur-sinkhole
+    namespace: default
+    user: vidur-sinkhole-me@vidur.dev
+  name: vidur-sinkhole
+current-context: vidur-errantventure
+kind: Config
+users:
+- name: vidur-centerpoint-me@vidur.dev
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1
+      args:
+      - oidc-login
+      - get-token
+      - --oidc-issuer-url=https://vidur.eu-central-1.omni.siderolabs.io/oidc
+      - --oidc-client-id=native
+      - --oidc-extra-scope=cluster:centerpoint
+      command: kubectl
+      env: null
+      interactiveMode: IfAvailable
+      provideClusterInfo: false
+- name: vidur-errantventure-me@vidur.dev
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1
+      args:
+      - oidc-login
+      - get-token
+      - --oidc-issuer-url=https://vidur.eu-central-1.omni.siderolabs.io/oidc
+      - --oidc-client-id=native
+      - --oidc-extra-scope=cluster:errantventure
+      command: kubectl
+      env: null
+      interactiveMode: IfAvailable
+      provideClusterInfo: false
+- name: vidur-sinkhole-me@vidur.dev
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1
+      args:
+      - oidc-login
+      - get-token
+      - --oidc-issuer-url=https://vidur.eu-central-1.omni.siderolabs.io/oidc
+      - --oidc-client-id=native
+      - --oidc-extra-scope=cluster:sinkhole
+      command: kubectl
+      env: null
+      interactiveMode: IfAvailable
+      provideClusterInfo: false

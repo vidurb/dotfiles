@@ -1,0 +1,27 @@
+[profile li-root]
+login_session = arn:aws:iam::441759754730:root
+[profile personal]
+login_session = arn:aws:iam::003478736913:root
+[profile li-bepossible]
+sso_session = li
+sso_account_id = 497617902210
+sso_role_name = AWSAdministratorAccess
+region = eu-west-1
+[sso-session li]
+sso_start_url = https://lewinnovation.awsapps.com/start/#/
+sso_region = ap-southeast-2
+sso_registration_scopes = sso:account:access
+[profile findmypet]
+sso_session = li
+sso_account_id = 631603563115
+sso_role_name = LewAdministrator
+region = ap-southeast-2
+[profile costshare]
+sso_session = ah
+sso_account_id = 911167923399
+sso_role_name = Solution-Role-Permission
+region = ap-southeast-2
+[sso-session ah]
+sso_start_url = https://atlantishealth.awsapps.com/start/#
+sso_region = ap-southeast-2
+sso_registration_scopes = sso:account:access
