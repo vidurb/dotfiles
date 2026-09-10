@@ -1,10 +1,12 @@
-{{- $email := promptString "Enter the email to use for git" -}}
-{{- $keys := promptBool "Update ~/.ssh/authorized_keys" -}}
-{{- $encrypted := promptBool "Install SSH config and other encrypted configs" -}}
-{{- $onepassword := promptBool "Enable 1Password SSH Agent" -}}
+{{- $email := promptString "Enter the email to use for git?" -}}
+{{- $keys := promptBool "Update ~/.ssh/authorized_keys?" -}}
+{{- $encrypted := promptBool "Install SSH config and other encrypted configs?" -}}
+{{- $onepassword := promptBool "Enable 1Password SSH Agent?" -}}
+{{- $terminal := promptBool "Is this a graphical terminal?" -}}
 
 [data]
     email = "{{ $email }}"
     keys = "{{ $keys }}"
     encrypted = "{{ $encrypted }}"
     onepassword = "{{ $onepassword }}"
+    gooey = "{{ $terminal }}"
