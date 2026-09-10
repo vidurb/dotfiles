@@ -28,8 +28,8 @@
     gpgSign = true
 [tag]
     forceSignAnnotated = false
-[url "git@github.com"]
-    insteadOf = gh
+[url "git@github.com:"]
+    insteadOf = gh:
     pushInsteadOf = https://github.com/
     pushInsteadOf = git://github.com/
 [pull]
@@ -43,3 +43,9 @@
 {{ else if eq .chezmoi.os "darwin" }}
     program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 {{- end -}}
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

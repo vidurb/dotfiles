@@ -1,104 +1,107 @@
 {
-  "ssh_connections": [
-    {
-      "host": "caddy.beetabus.vidur.xyz",
-      "username": "root",
-      "args": [],
-      "projects": [
-        {
-          "paths": ["/etc/caddy"]
-        }
-      ]
-    },
-    {
-      "host": "authelia.beetabus.vidur.xyz",
-      "username": "root",
-      "args": [],
-      "projects": [
-        {
-          "paths": ["/etc/authelia"]
-        }
-      ]
-    },
-    {
-      "host": "configarr.beetabus.vidur.xyz",
-      "username": "root",
-      "args": [],
-      "projects": [
-        {
-          "paths": ["/opt/configarr"]
-        }
-      ]
-    }
-  ],
-  "agent": {
-    "default_model": {
-      "provider": "google",
-      "model": "gemini-2.5-pro"
-    }
-  },
-  "features": {
-    "edit_prediction_provider": "codestral"
-  },
-  "ui_font_size": 14,
-  "buffer_font_size": 14,
-  "buffer_font_family": "PragmataPro Mono Liga",
-  "theme": {
-    "mode": "system",
-    "light": "Nord Dark",
-    "dark": "Nord Dark"
-  },
-  "restore_on_startup": "none",
-  "languages": {
-    "Python": {
-      "tab_size": 4,
-      "formatter": "language_server",
-      "format_on_save": "on"
-    },
-    "JavaScript": {
-      "tab_size": 2,
-      "formatter": [
-        {
-          "code_action": "source.fixAll.eslint"
-        },
-        {
-          "code_action": "source.organizeImports"
-        },
-        {
-          "external": {
-            "command": "prettier",
-            "arguments": ["--stdin-filepath", "{buffer_path}"]
-          }
-        }
-      ],
-      "format_on_save": "on"
-    },
-    "TypeScript": {
-      "tab_size": 2,
-      "formatter": [
-        {
-          "code_action": "source.fixAll.eslint"
-        },
-        {
-          "code_action": "source.organizeImports"
-        },
-        {
-          "external": {
-            "command": "prettier",
-            "arguments": ["--stdin-filepath", "{buffer_path}"]
-          }
-        }
-      ],
-      "format_on_save": "on"
-    },
-    "JSON": {
-      "formatter": {
-        "external": {
-          "command": "prettier",
-          "arguments": ["--stdin-filepath", "{buffer_path}"]
-        }
-      },
-      "format_on_save": "on"
-    }
-  }
+	"context_servers": {},
+	"agent_servers": {
+		"cursor": {
+			"type": "registry"
+		},
+		"opencode": {
+			"default_config_options": {
+				"effort": "medium",
+				"mode": "build",
+				"model": "openrouter/deepseek/deepseek-v4-pro"
+			},
+			"type": "registry"
+		},
+		"gemini": {
+			"type": "registry"
+		},
+		"claude-acp": {
+			"favorite_config_option_values": {
+				"mode": ["auto"]
+			},
+			"default_config_options": {
+				"fast": false,
+				"model": "default",
+				"mode": "auto"
+			},
+			"type": "registry"
+		}
+	},
+	"icon_theme": {
+		"mode": "dark",
+		"light": "Zed (Default)",
+		"dark": "Catppuccin Frappé"
+	},
+	"on_last_window_closed": "quit_app",
+	"when_closing_with_no_tabs": "close_window",
+	"edit_predictions": {
+		"provider": "zed",
+		"mode": "subtle"
+	},
+	"cli_default_open_behavior": "new_window",
+	"project_panel": {
+		"dock": "left"
+	},
+	"outline_panel": {
+		"dock": "left"
+	},
+	"collaboration_panel": {
+		"dock": "left"
+	},
+	"git_panel": {
+		"dock": "left"
+	},
+	"ssh_connections": [],
+	"agent": {
+		"sidebar_side": "right",
+		"dock": "right"
+	},
+	"ui_font_size": 14,
+	"buffer_font_size": 14,
+	"buffer_font_family": "PragmataPro Mono Liga",
+	"theme": {
+		"mode": "dark",
+		"light": "Nord Dark",
+		"dark": "Nord Dark"
+	},
+	"restore_on_startup": "launchpad",
+	"format_on_save": "off",
+	"languages": {
+		"Python": {
+			"tab_size": 4,
+			"formatter": "language_server",
+			"format_on_save": "on"
+		},
+		"Astro": { "formatter": { "language_server": { "name": "biome" } } },
+		"CSS": { "formatter": { "language_server": { "name": "biome" } } },
+		"GraphQL": { "formatter": { "language_server": { "name": "biome" } } },
+		"HTML": { "formatter": { "language_server": { "name": "biome" } } },
+		"JSON": {
+			"formatter": { "language_server": { "name": "biome" } },
+			"format_on_save": "on"
+		},
+		"JSONC": { "formatter": { "language_server": { "name": "biome" } } },
+		"JavaScript": {
+			"formatter": { "language_server": { "name": "biome" } },
+			"code_actions_on_format": {
+				"source.fixAll.biome": true,
+				"source.organizeImports.biome": true
+			}
+		},
+		"TypeScript": {
+			"formatter": { "language_server": { "name": "biome" } },
+			"code_actions_on_format": {
+				"source.fixAll.biome": true,
+				"source.organizeImports.biome": true
+			}
+		},
+		"TSX": {
+			"formatter": { "language_server": { "name": "biome" } },
+			"code_actions_on_format": {
+				"source.fixAll.biome": true,
+				"source.organizeImports.biome": true
+			}
+		},
+		"Svelte": { "formatter": { "language_server": { "name": "biome" } } }
+	}
 }
