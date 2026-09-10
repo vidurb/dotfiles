@@ -4,9 +4,14 @@
 {{- $onepassword := promptBool "Enable 1Password SSH Agent?" -}}
 {{- $terminal := promptBool "Is this a graphical terminal?" -}}
 
+encryption = "age"
+
 [data]
     email = "{{ $email }}"
     keys = "{{ $keys }}"
     encrypted = "{{ $encrypted }}"
     onepassword = "{{ $onepassword }}"
     gooey = "{{ $terminal }}"
+[age]
+     identity = "/Users/vidur/personal.agekey"
+     recipient = "age1mlxfju63j08rxpuxa56kjusx53a7ewcg7k9m32p9xt9ynh7h59fqlq65kk"
