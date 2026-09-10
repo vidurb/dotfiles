@@ -36,6 +36,11 @@
     rebase = true
 [push]
     autoSetupRemote = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
 [gpg "ssh"]
     allowedSignersFile = /Users/vidur/.ssh/allowed_signers
 {{ if eq .chezmoi.os "linux" }}
@@ -43,9 +48,3 @@
 {{ else if eq .chezmoi.os "darwin" }}
     program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 {{- end -}}
-
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
