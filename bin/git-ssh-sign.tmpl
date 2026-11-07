@@ -1,0 +1,10 @@
+#!/bin/sh
+if [ -n "${BB_THREAD_ID:-}" ] && [ "$1" = "-Y" ] && [ "$2" = "sign" ]; then
+  for last; do :; done
+  exec /usr/bin/ssh-keygen -Y sign -n git -f "$HOME/.ssh/bb_agent_ed25519" "$last"
+fi
+{{ if eq .chezmoi.os "linux" }}
+exec /opt/1Password/op-ssh-sign "$@"
+{{ else if eq .chezmoi.os "darwin" }}
+exec /Applications/1Password.app/Contents/MacOS/op-ssh-sign "$@"
+{{ end }}
