@@ -5,6 +5,9 @@ clusters:
   name: vidur-centerpoint
 - cluster:
     server: https://vidur.kubernetes.eu-central-1.omni.siderolabs.io
+  name: vidur-ermazd
+- cluster:
+    server: https://vidur.kubernetes.eu-central-1.omni.siderolabs.io
   name: vidur-errantventure
 - cluster:
     server: https://vidur.kubernetes.eu-central-1.omni.siderolabs.io
@@ -16,6 +19,11 @@ contexts:
     user: vidur-centerpoint-me@vidur.dev
   name: vidur-centerpoint
 - context:
+    cluster: vidur-ermazd
+    namespace: default
+    user: vidur-ermazd-me@vidur.dev
+  name: vidur-ermazd
+- context:
     cluster: vidur-errantventure
     namespace: default
     user: vidur-errantventure-me@vidur.dev
@@ -25,7 +33,7 @@ contexts:
     namespace: default
     user: vidur-sinkhole-me@vidur.dev
   name: vidur-sinkhole
-current-context: vidur-errantventure
+current-context: vidur-sinkhole
 kind: Config
 users:
 - name: vidur-centerpoint-me@vidur.dev
@@ -38,6 +46,20 @@ users:
       - --oidc-issuer-url=https://vidur.eu-central-1.omni.siderolabs.io/oidc
       - --oidc-client-id=native
       - --oidc-extra-scope=cluster:centerpoint
+      command: kubectl
+      env: null
+      interactiveMode: IfAvailable
+      provideClusterInfo: false
+- name: vidur-ermazd-me@vidur.dev
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1
+      args:
+      - oidc-login
+      - get-token
+      - --oidc-issuer-url=https://vidur.eu-central-1.omni.siderolabs.io/oidc
+      - --oidc-client-id=native
+      - --oidc-extra-scope=cluster:ermazd
       command: kubectl
       env: null
       interactiveMode: IfAvailable
